@@ -38,12 +38,16 @@ config2  = [
     'type=before',
     '_=1496850179732',
 ];
+config3  = [
+    '_=1497074817396',
+];
 
 
 #需要抓取的数据源
-baseUrl     = 'https://xueqiu.com/stock';
-screenerAPI = baseUrl+'/screener/screen.json';
-stockAPI    = baseUrl+'/forchartk/stocklist.json';
+baseUrl      = 'https://xueqiu.com/stock';
+screenerAPI  = baseUrl+'/screener/screen.json';
+stockAPI     = baseUrl+'/forchartk/stocklist.json';
+stockInfoAPI = 'https://xueqiu.com/v4/stock/quote.json';
 
 
 #所有的数据列表
@@ -52,11 +56,12 @@ stockArr = [];
 
 #股票类
 class Stock:
-    def __init__(self, name=0, symbol=1,lows=[],percents=[]):
+    def __init__(self, name=0, symbol=1,lows=[],percents=[],info={}):
         self.name     = name
         self.symbol   = symbol
         self.lows     = lows
         self.percents = percents
+        self.info     = info
 
 
 #解析json
@@ -92,18 +97,22 @@ def getAllData(page=0,stockArr=[]):
         page = page+1;
         #处理一页中，各个股票的数据
         for one in arr:
+            
             name = one['name']; 
             symbol = one['symbol']; 
 
-            #非常核心的数据提炼部分
+            #非常核心的数据提炼部分1
             lows     = getLowPriceArr(symbol,6);
             percents = getSellPercent(lows);
+            #非常核心的数据提炼部分2
+            info     = getStockInfoData(stockInfoAPI,config3,symbol);
 
             #完成一个完整的股票分析
-            oneStock = Stock(name,symbol,lows,percents);
+            oneStock = Stock(name,symbol,lows,percents,info);
 
             #屏幕输出
             print(oneStock.name)
+            print(oneStock.info)
             print(oneStock.lows)
             print(oneStock.percents)
             print('-------------------------------------')
@@ -221,7 +230,26 @@ def getSellPercent(arr):
     return [percentArr,avg];
 
 
-
+#获取股票的信息（市净率等）
+def getStockInfoData(url,config,symbol):
+    _headers = {
+        "User-Agent":userAgent,
+        "Cookie":cookie
+    }
+    _params = "&".join(config);
+    _params = _params + '&code=' + symbol;
+    res = requests.get(url=url,params=_params,headers=_headers)
+    data = json.loads(res.text);
+    pe_ttm = data[symbol]['pe_ttm'];
+    pe_lyr = data[symbol]['pe_lyr'];
+    pb = data[symbol]['pb'];
+    totalShares = data[symbol]['totalShares'];
+    return {
+        "pe_ttm":pe_ttm,
+        "pe_lyr":pe_lyr,
+        "pb":pb,
+        "totalShares":totalShares,
+    };
 
 
 #获取所有处理完毕的数据
