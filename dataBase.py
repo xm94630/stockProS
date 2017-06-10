@@ -14,7 +14,8 @@ db = client.xm94630
 coll = db.stocks
 
 #删除全部原有数据
-#result = coll.delete_many({})
+print('清空全部旧数据')
+result = coll.delete_many({})
 
 #把抓取的一条数据，保存到 mongo 数据库
 def save(data={}):  
