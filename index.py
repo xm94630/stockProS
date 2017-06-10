@@ -270,6 +270,7 @@ def getStockInfoData(url,config,symbol):
         "pe_lyr":pe_lyr,
         "pb":pb,
         "totalShares":totalShares,
+        "totalShares2":round(int(totalShares)/100000000,1)
     };
 
 

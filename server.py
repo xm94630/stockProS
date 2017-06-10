@@ -4,13 +4,15 @@
 
 from __future__ import division
 from pymongo import MongoClient
+import pymongo
 
 
 #连接数据库
 client = MongoClient()
 db = client.xm94630
 coll = db.stocks
-cursor = coll.find()
+#获取全部数据，并按照均值大小排序
+cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)])
 
 
 # 服务
