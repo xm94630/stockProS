@@ -54,6 +54,8 @@ stockInfoAPI = 'https://xueqiu.com/v4/stock/quote.json';
 
 #所有的数据列表
 stockArr = [];
+#处理完成的条数，用来提示进度
+dealNum = 0;
 
 
 #股票类
@@ -64,7 +66,8 @@ stockArr = [];
 #         self.lows     = lows
 #         self.percents = percents
 #         self.info     = info
-def Stock(self, name=0, symbol=1,lows=[],percents=[],info={}):
+
+def Stock(name=0, symbol=1,lows=[],percents=[],info={}):
     return{
         "name"     : name,
         "symbol"   : symbol,
@@ -97,6 +100,9 @@ def getAllData(page=0,stockArr=[]):
     data = Payload(json);
     arr  = data.list;
 
+    #在函数中使用全局变量需要这里声明
+    global dealNum;
+
     # 股票总条数
     count = data.count;
     totalPages = int(math.ceil(count/30)) 
@@ -124,7 +130,9 @@ def getAllData(page=0,stockArr=[]):
             print(oneStock['info'])
             print(oneStock['lows'])
             print(oneStock['percents'])
-            print('-------------------------------------')
+            dealNum = dealNum + 1;
+            perc = round((dealNum/count),3)*100;
+            print('--------------------------------------------------------------------------------------------------------------- '+str(perc)+'%')
 
             #保存到数据库
             dataBase.save(oneStock);

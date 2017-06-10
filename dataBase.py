@@ -18,7 +18,6 @@ coll = db.stocks
 
 #把抓取的一条数据，保存到 mongo 数据库
 def save(data={}):  
-    print("这是我自己写的模块")  
     #插入一条数据
     result = coll.insert_one(data)
     return  
