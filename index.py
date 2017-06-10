@@ -43,6 +43,8 @@ config2  = [
 config3  = [
     '_=1497074817396',
 ];
+#行业配置
+industryPrice = 10000;
 
 
 #需要抓取的数据源
@@ -265,12 +267,25 @@ def getStockInfoData(url,config,symbol):
     pe_lyr = data[symbol]['pe_lyr'];
     pb = data[symbol]['pb'];
     totalShares = data[symbol]['totalShares'];
+    close = data[symbol]['close'];
+
+    #购买推荐
+    buyPercent  = round ( (-2*float(pb) + 5)/3 ,3);
+    buyNum      = int(round ( industryPrice*buyPercent/float(close) ,0));
+    buyNum2     = int(round ( buyNum/100 ,0) * 100);
+
+
     return {
         "pe_ttm":pe_ttm,
         "pe_lyr":pe_lyr,
         "pb":pb,
         "totalShares":totalShares,
-        "totalShares2":round(int(totalShares)/100000000,1)
+        "totalShares2":round(int(totalShares)/100000000,1),
+        #新增几个
+        "buyPercent":buyPercent,
+        "buyNum":buyNum,
+        "buyNum2":buyNum2,
+        "close":close,
     };
 
 

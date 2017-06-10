@@ -6,9 +6,11 @@
 <ul id="navigation">
 {% for item in data %}
     <li>
-        <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">{{ item.name }}【{{ item.symbol }}】</a> <span>{{ item.percents[1] }}</span>
+        <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">{{ item.name }}【{{ item.symbol }}】</a> 
+        <div>推荐购买 {{ item.info.buyNum2 }}({{ item.info.buyNum }}) 股</div>
         <div>【PB/TTM/LYR】{{item.info.pb}}/{{item.info.pe_ttm}}/{{item.info.pe_lyr}}</div>
-        <div>N年内卖点占比 {{ item.percents[0] }}</div>
+        <div>N年内低点 {{ item.lows }}</div>
+        <div>N年内卖点占比 {{ item.percents }}</div>
         <div>总股本 {{ item.info.totalShares2 }}</div>
     </li>
 {% endfor %}
