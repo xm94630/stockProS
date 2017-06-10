@@ -3,6 +3,10 @@
 <link rel="stylesheet" href='static/css/style.css' />
 </head>
 <body>
-<h1>{{user}}，你好</h1>
+<ul id="navigation">
+{% for item in data %}
+    <li><a href="{{ item.name }}">{{ item.name }}</a></li>
+{% endfor %}
+</ul>
 </body>
 </html>

@@ -3,6 +3,14 @@
 #上面的注释是用来支持中文，没有就会出错
 
 from __future__ import division
+from pymongo import MongoClient
+
+
+#连接数据库
+client = MongoClient()
+db = client.xm94630
+coll = db.stocks
+cursor = coll.find()
 
 
 # 服务
@@ -20,7 +28,7 @@ env = Environment(
 @app.route("/")
 def hello():
     template = env.get_template('index.html');
-    return  template.render(user='xm94630');
+    return  template.render(data=cursor);
 
 if __name__ == "__main__":
     app.run()
