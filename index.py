@@ -11,6 +11,8 @@ import requests
 import json
 import math
 import time
+#导入自己写的
+import dataBase
 
 
 #头信息
@@ -55,14 +57,21 @@ stockArr = [];
 
 
 #股票类
-class Stock:
-    def __init__(self, name=0, symbol=1,lows=[],percents=[],info={}):
-        self.name     = name
-        self.symbol   = symbol
-        self.lows     = lows
-        self.percents = percents
-        self.info     = info
-
+# class Stock:
+#     def __init__(self, name=0, symbol=1,lows=[],percents=[],info={}):
+#         self.name     = name
+#         self.symbol   = symbol
+#         self.lows     = lows
+#         self.percents = percents
+#         self.info     = info
+def Stock(self, name=0, symbol=1,lows=[],percents=[],info={}):
+    return{
+        "name"     : name,
+        "symbol"   : symbol,
+        "lows"     : lows,
+        "percents" : percents,
+        "info"     : info,
+    }
 
 #解析json
 class Payload(object):
@@ -111,12 +120,16 @@ def getAllData(page=0,stockArr=[]):
             oneStock = Stock(name,symbol,lows,percents,info);
 
             #屏幕输出
-            print(oneStock.name)
-            print(oneStock.info)
-            print(oneStock.lows)
-            print(oneStock.percents)
+            print(oneStock['name'])
+            print(oneStock['info'])
+            print(oneStock['lows'])
+            print(oneStock['percents'])
             print('-------------------------------------')
+
+            #保存到数据库
+            dataBase.save(oneStock);
             
+            #并保存到全局对象中（这个其实没啥用呢）
             stockArr.append(oneStock);
        
     if page<=totalPages:
