@@ -11,8 +11,7 @@ import pymongo
 client = MongoClient()
 db = client.xm94630
 coll = db.stocks
-#获取全部数据，并按照均值大小排序
-cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)])
+
 
 
 # 服务
@@ -29,6 +28,11 @@ env = Environment(
 
 @app.route("/")
 def hello():
+    
+    #获取全部数据，并按照均值大小排序
+    #注意，这部分一定要放在这里，不能在全局，否者的话，数据就为空，在页面中就看不到（也就是只有第一次才能有数据）。
+    cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)])
+
     template = env.get_template('index.html');
     return  template.render(data=cursor);
 
