@@ -1,3 +1,6 @@
 body{
-    background: green;
+    background: #f3f3f3;
+}
+span{
+    color: red;
 }
