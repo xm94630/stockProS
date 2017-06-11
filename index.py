@@ -13,6 +13,7 @@ import math
 import time
 #导入自己写的
 import dataBase
+import exportFile
 
 
 #头信息
@@ -138,6 +139,8 @@ def getAllData(page=0,stockArr=[]):
 
             #保存到数据库
             dataBase.save(oneStock);
+            #保存到文件
+            exportFile.save(oneStock);
             
             #并保存到全局对象中（这个其实没啥用呢）
             stockArr.append(oneStock);
