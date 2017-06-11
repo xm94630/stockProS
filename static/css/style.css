@@ -1,6 +1,361 @@
-body{
-    background: #f3f3f3;
+/*
+ * 通用css 第四版
+ * 时间：2014-01-17
+ * 更新：2015-09-09
+ */
+
+* {
+  margin: 0px;
+  padding: 0px;
 }
-span{
-    color: red;
+body {
+  font-size: 12px;
+  font-family:"微软雅黑","黑体",Arial,Helvetica,sans-serif,"宋体";/*缺少分号，safari中无效*/
+  color: #666;
+  background: #fff;
 }
+body ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+body a {
+  text-decoration: none;
+  color: orangered;
+}
+body a:visited {
+  text-decoration: none;
+  color: orangered;
+}
+
+
+.myb  {border: solid 1px orangered;}
+.myb2 {border: dotted 1px deepskyblue;}
+.myb3 {border: solid 2px gold;}
+.myb4 {border: solid 3px plum;}
+.myb5 {border: solid 5px mediumpurple;}
+.myb6 {border: dashed 1px mediumpurple;}
+
+.bg1 {background:deepskyblue;}
+.bg2 {background:lightseagreen;}
+.bg3 {background:darkseagreen;}
+.bg4 {background:gold;}
+.bg5 {background:coral;}
+.bg6 {background:#f1838d;}
+.bg7 {background:orangered;}
+.bg8 {background:plum;}
+.bg9 {background:mediumpurple;}
+.bg10 {background:burlywood;}
+.bg11 {background:darkgoldenrod;}
+.bg-000 {background:#000;}
+.bg-fff {background:#fff;}
+.bg-Gray {background:#e5e5e5;}
+.bg-Ori {background:#eb7350;}
+
+.C1 {color:deepskyblue;}
+.C2 {color:lightseagreen;}
+.C3 {color:darkseagreen;}
+.C4 {color:gold;}
+.C5 {color:coral;}
+.C6 {color:#f1838d;}
+.C7 {color:orangered;}
+.C8 {color:plum;}
+.C9 {color:mediumpurple;}
+.C10 {color:burlywood;}
+.C11 {color:darkgoldenrod;}
+.C-000 {color:#000;}
+.C-fff {color:#fff;}
+.C-Gray {color:#e5e5e5;}
+.C-Ori {color:#eb7350;}
+
+.FS10 {font-size: 10px;}
+.FS12 {font-size: 12px;}
+.FS13 {font-size: 13px;}
+.FS14 {font-size: 14px;}
+.FS15 {font-size: 15px;}
+.FS16 {font-size: 16px;}
+.FS17 {font-size: 17px;}
+.FS18 {font-size: 18px;}
+.FS19 {font-size: 19px;}
+.FS20 {font-size: 20px;}
+.FS21 {font-size: 21px;}
+.FS22 {font-size: 22px;}
+.FS23 {font-size: 23px;}
+.FS24 {font-size: 24px;}
+.FS25 {font-size: 25px;}
+.FS26 {font-size: 26px;}
+.FS27 {font-size: 27px;}
+.FS28 {font-size: 28px;}
+.FS29 {font-size: 29px;}
+.FS30 {font-size: 30px;}
+.FS31 {font-size: 31px;}
+.FS32 {font-size: 32px;}
+.FS33 {font-size: 33px;}
+.FS34 {font-size: 34px;}
+.FS35 {font-size: 35px;}
+.FS36 {font-size: 36px;}
+
+.MT5 {margin-top: 5px;}
+.MT6 {margin-top: 6px;}
+.MT7 {margin-top: 7px;}
+.MT8 {margin-top: 8px;}
+.MT9 {margin-top: 9px;}
+.MT10 {margin-top: 10px;}
+.MT15 {margin-top: 15px;}
+.MT20 {margin-top: 20px;}
+.MT25 {margin-top: 25px;}
+.MT30 {margin-top: 30px;}
+.MT35 {margin-top: 35px;}
+.MT40 {margin-top: 40px;}
+.MT45 {margin-top: 45px;}
+.MT50 {margin-top: 50px;}
+
+.MB5 {margin-bottom: 5px;}
+.MB6 {margin-bottom: 6px;}
+.MB7 {margin-bottom: 7px;}
+.MB8 {margin-bottom: 8px;}
+.MB9 {margin-bottom: 9px;}
+.MB10 {margin-bottom: 10px;}
+.MB15 {margin-bottom: 15px;}
+.MB20 {margin-bottom: 20px;}
+.MB25 {margin-bottom: 25px;}
+.MB30 {margin-bottom: 30px;}
+.MB35 {margin-bottom: 35px;}
+.MB40 {margin-bottom: 40px;}
+.MB45 {margin-bottom: 45px;}
+.MB50 {margin-bottom: 50px;}
+
+.ML5 {margin-left: 5px;}
+.ML6 {margin-left: 6px;}
+.ML7 {margin-left: 7px;}
+.ML8 {margin-left: 8px;}
+.ML9 {margin-left: 9px;}
+.ML10 {margin-left: 10px;}
+.ML12 {margin-left: 12px;}
+.ML15 {margin-left: 15px;}
+.ML20 {margin-left: 20px;}
+.ML25 {margin-left: 25px;}
+.ML30 {margin-left: 30px;}
+.ML35 {margin-left: 35px;}
+.ML40 {margin-left: 40px;}
+.ML45 {margin-left: 45px;}
+.ML50 {margin-left: 50px;}
+
+.MR5 {margin-right: 5px;}
+.MR6 {margin-right: 6px;}
+.MR7 {margin-right: 7px;}
+.MR8 {margin-right: 8px;}
+.MR9 {margin-right: 9px;}
+.MR10 {margin-right: 10px;}
+.MR15 {margin-right: 15px;}
+.MR20 {margin-right: 20px;}
+.MR25 {margin-right: 25px;}
+.MR30 {margin-right: 30px;}
+.MR35 {margin-right: 35px;}
+.MR40 {margin-right: 40px;}
+.MR45 {margin-right: 45px;}
+.MR50 {margin-right: 50px;}
+
+.PD0  {padding: 0px;}
+.PD10 {padding: 10px;}
+.PD20 {padding: 20px;}
+
+.W10 {width:10px;}
+.W14 {width:14px;}
+.W20 {width:20px;}
+.W30 {width:30px;}
+.W40 {width:40px;}
+.W50 {width:50px;}
+.W60 {width:60px;}
+.W70 {width:70px;}
+.W80 {width:80px;}
+.W90 {width:90px;}
+.W100 {width:100px;}
+.W150 {width:150px;}
+.W180 {width:180px;}
+.W200 {width:200px;}
+.W250 {width:250px;}
+.W300 {width:300px;}
+.W310 {width:310px;}
+.W350 {width:350px;}
+.W400 {width:400px;}
+.W450 {width:450px;}
+.W500 {width:500px;}
+.W550 {width:550px;}
+.W600 {width:600px;}
+.W650 {width:650px;}
+.W700 {width:700px;}
+.W750 {width:750px;}
+.W800 {width:800px;}
+.W850 {width:850px;}
+.W900 {width:900px;}
+.W950 {width:950px;}
+.W1000 {width:1000px;}
+.W10P {width:10%;}
+.W20P {width:20%;}
+.W25P {width:25%;}
+.W30P {width:30%;}
+.W40P {width:40%;}
+.W50P {width:50%;}
+.W60P {width:60%;}
+.W70P {width:70%;}
+.W80P {width:80%;}
+.W90P {width:90%;}
+.W100P {width:100%;}
+
+.H1 {height:1px;}
+.H2 {height:2px;}
+.H3 {height:3px;}
+.H4 {height:4px;}
+.H5 {height:5px;}
+.H6 {height:6px;}
+.H7 {height:7px;}
+.H8 {height:8px;}
+.H9 {height:9px;}
+.H10 {height:10px;}
+.H15 {height:15px;}
+.H20 {height:20px;}
+.H24 {height:24px;}
+.H25 {height:25px;}
+.H30 {height:30px;}
+.H35 {height:35px;}
+.H40 {height:40px;}
+.H45 {height:45px;}
+.H50 {height:50px;}
+.H100 {height:100px;}
+
+.LH5 {line-height:5px;}
+.LH6 {line-height:6px;}
+.LH7 {line-height:7px;}
+.LH8 {line-height:8px;}
+.LH9 {line-height:9px;}
+.LH10 {line-height:10px;}
+.LH15 {line-height:15px;}
+.LH16 {line-height:16px;}
+.LH20 {line-height:20px;}
+.LH25 {line-height:25px;}
+.LH30 {line-height:30px;}
+.LH35 {line-height:35px;}
+.LH40 {line-height:40px;}
+.LH45 {line-height:45px;}
+.LH50 {line-height:50px;}
+
+.blankBox {clear: both;}
+.myHide {display: none;}
+.floatL {float: left;}
+.floatR {float: right;}
+.center {margin: 0 auto;}
+.FCenter {text-align: center;}
+.FC {text-align: center;}
+.noline {border:none;}
+.vertical {vertical-align:middle; margin-top:-2px; margin-bottom:1px;}
+.pointer {cursor:pointer;}
+.beeInline {display:inline-block;}
+
+
+.beeCSS {
+  /*圆角*/
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  /*阴影*/
+  -webkit-box-shadow:3px 3px 3px;
+  -moz-box-shadow:3px 3px 3px;
+  box-shadow:3px 3px 3px;
+  /*渐变*/
+  background:#eee;
+  background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#666));
+  background:-moz-linear-gradient(top, #eee, #666);
+  background:-o-linear-gradient(top,#eee, #666);
+  /*半透明*/
+  -moz-opacity:0.5;
+  -khtml-opacity:0.5;
+  opacity:0.5;
+  /*宽度变化动画*/
+  transition:width 1s;
+  -moz-transition:width 1s; 
+  -webkit-transition:width 1s; 
+  -o-transition:width 1s;
+}
+.beeCSS:hover{
+  background: #666;
+  color:#fff;
+}
+
+@font-face {
+  font-family: "方正正中黑";
+  src: url("../font/方正正中黑.TTF");
+}
+
+/*媒体查询*/
+.mediaBox {
+  width:100%;
+  background:#e5e5e5;
+}
+@media screen and (max-width:500px) {
+  .mediaBox {
+    background:coral;
+  }
+}
+@media screen and (min-width:500px) and (max-width:1000px) {
+  .mediaBox {
+    background:lightseagreen;
+  }
+}
+@media screen and (min-width:1000px) {
+  .mediaBox {
+    background:burlywood;
+  }
+}
+
+
+/*项目*/
+.mask{
+  width:100%;
+  height:200px;
+  background: #000;
+  -moz-opacity:0.5;
+  -khtml-opacity:0.5;
+  opacity:0.5;
+  position:absolute;
+  top: 0px;
+  left:0px;
+}
+.loadingBar-Border{
+  width: 100%;
+  height:100%;
+  border:solid 1px #ccc;
+}
+.loadingBar-con{
+  width: 0px;
+  height:100%;
+  background: lightseagreen;
+  transition:width 1s;
+  -moz-transition:width 1s; 
+  -webkit-transition:width 1s; 
+  -o-transition:width 1s;
+}
+
+.myBox{
+  width:100px;
+  height:100px;
+  position: absolute;
+  top:0px;
+  left:0px;
+}
+
+/*项目*/
+ul li{
+  padding:10px;
+  padding-left: 20px;
+  border-bottom: solid 1px #ccc;
+}
+ul li a{
+  font-size: 16px;
+}
+
+
+
+
