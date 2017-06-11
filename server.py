@@ -26,7 +26,7 @@ env = Environment(
     autoescape=select_autoescape(['html', 'xml'])
 )
 
-@app.route("/")
+@app.route("/",methods=["GET"])
 def hello():
     
     #获取全部数据，并按照均值大小排序
@@ -37,4 +37,14 @@ def hello():
     return  template.render(data=cursor);
 
 if __name__ == "__main__":
-    app.run()
+    #只能本机访问
+    #app.run()
+    
+    #这样子写就可以支持LAN访问
+    app.run('0.0.0.0')
+
+
+
+
+
+
