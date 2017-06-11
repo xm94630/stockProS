@@ -70,13 +70,14 @@ dealNum = 0;
 #         self.percents = percents
 #         self.info     = info
 
-def Stock(name=0, symbol=1,lows=[],percents=[],info={}):
+def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0):
     return{
         "name"     : name,
         "symbol"   : symbol,
         "lows"     : lows,
         "percents" : percents,
         "info"     : info,
+        "averagePrecent" : averagePrecent,
     }
 
 #解析json
@@ -125,8 +126,11 @@ def getAllData(page=0,stockArr=[]):
             #非常核心的数据提炼部分2
             info     = getStockInfoData(stockInfoAPI,config3,symbol);
 
+            #需要再增加一个key,用来排序
+            averagePrecent = percents[1];
+
             #完成一个完整的股票分析
-            oneStock = Stock(name,symbol,lows,percents,info);
+            oneStock = Stock(name,symbol,lows,percents,info,averagePrecent);
 
             #屏幕输出
             print(oneStock['name'])
@@ -139,10 +143,11 @@ def getAllData(page=0,stockArr=[]):
 
             #保存到数据库
             dataBase.save(oneStock);
-            #保存到文件
-            exportFile.save(oneStock);
             
             #并保存到全局对象中（这个其实没啥用呢）
+            #补充，现在有用了，最后的时候，用来作为全部数据导出到txt
+            #为什么不是和数据库存入一样，在每一次中完成，而选择了最后一次性处理
+            #因为主要是为了解决排序的问题
             stockArr.append(oneStock);
        
     if page<=totalPages:
@@ -295,9 +300,12 @@ def getStockInfoData(url,config,symbol):
 #获取所有处理完毕的数据
 stockArr = getAllData();
 print(len(stockArr))
+print(u'SUCCESS! 完成数据库存储');
 
-
-
+#保存到文件
+exportFile.save(stockArr);
+print(u'SUCCESS! 完成txt导出');
+print(u'=== END ===');
 
 
 
