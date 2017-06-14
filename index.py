@@ -14,12 +14,15 @@ import time
 #导入自己写的
 import dataBase
 import exportFile
+import getCookie
 
 
 #头信息
 #cookie = 'aliyungf_tc=AQAAAPmR3X3Y0QwAopuP2+mfwa3X68B9; xq_a_token=876f2519b10cea9dc131b87db2e5318e5d4ea64f; xq_a_token.sig=dfyKV8R29cG1dbHpcWXqSX6_5BE; xq_r_token=709abdc1ccb40ac956166989385ffd603ad6ab6f; xq_r_token.sig=dBkYRMW0CNWbgJ3X2wIkqMbKy1M; u=571496720504862; s=f811dxbvsv; Hm_lvt_1db88642e346389874251b5a1eded6e3=1495547353,1496562578,1496717217,1496718108; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1496806200; __utma=1.1590213924.1496727484.1496757368.1496806200.6; __utmc=1; __utmz=1.1496727484.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)';
 #20170613 更新
-cookie = 's=f811dxbvsv; aliyungf_tc=AQAAAFAqgS6SyAYA4Ah6ey0pwRiXjXtN; device_id=a0ff6c142e7ace69832875472cd91de6; __utma=1.1590213924.1496727484.1497109649.1497115287.13; __utmc=1; __utmz=1.1497115287.13.2.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; xq_a_token=445b4b15f59fa37c8bd8133949f910e7297a52ef; xq_a_token.sig=5qsKG3NMR_Go5O8QjcKxalfFwhM; xq_r_token=132b2ba19b0053bc7f04401788b6e0d24f35d365; xq_r_token.sig=1w18Bj12xS0s6jGzDJnEQgA8IGo; u=961497324207636; Hm_lvt_1db88642e346389874251b5a1eded6e3=1497115461,1497115500,1497115551,1497115634; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1497324738';
+#cookie = 's=f811dxbvsv; aliyungf_tc=AQAAAFAqgS6SyAYA4Ah6ey0pwRiXjXtN; device_id=a0ff6c142e7ace69832875472cd91de6; __utma=1.1590213924.1496727484.1497109649.1497115287.13; __utmc=1; __utmz=1.1497115287.13.2.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; xq_a_token=445b4b15f59fa37c8bd8133949f910e7297a52ef; xq_a_token.sig=5qsKG3NMR_Go5O8QjcKxalfFwhM; xq_r_token=132b2ba19b0053bc7f04401788b6e0d24f35d365; xq_r_token.sig=1w18Bj12xS0s6jGzDJnEQgA8IGo; u=961497324207636; Hm_lvt_1db88642e346389874251b5a1eded6e3=1497115461,1497115500,1497115551,1497115634; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1497324738';
+#20170614 更新
+cookie = getCookie.getCookie('https://xueqiu.com/');
 userAgent  = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36';
 
 
