@@ -43,6 +43,11 @@ def api():
     jsonStr = dumps(cursor);
     return jsonStr;
 
+#添加允许跨域头
+@app.after_request
+def add_header(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 if __name__ == "__main__":
     #只能本机访问
