@@ -15,8 +15,9 @@ coll = db.stocks
 
 
 # 服务
-from flask import Flask
+from flask import Flask,request
 app = Flask(__name__)
+
 
 from jinja2 import Environment, PackageLoader, select_autoescape
 env = Environment(
@@ -41,6 +42,11 @@ def hello():
 def api():
     cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)]);
     jsonStr = dumps(cursor);
+
+    # 获取get参数的方法
+    a = request.args.get('a');
+    print(a);
+
     return jsonStr;
 
 #添加允许跨域头
