@@ -5,13 +5,13 @@
 from __future__ import division
 from pymongo import MongoClient
 import pymongo
+from bson.json_util import dumps   #这个用来解析mongo返回的数据为json
 
 
 #连接数据库
 client = MongoClient()
 db = client.xm94630
 coll = db.stocks
-
 
 
 # 服务
@@ -35,6 +35,14 @@ def hello():
 
     template = env.get_template('index.html');
     return  template.render(data=cursor);
+
+
+@app.route("/api/getStocks/",methods=["GET"])
+def api():
+    cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)]);
+    jsonStr = dumps(cursor);
+    return jsonStr;
+
 
 if __name__ == "__main__":
     #只能本机访问
