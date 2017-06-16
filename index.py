@@ -108,7 +108,17 @@ def getScreenerData(url,config,page):
 #递归获取全部数据
 def getAllData(page=0,stockArr=[]):
     json = getScreenerData(screenerAPI,config,page);
-    data = Payload(json);
+
+    try:
+        #正常的操作
+        data = Payload(json);
+    except:
+        #发生异常，执行这块代码
+        print '【xm】股票筛选接口崩坏！'
+        print json
+    else:
+        #如果没有异常执行这块代码
+        print '无异常'
 
     if(~~hasattr(data,'list')==0):
         print('获取数据的接口似乎有点问题哦=================> 请尝试更新cookie!');
@@ -195,7 +205,17 @@ def getStockDetail(url,config,symbol,nYear):
 def getLowPrice(symbol,nth):
     lows = []
     stockInfo = getStockDetail(stockAPI,config2,symbol,nth);
-    arr = Payload(stockInfo).chartlist;
+
+    try:
+        #正常的操作
+        arr = Payload(stockInfo).chartlist;
+    except:
+        #发生异常，执行这块代码
+        print '【xm】股票详情接口崩坏！估计是被检测到ip访问频繁：'
+        print stockInfo
+    else:
+        #如果没有异常执行这块代码
+        print '无异常'
 
     #令最近一天的收盘价格作为最新价格，来分析用
     newClosePrice = arr[-1]["close"];
