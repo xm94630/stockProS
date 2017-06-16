@@ -117,7 +117,7 @@ def getScreenerData(url,config,page):
 #递归获取全部数据
 def getAllData(page=0,stockArr=[]):
 
-    json = getScreenerData(screenerAPI,config,page);
+    json = getScreenerData(screenerAPI,config,page);    #这里使用第1个接口
 
     try:
         #正常的操作
@@ -208,7 +208,14 @@ def getStockDetail(url,config,symbol,nYear):
     print '接口2：K接口，休息一下（'+ str(nYear) +'年内价格处理）'
     time.sleep(sleep2);
 
-    res = requests.get(url=url,params=_params,headers=_headers)
+    try:
+        #正常的操作
+        res = requests.get(url=url,params=_params,headers=_headers)
+    except:
+        #发生异常，执行这块代码
+        print '【xm】接口2有点问题哦'
+        print res
+
     return res.text;
 
 
