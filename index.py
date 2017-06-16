@@ -51,15 +51,19 @@ config2  = [
 config3  = [
     '_='+nowTime,
 ];
-#行业配置
+#行业配置多少钱
 industryPrice = 10000;
+#接口sleep时间(单位秒)
+sleep1 = 1;
+sleep2 = 1;
+sleep3 = 1;
 
 
 #需要抓取的数据源
 baseUrl      = 'https://xueqiu.com/stock';
-screenerAPI  = baseUrl+'/screener/screen.json';
-stockAPI     = baseUrl+'/forchartk/stocklist.json';
-stockInfoAPI = 'https://xueqiu.com/v4/stock/quote.json';
+screenerAPI  = baseUrl+'/screener/screen.json';          #检索
+stockAPI     = baseUrl+'/forchartk/stocklist.json';      #K
+stockInfoAPI = 'https://xueqiu.com/v4/stock/quote.json'; #详细
 
 
 #所有的数据列表
@@ -101,12 +105,18 @@ def getScreenerData(url,config,page):
     }
     _params = "&".join(config);
     _params = _params + '&page=' + str(page);
+
+    #不要太频
+    print '接口1：检索接口，休息一下'
+    time.sleep(sleep1);
     res = requests.get(url=url,params=_params,headers=_headers)
+    
     return res.text;
 
 
 #递归获取全部数据
 def getAllData(page=0,stockArr=[]):
+
     json = getScreenerData(screenerAPI,config,page);
 
     try:
@@ -116,9 +126,6 @@ def getAllData(page=0,stockArr=[]):
         #发生异常，执行这块代码
         print '【xm】股票筛选接口崩坏！'
         print json
-    else:
-        #如果没有异常执行这块代码
-        print '无异常'
 
     if(~~hasattr(data,'list')==0):
         print('获取数据的接口似乎有点问题哦=================> 请尝试更新cookie!');
@@ -142,10 +149,10 @@ def getAllData(page=0,stockArr=[]):
             symbol = one['symbol']; 
 
             #非常核心的数据提炼部分1
-            lows     = getLowPriceArr(symbol,6);
+            lows     = getLowPriceArr(symbol,6);                      #这里使用第2个接口（这里其实是有六次的接口调用哦！）
             percents = getSellPercent(lows);
             #非常核心的数据提炼部分2
-            info     = getStockInfoData(stockInfoAPI,config3,symbol);
+            info     = getStockInfoData(stockInfoAPI,config3,symbol); #这里使用第3个接口
 
             #需要再增加一个key,用来排序
             averagePrecent = percents[1];
@@ -197,6 +204,10 @@ def getStockDetail(url,config,symbol,nYear):
 
     #print(_params)
 
+    #不要太频
+    print '接口2：K接口，休息一下（'+ str(nYear) +'年内价格处理）'
+    time.sleep(sleep2);
+
     res = requests.get(url=url,params=_params,headers=_headers)
     return res.text;
 
@@ -213,9 +224,6 @@ def getLowPrice(symbol,nth):
         #发生异常，执行这块代码
         print '【xm】股票详情接口崩坏！估计是被检测到ip访问频繁：'
         print stockInfo
-    else:
-        #如果没有异常执行这块代码
-        print '无异常'
 
     #令最近一天的收盘价格作为最新价格，来分析用
     newClosePrice = arr[-1]["close"];
@@ -300,7 +308,13 @@ def getStockInfoData(url,config,symbol):
     }
     _params = "&".join(config);
     _params = _params + '&code=' + symbol;
+
+    #不要太频
+    print '接口3：详细接口，休息一下'
+    time.sleep(sleep3);
+
     res = requests.get(url=url,params=_params,headers=_headers)
+    
     data = json.loads(res.text);
     pe_ttm = data[symbol]['pe_ttm'];
     pe_lyr = data[symbol]['pe_lyr'];
