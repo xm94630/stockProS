@@ -15,6 +15,7 @@ import time
 import dataBase
 import exportFile
 import getCookie
+import myEmail
 
 
 #头信息
@@ -313,8 +314,14 @@ print(len(stockArr))
 print(u'SUCCESS! 完成数据库存储');
 
 #保存到文件
-exportFile.save(stockArr);
+fileName = exportFile.save(stockArr);
 print(u'SUCCESS! 完成txt导出');
+
+#发送到目标邮箱
+with open(fileName, 'r') as myfile:
+    data=myfile.read()
+    myEmail.send(data)
+myfile.close();
 print(u'=== END ===');
 
 

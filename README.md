@@ -5,3 +5,5 @@ stockProSuper
 pymongo 数据库
 Flask   web服务
 jinja   模板
+email   邮件
+smtplib SMTP协议

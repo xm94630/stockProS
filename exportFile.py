@@ -97,9 +97,9 @@ def save(stockList={}):
         f.write(content.encode('utf-8'))
 
     f.close();
-    return  
+    return fileName;
 
-save(exmple);
+#print save(exmple);
 
 
 
