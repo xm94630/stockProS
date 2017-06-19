@@ -5,12 +5,13 @@
 
 from __future__ import division
 
-
 #这个需要先 pip install requests
 import requests
 import json
 import math
 import time
+import argparse #用来获取命令行参数
+
 #导入自己写的
 import dataBase
 import exportFile
@@ -67,20 +68,26 @@ stockInfoAPI = 'https://xueqiu.com/v4/stock/quote.json'; #详细
 
 
 #所有的数据列表
-stockArr = [];
+stockArr = []
 #处理完成的条数，用来提示进度
-dealNum = 0;
+dealNum = 0
+#是否需要清空数据库重新抓取
+isClearOld = False
+
+#获取命令行参数
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-n', dest='new', action='store_true')
+    #parser.add_argument('-o', '--output')
+    args = parser.parse_args()
+    isClearOld = args.new
+
+
+#是否清除旧数据
+dataBase.clearOldDatabase(isClearOld);
 
 
 #股票类
-# class Stock:
-#     def __init__(self, name=0, symbol=1,lows=[],percents=[],info={}):
-#         self.name     = name
-#         self.symbol   = symbol
-#         self.lows     = lows
-#         self.percents = percents
-#         self.info     = info
-
 def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0):
     return{
         "name"     : name,
