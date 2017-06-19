@@ -29,12 +29,9 @@ def save(data={}):
     return  
 
 #某股票数据是否已经在数据库中存在
-def isExit(symbol):
+def getStock(symbol):
     cursor = coll.find({"symbol": symbol})
-    if cursor.count()>=1:
-        return True
-    else:
-        return False
+    return cursor
 
 
 

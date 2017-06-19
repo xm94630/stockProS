@@ -160,11 +160,15 @@ def getAllData(page=0,stockArr=[]):
             symbol = one['symbol']; 
 
             #判断股票是否存在
-            bool = dataBase.isExit(symbol);
-            if bool:
+            cursor = dataBase.getStock(symbol);
+            if cursor.count()>=1:
+                for document in cursor:     
+                    oneStock = document
                 print(name+u' 已经存在数据库中，不再处理')
                 print('--------------------------------------------------------------------------------------------------------------- '+str(perc)+'%')
+                stockArr.append(oneStock);
                 continue
+
 
             #非常核心的数据提炼部分1
             lows     = getLowPriceArr(symbol,6);                      #这里使用第2个接口（这里其实是有六次的接口调用哦！）
@@ -231,7 +235,7 @@ def getStockDetail(url,config,symbol,nYear):
     except:
         #发生异常，执行这块代码
         print '【xm】接口2有点问题哦'
-        print res
+        #print res
 
     return res.text;
 
