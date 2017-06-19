@@ -13,6 +13,7 @@ client = MongoClient()
 db = client.xm94630
 coll = db.stocks
 
+#清除旧的数据
 def clearOldDatabase(bool=False):
     if bool:
         #删除全部原有数据
@@ -26,4 +27,14 @@ def save(data={}):
     #插入一条数据
     result = coll.insert_one(data)
     return  
+
+#某股票数据是否已经在数据库中存在
+def isExit(symbol):
+    cursor = coll.find({"symbol": symbol})
+    if cursor.count()>=1:
+        return True
+    else:
+        return False
+
+
 

@@ -151,9 +151,20 @@ def getAllData(page=0,stockArr=[]):
         page = page+1;
         #处理一页中，各个股票的数据
         for one in arr:
-            
+
+            #用来统计进度
+            dealNum = dealNum + 1;
+            perc = round((dealNum/count),3)*100;
+
             name = one['name']; 
             symbol = one['symbol']; 
+
+            #判断股票是否存在
+            bool = dataBase.isExit(symbol);
+            if bool:
+                print(name+u' 已经存在数据库中，不再处理')
+                print('--------------------------------------------------------------------------------------------------------------- '+str(perc)+'%')
+                continue
 
             #非常核心的数据提炼部分1
             lows     = getLowPriceArr(symbol,6);                      #这里使用第2个接口（这里其实是有六次的接口调用哦！）
@@ -173,8 +184,6 @@ def getAllData(page=0,stockArr=[]):
             print(oneStock['info'])
             print(oneStock['lows'])
             print(oneStock['percents'])
-            dealNum = dealNum + 1;
-            perc = round((dealNum/count),3)*100;
             print('--------------------------------------------------------------------------------------------------------------- '+str(perc)+'%')
 
             #保存到数据库
