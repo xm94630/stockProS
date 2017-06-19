@@ -54,7 +54,7 @@ config3  = [
 #行业配置多少钱
 industryPrice = 10000;
 #接口sleep时间(单位秒)
-sleep1 = 1;
+sleep1 = 0;
 sleep2 = 1;
 sleep3 = 1;
 
@@ -150,6 +150,7 @@ def getAllData(page=0,stockArr=[]):
 
             #非常核心的数据提炼部分1
             lows     = getLowPriceArr(symbol,6);                      #这里使用第2个接口（这里其实是有六次的接口调用哦！）
+
             percents = getSellPercent(lows);
             #非常核心的数据提炼部分2
             info     = getStockInfoData(stockInfoAPI,config3,symbol); #这里使用第3个接口
@@ -219,42 +220,79 @@ def getStockDetail(url,config,symbol,nYear):
     return res.text;
 
 
-#某个股 第N年内 最低点
-def getLowPrice(symbol,nth):
+
+#该股票第n年内的最低点
+def getLowPrice(n,data):
+
     lows = []
-    stockInfo = getStockDetail(stockAPI,config2,symbol,nth);
+    myLen=0
 
-    try:
-        #正常的操作
-        arr = Payload(stockInfo).chartlist;
-    except:
-        #发生异常，执行这块代码
-        print '【xm】股票详情接口崩坏！估计是被检测到ip访问频繁：'
-        print stockInfo
+    _interval = int( (n+1)*31536000*1000 );
+    _now      = int(time.time() * 1000);  
+    _begin    = _now - _interval;
 
-    #令最近一天的收盘价格作为最新价格，来分析用
-    newClosePrice = arr[-1]["close"];
+    for one in data:
+        # 时间的格式为
+        # Mon Jun 19 00:00:00 +0800 2017
+        mytime = one['time']
+        timestamp = time.mktime( time.strptime(mytime, "%a %b %d %H:%M:%S %Y") )
+        #扩大1000倍，并转化为整数，方便比较
+        timestamp = int(timestamp * 1000); 
 
-    for one in arr:
-        low = one['low'];  
-        lows.append(low);
+        #只处理合理范围内的
+        if timestamp>= _begin:
+            low = one['low'];  
+            lows.append(low);
+            myLen=myLen+1;
 
-    m = sorted(lows)[:1];
+    m = sorted(lows)[:1][0]
 
     #这里返回最低点、和总数据条数
     #总数据条数 会用来判断，这个股票是否不足六年（比如第4年和第3年数据一样多，说明其实不存在第四年的数据！）
-    #[最低点，数据条数，最近一天的收盘价格]
-    return [m[0],len(arr),newClosePrice];  
+    #[最低点，数据条数]
+    return [m,myLen];
+
+
+
+#获取该股票 6年内每天价格数据
+def getLowPriceArr(symbol,nYear):
+
+    total = nYear
+    lows = []
+    # 获取六年内的全部
+    # 之前这部分的实现是通过调用六次接口，这里为了减少接口访问频率，其他的年份就需要自己手动从这里提取
+    stockInfo = getStockDetail(stockAPI,config2,symbol,nYear)
+
+    #修改字符串中的数据（删除 '+0800 '）
+    stockInfo = stockInfo.replace('+0800 ','')
+
+    arr = Payload(stockInfo).chartlist
+    #令最近一天的收盘价格作为最新价格，来分析用
+    newClosePrice = arr[-1]["close"];
+
+    #1年内~6(N)年内
+    #把每个股票的低点和处理数据个数存到一个大数组中
+    arr2 = []
+    while nYear>0:
+        low = getLowPrice( total-nYear , arr )
+        nYear = nYear-1;
+        arr2.append(low)
+
+    arr3 = modData(arr2)
+
+    #提炼数据
+    return [ arr3,newClosePrice ];
+
 
 
 #调整数据
-#比如有数据为：[[18.91, 241,20], [18.91, 486,20], [11.11, 732,20], [10.51, 732,20], [9.68, 732,20], [9.68, 732,20]]
+#比如有数据为：[[18.91, 241], [18.91, 486], [11.11, 732], [10.51, 732], [9.68, 732], [9.68, 732]];
 #从第4年开始数据长度就没有发生改变了，就说明不存在第四年的数据，后面的年份就更加不存在了，要调整数据为：
-#调整目标数据为：[[18.91, 241,20], [18.91, 486,20], [11.11, 732,20], [0, 732,20], [0, 732,20], [0, 732,20]]
-#进一步提取为：[ [18.91, 18.91, 11.11, 0, 0, 0],20 ]
+#调整目标数据为：[[18.91, 241], [18.91, 486], [11.11, 732], [-999, 732], [-999, 732], [-999, 732]]
+#进一步提取为：[18.91, 18.91, 11.11, -999, -999, -999]
 def modData(arr):
 
-    #arr = [[18.91, 241,20], [18.91, 486,20], [11.11, 732,20], [10.51, 732,20], [9.68, 732,20], [9.68, 732,20]];
+    #arr = [[18.91, 241], [18.91, 486], [11.11, 732], [10.51, 732], [9.68, 732], [9.68, 732]];
     newArr = [];
     length = len(arr);
     for i in range(0,length-1):
@@ -265,24 +303,9 @@ def modData(arr):
     for i in range(0,length):
         newArr.append(arr[i][0]);
 
-    #[低点价格数组，最近一天的收盘价格]
-    return [newArr,arr[0][2]];
+    #返回 低点价格数组
+    return newArr
 
-
-#获取 N年内 每一年的低点，以数组返回
-def getLowPriceArr(symbol,nYear):
-    total = nYear;
-    arr   = [];
-    while nYear>0:
-        low = getLowPrice(symbol,total+1-nYear);
-        nYear = nYear-1;
-        arr.append(low)
-
-    #提炼数据
-    arr = modData(arr);
-
-    #[低点价格数组，最近一天的收盘价格]
-    return arr;
 
 
 #获取 各年份卖点占比、平均卖点占比
