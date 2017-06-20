@@ -114,8 +114,9 @@ def getScreenerData(url,config,page):
     _params = _params + '&page=' + str(page);
 
     #不要太频
-    print '接口1：检索接口，休息一下'
-    time.sleep(sleep1);
+    # print '接口1：检索接口，休息一下'
+    # time.sleep(sleep1);
+    
     res = requests.get(url=url,params=_params,headers=_headers)
     
     return res.text;
@@ -226,8 +227,8 @@ def getStockDetail(url,config,symbol,nYear):
     #print(_params)
 
     #不要太频
-    print '接口2：K接口，休息一下（'+ str(nYear) +'年内价格处理）'
-    time.sleep(sleep2);
+    # print '接口2：K接口，休息一下（'+ str(nYear) +'年内价格处理）'
+    # time.sleep(sleep2);
 
     try:
         #正常的操作
@@ -360,8 +361,8 @@ def getStockInfoData(url,config,symbol):
     _params = _params + '&code=' + symbol;
 
     #不要太频
-    print '接口3：详细接口，休息一下'
-    time.sleep(sleep3);
+    # print '接口3：详细接口，休息一下'
+    # time.sleep(sleep3);
 
     res = requests.get(url=url,params=_params,headers=_headers)
     
