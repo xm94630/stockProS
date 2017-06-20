@@ -44,16 +44,21 @@ def api():
     jsonStr = dumps(cursor);
 
     # 获取get参数的方法
-    a = request.args.get('a');
-    print(a);
+    # a = request.args.get('a');
+    # print(a);
 
+    # jonp 的写法
+    # 获取 callback 参数的方法
+    # 这个“callback”可以在jquery的jonp方法中定义
+    cb = request.args.get('callback');
+    jsonStr = cb+'('+jsonStr+')'
     return jsonStr;
 
 #添加允许跨域头
-@app.after_request
-def add_header(response):
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
+# @app.after_request
+# def add_header(response):
+#     response.headers['Access-Control-Allow-Origin'] = '*'
+#     return response
 
 if __name__ == "__main__":
     #只能本机访问
