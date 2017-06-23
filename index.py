@@ -266,6 +266,11 @@ def getLowPrice(n,data):
             lows.append(low);
             myLen=myLen+1;
 
+    if len(lows)==0:
+        print "该年份没有数据（可能已经停牌了有一年多了...）"
+        # 伪造一个数据，为了让程序跑通，后期会把价格中有-999的股票都会被过滤~
+        lows = [-999]
+
     m = sorted(lows)[:1][0]
 
     #这里返回最低点、和总数据条数
