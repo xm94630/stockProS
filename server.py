@@ -50,9 +50,15 @@ def api():
     # jonp 的写法
     # 获取 callback 参数的方法
     # 这个“callback”可以在jquery的jonp方法中定义
+    # 这个接口调用方法如下： http://127.0.0.1:5000/api/getStocks/?callback=xxx
     cb = request.args.get('callback');
-    jsonStr = cb+'('+jsonStr+')'
-    return jsonStr;
+    print cb
+    try:
+        jsonStr = cb+'('+jsonStr+')'
+        return jsonStr;
+    except:
+        return '接口使用方式有点问题哦'
+
 
 #添加允许跨域头
 # @app.after_request
