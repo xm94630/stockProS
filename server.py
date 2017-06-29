@@ -62,7 +62,8 @@ def api():
 
         token =  cookie['token'].value
         if(token != '123456'):
-            return 'token不对！'
+            template = env.get_template('404.html');
+            return  template.render();
         
         try:
             jsonStr = cb+'('+jsonStr+')'
@@ -71,7 +72,8 @@ def api():
             return '接口使用方式有点问题哦'
 
     else:
-        return '非法访问哦';
+        template = env.get_template('404.html');
+        return  template.render();
 
 
 #添加允许跨域头
