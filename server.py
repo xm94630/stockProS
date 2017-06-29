@@ -6,7 +6,7 @@ from __future__ import division
 from pymongo import MongoClient
 import pymongo
 from bson.json_util import dumps   #这个用来解析mongo返回的数据为json
-
+import Cookie
 
 #连接数据库
 client = MongoClient()
@@ -52,12 +52,26 @@ def api():
     # 这个“callback”可以在jquery的jonp方法中定义
     # 这个接口调用方法如下： http://127.0.0.1:5000/api/getStocks/?callback=xxx
     cb = request.args.get('callback');
-    print cb
-    try:
-        jsonStr = cb+'('+jsonStr+')'
-        return jsonStr;
-    except:
-        return '接口使用方式有点问题哦'
+
+    #这里是获取请求中带过来的cookie
+    #这里增加了对cookie的要求，必须有带token为123456的cookie
+    cookieStr = request.headers.get('Cookie') 
+    if cookieStr:
+        cookie = Cookie.SimpleCookie()
+        cookie.load(cookieStr.encode('utf-8'))   # .encode('utf-8') 非常重要
+
+        token =  cookie['token'].value
+        if(token != '123456'):
+            return 'token不对！'
+        
+        try:
+            jsonStr = cb+'('+jsonStr+')'
+            return jsonStr;
+        except:
+            return '接口使用方式有点问题哦'
+
+    else:
+        return '非法访问哦';
 
 
 #添加允许跨域头
