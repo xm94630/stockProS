@@ -85,8 +85,10 @@ def save(stockList={}):
         if ~~(-999 in stock['lows'][0])==0 :
 
             if stock['percents'][0][0]<=1 and stock['percents'][0][1]<=1 and stock['percents'][0][2]<=1 and stock['percents'][0][3]<=1 and stock['percents'][0][4]<=1 and stock['percents'][0][5]<=1 and stock['percents'][1]<=1 :
+                
                 #写入一条数
                 content += stock['name']+ '['+stock['symbol'] +'] '+ u'推荐购买' + str(stock['info']['buyNum'])+u'股\n' 
+                content += stock['continueDaysText']+'\n'
                 content += '[PB/TTM/LYR] '+ stock['info']['pb']+' / '+stock['info']['pe_ttm']+' / '+stock['info']['pe_lyr']+'\n'
                 content += u'[n年内低点] '+ str(stock['lows'])+'\n'
                 content += u'[n年内卖点占比] '+ str(stock['percents'])+'\n'

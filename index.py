@@ -361,11 +361,11 @@ def getLowPriceArr(symbol,nYear):
     #中文渲染
     continueDaysText = ''
     if continueDays>0:
-        continueDaysText = '涨'+str(continueDays)
+        continueDaysText = u'涨'+str(continueDays)
     elif continueDays<0:
-        continueDaysText = '跌'+str(continueDays)
+        continueDaysText = u'跌'+str(continueDays)
     else:
-        continueDaysText = '平'
+        continueDaysText = u'平'
 
     #提炼数据
     return [ arr3, newClosePrice, continueDays,continueDaysText]
