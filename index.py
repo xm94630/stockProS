@@ -89,14 +89,16 @@ dataBase.clearOldDatabase(isClearOld);
 
 
 #股票类
-def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0):
+def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,continueDays=0,continueDaysText=''):
     return{
         "name"     : name,
         "symbol"   : symbol,
         "lows"     : lows,
         "percents" : percents,
         "info"     : info,
-        "averagePrecent" : averagePrecent,
+        "averagePrecent"   : averagePrecent,
+        "continueDays"     : continueDays,
+        "continueDaysText" : continueDaysText,
     }
 
 #解析json
@@ -173,9 +175,13 @@ def getAllData(page=0,stockArr=[]):
 
 
             #非常核心的数据提炼部分1
-            lows     = getLowPriceArr(symbol,6);                      #这里使用第2个接口（这里其实是有六次的接口调用哦！）
-
+            lows     = getLowPriceArr(symbol,6);                      #这里使用第2个接口
+            #提炼低点占比
             percents = getSellPercent(lows);
+            #提炼低点占比
+            continueDays     = lows[2];
+            continueDaysText = lows[3];
+
             #非常核心的数据提炼部分2
             info     = getStockInfoData(stockInfoAPI,config3,symbol); #这里使用第3个接口
 
@@ -183,13 +189,14 @@ def getAllData(page=0,stockArr=[]):
             averagePrecent = percents[1];
 
             #完成一个完整的股票分析
-            oneStock = Stock(name,symbol,lows,percents,info,averagePrecent);
+            oneStock = Stock(name,symbol,lows,percents,info,averagePrecent,continueDays,continueDaysText);
 
             #屏幕输出
             print(oneStock['name'])
             print(oneStock['info'])
             print(oneStock['lows'])
             print(oneStock['percents'])
+            print(oneStock['continueDaysText'])
             print('--------------------------------------------------------------------------------------------------------------- '+str(perc)+'%')
 
             #保存到数据库
@@ -280,12 +287,40 @@ def getLowPrice(n,data):
     return [m,myLen];
 
 
+#获取最近连续上涨或下跌的天数(价格按照最近1天到最近第10天顺序)
+def getContinuityDay(arr):
+    print arr
+    #首先确认是涨势还是跌势，用flag标记
+    d1 = arr[0]
+    d2 = arr[1]
+    flag = 0 #0表示不变，1表示连续涨，-1表示连续跌
+    if d1>d2:
+        flag = 1
+    elif d1<d2:
+        flag = -1
+    else:
+        pass
+         
+    #统计连续的次数
+    sum = 0
+    for i,one in enumerate(arr):
+        if i==0:
+            pass
+        elif flag==1 and arr[i]<arr[i-1]:
+            sum=sum+1
+        elif flag==-1 and arr[i]>arr[i-1]:
+            sum=sum-1
+        else:
+            break
+
+    return sum
+
 
 #获取该股票 6年内每天价格数据
 def getLowPriceArr(symbol,nYear):
 
     total = nYear
-    lows = []
+
     # 获取六年内的全部
     # 之前这部分的实现是通过调用六次接口，这里为了减少接口访问频率，其他的年份就需要自己手动从这里提取
     stockInfo = getStockDetail(stockAPI,config2,symbol,nYear)
@@ -294,6 +329,7 @@ def getLowPriceArr(symbol,nYear):
     stockInfo = stockInfo.replace('+0800 ','')
 
     arr = Payload(stockInfo).chartlist
+
     #令最近一天的收盘价格作为最新价格，来分析用
     newClosePrice = arr[-1]["close"];
 
@@ -307,8 +343,32 @@ def getLowPriceArr(symbol,nYear):
 
     arr3 = modData(arr2)
 
+
+    #获取最近(这里只获取10天)连续上涨或下跌的天数
+    lastTenDays = [
+        arr[-1]["close"],
+        arr[-2]["close"],
+        arr[-3]["close"],
+        arr[-4]["close"],
+        arr[-5]["close"],
+        arr[-6]["close"],
+        arr[-7]["close"],
+        arr[-8]["close"],
+        arr[-9]["close"],
+        arr[-10]["close"],
+    ]
+    continueDays = getContinuityDay(lastTenDays)
+    #中文渲染
+    continueDaysText = ''
+    if continueDays>0:
+        continueDaysText = '涨'+str(continueDays)
+    elif continueDays<0:
+        continueDaysText = '跌'+str(continueDays)
+    else:
+        continueDaysText = '平'
+
     #提炼数据
-    return [ arr3,newClosePrice ];
+    return [ arr3, newClosePrice, continueDays,continueDaysText]
 
 
 
