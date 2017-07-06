@@ -335,9 +335,6 @@ def getLowPriceArr(symbol,nYear):
 
     arr = Payload(stockInfo).chartlist
 
-    print '==>'
-    print arr[-1]
-
     #获取当天的涨跌幅
     upOrDownPercent = arr[-1]["percent"];
 
