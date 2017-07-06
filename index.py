@@ -40,7 +40,7 @@ config = [
     'order=desc',
     'current=ALL',
     'pct=ALL',
-    'pb=0_2',           #PB
+    'pb=1_2',           #PB
     'pettm=0_20',       #PE/TTM
     'pelyr=0_20',       #PE/LYR
     '_='+nowTime,
@@ -89,7 +89,7 @@ dataBase.clearOldDatabase(isClearOld);
 
 
 #股票类
-def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,continueDays=0,continueDaysText=''):
+def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0):
     return{
         "name"     : name,
         "symbol"   : symbol,
@@ -99,6 +99,8 @@ def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,continue
         "averagePrecent"   : averagePrecent,
         "continueDays"     : continueDays,
         "continueDaysText" : continueDaysText,
+        "upOrDownPercent"         : upOrDownPercent,
+        "upOrDownContinuePercent" : upOrDownContinuePercent,
     }
 
 #解析json
@@ -181,6 +183,9 @@ def getAllData(page=0,stockArr=[]):
             #提炼低点占比
             continueDays     = lows[2];
             continueDaysText = lows[3];
+            #提炼最近一天涨跌百分比 和 连续几天的涨跌百分比
+            upOrDownPercent         = lows[4];
+            upOrDownContinuePercent = lows[5];
 
             #非常核心的数据提炼部分2
             info     = getStockInfoData(stockInfoAPI,config3,symbol); #这里使用第3个接口
@@ -189,14 +194,14 @@ def getAllData(page=0,stockArr=[]):
             averagePrecent = percents[1];
 
             #完成一个完整的股票分析
-            oneStock = Stock(name,symbol,lows,percents,info,averagePrecent,continueDays,continueDaysText);
+            oneStock = Stock(name,symbol,lows,percents,info,averagePrecent,continueDays,continueDaysText,upOrDownPercent,upOrDownContinuePercent);
 
             #屏幕输出
             print(oneStock['name'])
             print(oneStock['info'])
             print(oneStock['lows'])
             print(oneStock['percents'])
-            print(oneStock['continueDaysText'])
+            print(oneStock['continueDaysText'] + u'，合计涨/跌百分比：' + str(oneStock['upOrDownContinuePercent']) )
             print('--------------------------------------------------------------------------------------------------------------- '+str(perc)+'%')
 
             #保存到数据库
@@ -330,6 +335,12 @@ def getLowPriceArr(symbol,nYear):
 
     arr = Payload(stockInfo).chartlist
 
+    print '==>'
+    print arr[-1]
+
+    #获取当天的涨跌幅
+    upOrDownPercent = arr[-1]["percent"];
+
     #令最近一天的收盘价格作为最新价格，来分析用
     newClosePrice = arr[-1]["close"];
 
@@ -357,18 +368,30 @@ def getLowPriceArr(symbol,nYear):
         arr[-9]["close"],
         arr[-10]["close"],
     ]
-    continueDays = getContinuityDay(lastTenDays)
+    continueDays    = getContinuityDay(lastTenDays)
+    continueDaysAbs = abs(continueDays) #绝对值
+
     #中文渲染
     continueDaysText = ''
     if continueDays>0:
-        continueDaysText = u'涨'+str(continueDays)
+        continueDaysText = u'涨'+str(continueDaysAbs)
     elif continueDays<0:
-        continueDaysText = u'跌'+str(abs(continueDays))
+        continueDaysText = u'跌'+str(continueDaysAbs)
     else:
         continueDaysText = u'平'
 
+    #获取连续的涨跌之和
+    upOrDownContinuePercent = getUpOrDownPercent(arr,continueDaysAbs)
+
     #提炼数据
-    return [ arr3, newClosePrice, continueDays,continueDaysText]
+    return [ arr3, newClosePrice, continueDays,continueDaysText,upOrDownPercent,upOrDownContinuePercent]
+
+#获取连续的涨跌之和
+def getUpOrDownPercent(arr,continueDaysAbs):
+    total = 0
+    for index in range(continueDaysAbs):
+        total = total + arr[-1*index-1]["percent"]
+    return total
 
 
 
