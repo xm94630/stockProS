@@ -78,7 +78,7 @@ isClearOld = False
 #获取命令行参数
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-n', dest='new', action='store_true')
+    parser.add_argument('-n', dest='new', action='store_true') #action 这个参数不能随便改，在我们的应用场景，就理解为不能改吧
     #parser.add_argument('-o', '--output')
     args = parser.parse_args()
     isClearOld = args.new
@@ -89,7 +89,7 @@ dataBase.clearOldDatabase(isClearOld);
 
 
 #股票类
-def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0):
+def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0):
     return{
         "name"     : name,
         "symbol"   : symbol,
@@ -97,6 +97,7 @@ def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,continue
         "percents" : percents,
         "info"     : info,
         "averagePrecent"   : averagePrecent,
+        "lastPrecent"      : lastPrecent,
         "continueDays"     : continueDays,
         "continueDaysText" : continueDaysText,
         "upOrDownPercent"         : upOrDownPercent,
@@ -192,9 +193,23 @@ def getAllData(page=0,stockArr=[]):
 
             #需要再增加一个key,用来排序
             averagePrecent = percents[1];
+            #需要再增加一个key,用来排序
+            lastPrecent    = percents[0][0];
 
             #完成一个完整的股票分析
-            oneStock = Stock(name,symbol,lows,percents,info,averagePrecent,continueDays,continueDaysText,upOrDownPercent,upOrDownContinuePercent);
+            oneStock = Stock(
+                name,
+                symbol,
+                lows,
+                percents,
+                info,
+                averagePrecent,
+                lastPrecent,
+                continueDays,
+                continueDaysText,
+                upOrDownPercent,
+                upOrDownContinuePercent
+            );
 
             #屏幕输出
             print(oneStock['name'])
@@ -294,7 +309,10 @@ def getLowPrice(n,data):
 
 #获取最近连续上涨或下跌的天数(价格按照最近1天到最近第10天顺序)
 def getContinuityDay(arr):
-    print arr
+
+    #最近10天价格
+    #print arr
+    
     #首先确认是涨势还是跌势，用flag标记
     d1 = arr[0]
     d2 = arr[1]

@@ -7,17 +7,19 @@ from pymongo import MongoClient
 import pymongo
 from bson.json_util import dumps   #这个用来解析mongo返回的数据为json
 import Cookie
+import argparse #用来获取命令行参数
 
 #连接数据库
 client = MongoClient()
 db = client.xm94630
 coll = db.stocks
 
+#全局数据
+sortByLastYear = False  #根据最近一年卖点占比排序
 
 # 服务
 from flask import Flask,request
 app = Flask(__name__)
-
 
 from jinja2 import Environment, PackageLoader, select_autoescape
 env = Environment(
@@ -27,12 +29,28 @@ env = Environment(
     autoescape=select_autoescape(['html', 'xml'])
 )
 
+
+#获取命令行参数
+parser = argparse.ArgumentParser()
+parser.add_argument('-s', dest='sort', action='store_true') #action 这个参数不能随便改，在我们的应用场景，就理解为不能改吧
+args = parser.parse_args()
+sortByLastYear = args.sort
+
+
+#路由
 @app.route("/",methods=["GET"])
 def hello():
+
+    #在函数中使用全局变量需要这里声明
+    global sortByLastYear;
     
     #获取全部数据，并按照均值大小排序
     #注意，这部分一定要放在这里，不能在全局，否者的话，数据就为空，在页面中就看不到（也就是只有第一次才能有数据）。
-    cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)])
+
+    if sortByLastYear:
+        cursor = coll.find().sort([("lastPrecent", pymongo.ASCENDING)])
+    else:
+        cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)])
 
     template = env.get_template('index.html');
     return  template.render(data=cursor);
