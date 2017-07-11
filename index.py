@@ -18,7 +18,6 @@ import exportFile
 import getCookie
 import myEmail
 
-
 #头信息
 #cookie = 'aliyungf_tc=AQAAAPmR3X3Y0QwAopuP2+mfwa3X68B9; xq_a_token=876f2519b10cea9dc131b87db2e5318e5d4ea64f; xq_a_token.sig=dfyKV8R29cG1dbHpcWXqSX6_5BE; xq_r_token=709abdc1ccb40ac956166989385ffd603ad6ab6f; xq_r_token.sig=dBkYRMW0CNWbgJ3X2wIkqMbKy1M; u=571496720504862; s=f811dxbvsv; Hm_lvt_1db88642e346389874251b5a1eded6e3=1495547353,1496562578,1496717217,1496718108; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1496806200; __utma=1.1590213924.1496727484.1496757368.1496806200.6; __utmc=1; __utmz=1.1496727484.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)';
 #20170613 更新
@@ -74,6 +73,8 @@ stockArr = []
 dealNum = 0
 #是否需要清空数据库重新抓取
 isClearOld = False
+#数据抓取时间
+grabTime = '';
 
 #获取命令行参数
 if __name__ == '__main__':
@@ -483,6 +484,27 @@ def getStockInfoData(url,config,symbol):
     buyNum2     = int(round ( buyNum/100 ,0) * 100);
 
 
+    #数据库保存抓取的股票的时间
+    #这个时间是以其中一个不停牌的股票中的时间
+    global grabTime
+    if(grabTime==''):
+        #volume表示成交量，当为0的时候，就表示“停牌”了
+        if float(data[symbol]['volume'])!=0:
+            
+            grabTime = data[symbol]['time'];
+            #修改字符串中的数据（删除 '+0800 '）
+            grabTime = grabTime.replace('+0800 ','')
+            #转为时间戳
+            myTime = time.mktime( time.strptime(grabTime, "%a %b %d %H:%M:%S %Y") )
+            #格式化
+            timeObj = time.strptime(grabTime, "%a %b %d %H:%M:%S %Y")
+            tm_year = str(timeObj.tm_year)
+            tm_mon  = str(timeObj.tm_mon)
+            tm_mday = str(timeObj.tm_mday)
+            myTimeStr = tm_year+'年'+tm_mon+'月'+tm_mday+'日'
+            #保存
+            dataBase.saveTime(myTime,myTimeStr);
+
     return {
         "pe_ttm":pe_ttm,
         "pe_lyr":pe_lyr,
@@ -511,7 +533,12 @@ with open(fileName, 'r') as myfile:
     data=myfile.read()
     myEmail.send(data)
 myfile.close();
+
+#显示时间
+print dataBase.getTime()[0]['timeStr'];
+#结束
 print(u'=== END ===');
+
 
 
 

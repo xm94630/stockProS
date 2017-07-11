@@ -9,9 +9,11 @@ from pymongo import MongoClient
 #1)开启数据库服务器
 #2)已经创建好相应的数据库
 #mongoimport --db xm94630 --collection stocks --drop --file ~/desktop/null.json
+#mongoimport --db xm94630 --collection timeInfo --drop --file ~/desktop/null.json
 client = MongoClient()
 db = client.xm94630
 coll = db.stocks
+coll2= db.timeInfo  #新增一个用来存储和时间相关的数据
 
 #清除旧的数据
 def clearOldDatabase(bool=False):
@@ -32,6 +34,24 @@ def save(data={}):
 def getStock(symbol):
     cursor = coll.find({"symbol": symbol})
     return cursor
+
+
+#把股票最近一天的时间，保存到 mongo 数据库
+def saveTime(time,timeStr):  
+    coll2.update({}, { "$set": {
+        "time":time,
+        "timeStr":timeStr,
+    }}, False, True)
+    return  
+
+#saveTime('1499762357.061553','20170711_Tue')
+
+#把股票最近一天的时间，保存到 mongo 数据库
+def getTime():  
+    cursor = coll2.find({})
+    return cursor
+
+
 
 
 

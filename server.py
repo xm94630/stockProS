@@ -13,6 +13,7 @@ import argparse #用来获取命令行参数
 client = MongoClient()
 db = client.xm94630
 coll = db.stocks
+coll2 = db.timeInfo
 
 #全局数据
 sortByLastYear = False  #根据最近一年卖点占比排序
@@ -52,8 +53,14 @@ def hello():
     else:
         cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)])
 
+    #从数据库获取时间信息
+    cursor2 = coll2.find({})
+    myTimeStr = cursor2[0]['timeStr']
+
     template = env.get_template('index.html');
-    return  template.render(data=cursor);
+    return  template.render(data=cursor,timeInfo=myTimeStr);
+
+
 
 
 @app.route("/api/getStocks/",methods=["GET"])

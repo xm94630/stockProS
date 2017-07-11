@@ -5,6 +5,9 @@
 </head>
 <body>
 <ul id="navigation">
+
+<div class="bar">{{ timeInfo }}</div>
+
 {% for item in data %}
     {% if -999 in item.lows[0] %}
         <!-- 过滤数据不全的,只要在数组中存在一个-999就是不全的 -->
