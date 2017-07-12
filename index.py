@@ -483,13 +483,21 @@ def getStockInfoData(url,config,symbol):
     buyNum      = int(round ( industryPrice*buyPercent/float(close) ,0));
     buyNum2     = int(round ( buyNum/100 ,0) * 100);
 
+    #是否停牌
+    #当交易量为非0的时候就认为是
+    myVolume = float(data[symbol]['volume'])
+    if myVolume==0:
+        halt = True
+    else:
+        halt = False
+
 
     #数据库保存抓取的股票的时间
     #这个时间是以其中一个不停牌的股票中的时间
     global grabTime
     if(grabTime==''):
         #volume表示成交量，当为0的时候，就表示“停牌”了
-        if float(data[symbol]['volume'])!=0:
+        if not halt:
             
             grabTime = data[symbol]['time'];
             #修改字符串中的数据（删除 '+0800 '）
@@ -503,7 +511,8 @@ def getStockInfoData(url,config,symbol):
             tm_mday = str(timeObj.tm_mday)
             myTimeStr = tm_year+'年'+tm_mon+'月'+tm_mday+'日'
             #保存
-            dataBase.saveTime(myTime,myTimeStr);
+            dataBase.saveTime(myTime,myTimeStr)
+            print '======================= '+myTimeStr+' ======================='
 
     return {
         "pe_ttm":pe_ttm,
@@ -516,6 +525,7 @@ def getStockInfoData(url,config,symbol):
         "buyNum":buyNum,
         "buyNum2":buyNum2,
         "close":close,
+        "halt":halt,
     };
 
 

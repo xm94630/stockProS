@@ -7,7 +7,12 @@
     <div class="bar">{{ timeInfo }}</div>
     <ul id="navigation" class="navigationBox">
     {% for item in data %}
-        {% if -999 in item.lows[0] %}
+        {% if item.halt == true %}
+            <li>
+                <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">{{ item.name }}【{{ item.symbol }}】</a> 停牌
+            </li>
+            <!-- 停牌的也不要 -->
+        {% elif -999 in item.lows[0] %}
             <!-- 过滤数据不全的,只要在数组中存在一个-999就是不全的 -->
         {% elif item.percents[0][0]>1 or item.percents[0][1]>1 or item.percents[0][2]>1 or item.percents[0][3]>1 or item.percents[0][4]>1 or item.percents[0][5]>1 or item.percents[1]>1 %}
             <!-- 过滤卖点占比超过1的 -->
