@@ -6,8 +6,8 @@ import time
 import datetime
 from operator import itemgetter
 
-time     = datetime.datetime.now().strftime("%Y%m%d")
-fileName = "backups/stock_" + time + ".txt"
+#引入自定义模块
+import dataBase
 
 #数据范例
 exmple = [{
@@ -64,14 +64,28 @@ exmple = [{
 },]
 
 
-#清空旧数据
-f=open(fileName,'w');
-f.truncate();
-f.close();
+#构建文件名字
+def createFileName():
+    #获取保存的时间戳，并格式化
+    myTime   = dataBase.getTime()[0]['time']
+    myTime   = time.strftime('%Y%m%d_%a_%H%M%S',  time.localtime(myTime))
+    
+    path     = "backups/"     
+    name     = myTime + ".txt"
+    fileName = path + name
+    return fileName
+
 
 #把全部数据排序后存入txt
 def save(stockList={}): 
-    
+
+    fileName = createFileName()
+
+    #清空旧数据
+    f=open(fileName,'w');
+    f.truncate();
+    f.close();
+
     #排序
     stockListNew = sorted(stockList, key=itemgetter('averagePrecent'));
 

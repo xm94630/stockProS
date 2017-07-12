@@ -46,7 +46,7 @@ def saveTime(time,timeStr):
 
 #saveTime('1499762357.061553','20170711_Tue')
 
-#把股票最近一天的时间，保存到 mongo 数据库
+#获取数据库中的时间对象
 def getTime():  
     cursor = coll2.find({})
     return cursor
