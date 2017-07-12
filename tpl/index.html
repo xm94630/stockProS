@@ -4,27 +4,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 </head>
 <body>
-<ul id="navigation">
-
-<div class="bar">{{ timeInfo }}</div>
-
-{% for item in data %}
-    {% if -999 in item.lows[0] %}
-        <!-- 过滤数据不全的,只要在数组中存在一个-999就是不全的 -->
-    {% elif item.percents[0][0]>1 or item.percents[0][1]>1 or item.percents[0][2]>1 or item.percents[0][3]>1 or item.percents[0][4]>1 or item.percents[0][5]>1 or item.percents[1]>1 %}
-        <!-- 过滤卖点占比超过1的 -->
-    {% else %}
-        <li>
-            <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">{{ item.name }}【{{ item.symbol }}】</a> 
-            <div>{{ item.continueDaysText }}，合计涨/跌百分比：<b>{{ item.upOrDownContinuePercent }}</b></div>
-            <div>推荐购买 <span class="c1">{{ item.info.buyNum2 }}</span>({{ item.info.buyNum }}) 股</div>
-            <div>【PB/TTM/LYR】{{item.info.pb}}/{{item.info.pe_ttm}}/{{item.info.pe_lyr}}</div>
-            <div>N年内低点 {{ item.lows }}</div>
-            <div>N年内卖点占比 {{ item.percents }}</div>
-            <div>总股本 {{ item.info.totalShares2 }}</div>
-        </li>
-    {% endif %}
-{% endfor %}
-</ul>
+    <div class="bar">{{ timeInfo }}</div>
+    <ul id="navigation" class="navigationBox">
+    {% for item in data %}
+        {% if -999 in item.lows[0] %}
+            <!-- 过滤数据不全的,只要在数组中存在一个-999就是不全的 -->
+        {% elif item.percents[0][0]>1 or item.percents[0][1]>1 or item.percents[0][2]>1 or item.percents[0][3]>1 or item.percents[0][4]>1 or item.percents[0][5]>1 or item.percents[1]>1 %}
+            <!-- 过滤卖点占比超过1的 -->
+        {% else %}
+            <li>
+                <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">{{ item.name }}【{{ item.symbol }}】</a> 
+                <div>{{ item.continueDaysText }}，合计涨/跌百分比：<b>{{ item.upOrDownContinuePercent }}</b></div>
+                <div>推荐购买 <span class="c1">{{ item.info.buyNum2 }}</span>({{ item.info.buyNum }}) 股</div>
+                <div>【PB/TTM/LYR】{{item.info.pb}}/{{item.info.pe_ttm}}/{{item.info.pe_lyr}}</div>
+                <div>N年内低点 {{ item.lows }}</div>
+                <div>N年内卖点占比 {{ item.percents }}</div>
+                <div>总股本 {{ item.info.totalShares2 }}</div>
+            </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
 </body>
 </html>
