@@ -90,7 +90,7 @@ dataBase.clearOldDatabase(isClearOld);
 
 
 #股票类
-def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0):
+def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0,halt=False):
     return{
         "name"     : name,
         "symbol"   : symbol,
@@ -103,6 +103,7 @@ def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrec
         "continueDaysText" : continueDaysText,
         "upOrDownPercent"         : upOrDownPercent,
         "upOrDownContinuePercent" : upOrDownContinuePercent,
+        "halt" : halt,
     }
 
 #解析json
@@ -196,6 +197,9 @@ def getAllData(page=0,stockArr=[]):
             averagePrecent = percents[1];
             #需要再增加一个key,用来排序
             lastPrecent    = percents[0][0];
+            
+            #新增 停牌信息
+            halt = info['halt']
 
             #完成一个完整的股票分析
             oneStock = Stock(
@@ -209,7 +213,8 @@ def getAllData(page=0,stockArr=[]):
                 continueDays,
                 continueDaysText,
                 upOrDownPercent,
-                upOrDownContinuePercent
+                upOrDownContinuePercent,
+                halt,
             );
 
             #屏幕输出
@@ -490,7 +495,6 @@ def getStockInfoData(url,config,symbol):
         halt = True
     else:
         halt = False
-
 
     #数据库保存抓取的股票的时间
     #这个时间是以其中一个不停牌的股票中的时间

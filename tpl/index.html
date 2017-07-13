@@ -7,7 +7,7 @@
     <div class="bar">{{ timeInfo }}</div>
     <ul id="navigation" class="navigationBox">
     {% for item in data %}
-        {% if item.halt == true %}
+        {% if item.halt == True %}
             <li>
                 <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">{{ item.name }}【{{ item.symbol }}】</a> 停牌
             </li>
