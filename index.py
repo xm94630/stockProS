@@ -124,9 +124,9 @@ def getScreenerData(url,config,page):
     #不要太频
     # print '接口1：检索接口，休息一下'
     # time.sleep(sleep1);
-    
+
     res = requests.get(url=url,params=_params,headers=_headers)
-    
+
     return res.text;
 
 
@@ -145,7 +145,7 @@ def getAllData(page=0,stockArr=[]):
 
     if(~~hasattr(data,'list')==0):
         print('获取数据的接口似乎有点问题哦=================> 请尝试更新cookie!');
-    
+
     arr  = data.list;
 
     #在函数中使用全局变量需要这里声明
@@ -153,7 +153,7 @@ def getAllData(page=0,stockArr=[]):
 
     # 股票总条数
     count = data.count;
-    totalPages = int(math.ceil(count/30)) 
+    totalPages = int(math.ceil(count/30))
     if page == 0:
         page = 1;
     else:
@@ -165,13 +165,13 @@ def getAllData(page=0,stockArr=[]):
             dealNum = dealNum + 1;
             perc = round((dealNum/count),3)*100;
 
-            name = one['name']; 
-            symbol = one['symbol']; 
+            name = one['name'];
+            symbol = one['symbol'];
 
             #判断股票是否存在
             cursor = dataBase.getStock(symbol);
             if cursor.count()>=1:
-                for document in cursor:     
+                for document in cursor:
                     oneStock = document
                 print(name+u' 已经存在数据库中，不再处理')
                 print('--------------------------------------------------------------------------------------------------------------- '+str(perc)+'%')
@@ -197,7 +197,7 @@ def getAllData(page=0,stockArr=[]):
             averagePrecent = percents[1];
             #需要再增加一个key,用来排序
             lastPrecent    = percents[0][0];
-            
+
             #新增 停牌信息
             halt = info['halt']
 
@@ -227,13 +227,13 @@ def getAllData(page=0,stockArr=[]):
 
             #保存到数据库
             dataBase.save(oneStock);
-            
+
             #并保存到全局对象中（这个其实没啥用呢）
             #补充，现在有用了，最后的时候，用来作为全部数据导出到txt
             #为什么不是和数据库存入一样，在每一次中完成，而选择了最后一次性处理
             #因为主要是为了解决排序的问题
             stockArr.append(oneStock);
-       
+
     if page<=totalPages:
         getAllData(page,stockArr);
 
@@ -253,7 +253,7 @@ def getStockDetail(url,config,symbol,nYear):
         "Cookie":cookie
     }
     _params = "&".join(config);
-    
+
     _params = _params+'&symbol='+symbol;
     _params = _params+'&end='+ str(_end);
     _params = _params+'&begin='+ str(_begin);
@@ -283,7 +283,7 @@ def getLowPrice(n,data):
     myLen=0
 
     _interval = int( (n+1)*31536000*1000 );
-    _now      = int(time.time() * 1000);  
+    _now      = int(time.time() * 1000);
     _begin    = _now - _interval;
 
     for one in data:
@@ -292,11 +292,11 @@ def getLowPrice(n,data):
         mytime = one['time']
         timestamp = time.mktime( time.strptime(mytime, "%a %b %d %H:%M:%S %Y") )
         #扩大1000倍，并转化为整数，方便比较
-        timestamp = int(timestamp * 1000); 
+        timestamp = int(timestamp * 1000);
 
         #只处理合理范围内的
         if timestamp>= _begin:
-            low = one['low'];  
+            low = one['low'];
             lows.append(low);
             myLen=myLen+1;
 
@@ -318,7 +318,7 @@ def getContinuityDay(arr):
 
     #最近10天价格
     #print arr
-    
+
     #首先确认是涨势还是跌势，用flag标记
     d1 = arr[0]
     d2 = arr[1]
@@ -329,7 +329,7 @@ def getContinuityDay(arr):
         flag = -1
     else:
         pass
-         
+
     #统计连续的次数
     sum = 0
     for i,one in enumerate(arr):
@@ -377,18 +377,27 @@ def getLowPriceArr(symbol,nYear):
 
 
     #获取最近(这里只获取10天)连续上涨或下跌的天数
-    lastTenDays = [
-        arr[-1]["close"],
-        arr[-2]["close"],
-        arr[-3]["close"],
-        arr[-4]["close"],
-        arr[-5]["close"],
-        arr[-6]["close"],
-        arr[-7]["close"],
-        arr[-8]["close"],
-        arr[-9]["close"],
-        arr[-10]["close"],
-    ]
+    print(len(arr))
+
+    if len(arr) < 10 :
+        #发现数组长度只有2的情况...查找原因是一只昨天刚上市的新股...
+        print('警告，这里数据有点问题！可能是一只新股')
+        lastTenDays = [
+            0,0,0,0,0,0,0,0,0,0,
+        ]
+    else:
+        lastTenDays = [
+            arr[-1]["close"],
+            arr[-2]["close"],
+            arr[-3]["close"],
+            arr[-4]["close"],
+            arr[-5]["close"],
+            arr[-6]["close"],
+            arr[-7]["close"],
+            arr[-8]["close"],
+            arr[-9]["close"],
+            arr[-10]["close"],
+        ]
     continueDays    = getContinuityDay(lastTenDays)
     continueDaysAbs = abs(continueDays) #绝对值
 
@@ -429,7 +438,7 @@ def modData(arr):
     for i in range(0,length-1):
         if arr[i][1]==arr[i+1][1]:
             #不存在的年份用-999填空，为何不是0呢？因为0不好区分，这中情况可是正常存在的，包括出现 -4 这样子也是合理的（因为前赋权）
-            arr[i+1][0] = -999;  
+            arr[i+1][0] = -999;
 
     for i in range(0,length):
         newArr.append(arr[i][0]);
@@ -475,7 +484,7 @@ def getStockInfoData(url,config,symbol):
     # time.sleep(sleep3);
 
     res = requests.get(url=url,params=_params,headers=_headers)
-    
+
     data = json.loads(res.text);
     pe_ttm = data[symbol]['pe_ttm'];
     pe_lyr = data[symbol]['pe_lyr'];
@@ -502,7 +511,7 @@ def getStockInfoData(url,config,symbol):
     if(grabTime==''):
         #volume表示成交量，当为0的时候，就表示“停牌”了
         if not halt:
-            
+
             grabTime = data[symbol]['time'];
             #修改字符串中的数据（删除 '+0800 '）
             grabTime = grabTime.replace('+0800 ','')
