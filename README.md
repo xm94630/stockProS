@@ -2,11 +2,12 @@
 stockProSuper
 
 # python 模块
+requests requests模块
 pymongo 数据库
 Flask   web服务
 jinja   模板
 email   邮件
-smtplib SMTP协议
+smtplib SMTP协议 （这个应该默认就有）
 
 # index.py 参数说明
 无参数:在旧数据上追加
