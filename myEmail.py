@@ -6,10 +6,10 @@ from email.mime.text import MIMEText
 from email.header import Header
 
 def send(words):
-    password   = raw_input("I want to sent email to target email, need your keywords:\n> ") #密码
+    password   = raw_input("I want to sent email to target email('163邮箱'), need your keywords:\n> ") #密码
 
-    sender     = 'xm94630@126.com'  #发信人地址
-    receiver   = 'xm94630@126.com'  #收信人地址
+    sender     = 'xm94630@163.com'  #发信人地址
+    receiver   = 'xm94630@163.com'  #收信人地址
     smtpserver = 'smtp.163.com'
 
     msg            = MIMEText(words, 'plain', 'utf-8') #中文需参数‘utf-8'，单字节字符不需要
@@ -18,7 +18,7 @@ def send(words):
     msg['to']      = receiver 
 
     smtp = smtplib.SMTP()
-    smtp.connect('smtp.126.com')
+    smtp.connect(smtpserver)
     smtp.login(sender, password)
     smtp.sendmail(sender, receiver, msg.as_string()) 
     smtp.quit()
