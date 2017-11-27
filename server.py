@@ -9,6 +9,8 @@ from bson.json_util import dumps   #这个用来解析mongo返回的数据为jso
 import Cookie
 import argparse #用来获取命令行参数
 
+
+
 #连接数据库
 client = MongoClient()
 db = client.xm94630
@@ -55,7 +57,12 @@ def hello():
 
     #从数据库获取时间信息
     cursor2 = coll2.find({})
-    myTimeStr = cursor2[0]['timeStr']
+
+    #这个问题以后有空查查看
+    if len(list(cursor2))==0:
+        myTimeStr = '无法解析时间'
+    else:
+        myTimeStr = cursor2[0]['timeStr']
 
     template = env.get_template('index.html');
     return  template.render(data=cursor,timeInfo=myTimeStr);
