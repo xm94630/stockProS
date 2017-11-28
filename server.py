@@ -58,11 +58,14 @@ def hello():
     #从数据库获取时间信息
     cursor2 = coll2.find({})
 
-    #这个问题以后有空查查看
-    if len(list(cursor2))==0:
-        myTimeStr = '无法解析时间'
-    else:
+    #这个是用来看 cursor 字符串类型的内容的，方便查看
+    #print dumps(cursor2)    #dumps后得到的类型是 <type 'str'>
+    try:
+        #正常的操作
         myTimeStr = cursor2[0]['timeStr']
+    except:
+        #发生异常，执行这块代码
+        myTimeStr = u'还没有时间信息，运行 python index.py 获取时间'
 
     template = env.get_template('index.html');
     return  template.render(data=cursor,timeInfo=myTimeStr);
