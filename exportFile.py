@@ -5,6 +5,7 @@
 import time
 import datetime
 from operator import itemgetter
+import os
 
 #引入自定义模块
 import dataBase
@@ -118,6 +119,11 @@ def save(stockList={}):
 #print save(exmple);
 
 
+# 判断文件加是否存在
+path = "backups/"
+if not os.path.exists(path):
+    print "新建 backups 文件夹，用来保存导出文本数据"
+    os.makedirs(path)
 
 
 
