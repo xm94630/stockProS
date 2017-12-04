@@ -6,6 +6,13 @@ import requests
 import json
 import sys 
 import getCookie
+import argparse
+
+if __name__ == '__main__':
+    try:
+        fileName = sys.argv[1]
+    except:
+        sys.exit(0)
 
 # 重要配置
 # 每只股票最大可配置额度
@@ -116,7 +123,7 @@ def printInfo2(oneStock):
 
 # 初始
 if __name__ == "__main__":
-    myStockArr = load('myStockConfig.json')
+    myStockArr = load(fileName)
     for oneStock in myStockArr:
         #解析计算
         parseStock(oneStock)
