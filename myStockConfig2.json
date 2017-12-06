@@ -1,0 +1,76 @@
+[
+    {
+        "symbol": "SZ000883", 
+        "name": "湖北能源",
+        "number": 0,
+        "sPrice": 0,
+        "sPB":0,
+        "latestCost": 8840
+    },
+    {
+        "symbol": "SH601006", 
+        "name": "大秦铁路",
+        "number": 0,
+        "sPrice": 0,
+        "sPB":0,
+        "latestCost": 7997
+    },
+    {
+        "symbol": "SH600761", 
+        "name": "安徽合力",
+        "number": 0,
+        "sPrice": 0,
+        "sPB":0,
+        "latestCost": 5090
+    },
+    {
+        "symbol": "SZ000581", 
+        "name": "威孚高科",
+        "number": 0,
+        "sPrice": 0,
+        "sPB":0,
+        "latestCost": 5059
+    },
+    {
+        "symbol": "SZ002588", 
+        "name": "鄂武商A",
+        "number": 0,
+        "sPrice": 0,
+        "sPB":0,
+        "latestCost": 4871
+    },
+    {
+        "symbol": "SZ000030", 
+        "name": "富奥股份",
+        "number": 0,
+        "sPrice": 0,
+        "sPB":0,
+        "latestCost": 4030
+    },
+    {
+        "symbol": "SZ002563", 
+        "name": "森马股份",
+        "number": 0,
+        "sPrice": 0,
+        "sPB":0,
+        "latestCost": 3715
+    },
+    {
+        "symbol": "SZ000718", 
+        "name": "苏宁环球",
+        "number": 0,
+        "sPrice": 0,
+        "sPB":0,
+        "latestCost": 3392
+    },
+    {
+        "symbol": "SH600897", 
+        "name": "厦门空港",
+        "number": 0,
+        "sPrice": 0,
+        "sPB":0,
+        "latestCost": 2237
+    }
+]
+
+
