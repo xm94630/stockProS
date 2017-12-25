@@ -5,7 +5,7 @@
         "number": 0,
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 10535.2
+        "latestCost": 10535
     },
     {
         "symbol": "SH600028", 
@@ -37,7 +37,7 @@
         "number": 0,
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 15298.8
+        "latestCost": 15298
     },
     {
         "symbol": "SH600284", 
@@ -101,7 +101,7 @@
         "number": 0,
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 4500
+        "latestCost": 4501
     }, 
     {
         "symbol": "SH600823", 
@@ -149,7 +149,7 @@
         "number": 1300,
         "sPrice": 6.454,
         "sPB":1.29,
-        "latestCost": 8390.2
+        "latestCost": 8390
     },
     {
         "symbol": "SZ000537", 
