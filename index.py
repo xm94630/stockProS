@@ -19,7 +19,7 @@ import getCookie
 import myEmail
 
 #头信息
-cookieByJS = 'device_id=1a598ee68fd9ab4a9a0de8480363df28; __utma=1.61397162.1511428575.1512459192.1512555561.5; __utmz=1.1512555561.5.5.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; xq_a_token=95b69ccb71a54ebf3d7060a84a72b45015fead7f; xq_a_token.sig=r7RhUAkpd9FiBmPDlOV3F-V8LFo; xq_r_token=6589f21e3e52d21c4d3de00d3135b3920fa8a52f; xq_r_token.sig=Ho5fiQYDNIITpBXlltLZVADXRSI; u=911513824494184; Hm_lvt_1db88642e346389874251b5a1eded6e3=1512555561,1512555672,1512555678,1513824495; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1513824495'
+cookieByJS = 'device_id=1a598ee68fd9ab4a9a0de8480363df28; __utma=1.61397162.1511428575.1512555561.1514183859.6; __utmc=1; __utmz=1.1514183859.6.6.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; xq_a_token=93ef7d84fd99d7b5f81ea4e1442c7252dff29d20; xq_a_token.sig=2_cWCFNwc-q7CurYUzOoewHw_DM; xq_r_token=18ddc4996d6018b400ebaaaa74f144296c288826; xq_r_token.sig=7749cnGDm8cToOaVZtCC3FKmJys; u=641515411055647; Hm_lvt_1db88642e346389874251b5a1eded6e3=1513824495,1514183859,1514183934; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1515411056'
 cookie = cookieByJS+getCookie.getCookie('https://xueqiu.com/');
 userAgent  = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36';
 

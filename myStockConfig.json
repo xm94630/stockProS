@@ -13,7 +13,8 @@
         "number": 0,
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 9636
+        "latestCost": 4064,
+        "n":1
     },
     {
         "symbol": "SH600060", 
@@ -157,7 +158,7 @@
         "number": 0,
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 1177
+        "latestCost": -266.3
     }, 
     {
         "symbol": "SZ000550", 
