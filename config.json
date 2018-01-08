@@ -1,0 +1,10 @@
+{
+    "_comment":{
+        "cookie":"cookie值",
+        "userAgent":"用户代理",
+        "maxMoneyPerStock":"个股最大可配置额度设置"
+    },
+    "cookie": "device_id=1a598ee68fd9ab4a9a0de8480363df28; __utma=1.61397162.1511428575.1512555561.1514183859.6; __utmc=1; __utmz=1.1514183859.6.6.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; xq_a_token=93ef7d84fd99d7b5f81ea4e1442c7252dff29d20; xq_a_token.sig=2_cWCFNwc-q7CurYUzOoewHw_DM; xq_r_token=18ddc4996d6018b400ebaaaa74f144296c288826; xq_r_token.sig=7749cnGDm8cToOaVZtCC3FKmJys; u=641515411055647; Hm_lvt_1db88642e346389874251b5a1eded6e3=1513824495,1514183859,1514183934; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1515411056'", 
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+    "maxMoneyPerStock": 10000
+}

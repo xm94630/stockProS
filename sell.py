@@ -8,15 +8,21 @@ import sys
 import getCookie
 import argparse
 
+import common
+
 if __name__ == '__main__':
     try:
         fileName = sys.argv[1]
     except:
         sys.exit(0)
 
-# 重要配置
+#引入配置
+conf = common.loadJsonFile('./config.json')
+#头信息
+cookie = conf['cookie'] + getCookie.getCookie('https://xueqiu.com/');
+userAgent  = conf['userAgent']
 # 每只股票最大可配置额度
-maxMoneyPerStock = 10000 
+maxMoneyPerStock = conf['maxMoneyPerStock']
 
 # 定义
 myStockArr = []
@@ -24,31 +30,8 @@ myStockArr = []
 #需要抓取的数据源
 stockInfoAPI = 'https://xueqiu.com/v4/stock/quote.json'; #详细
 
-#头信息
-cookieByJS = 'device_id=1a598ee68fd9ab4a9a0de8480363df28; __utma=1.61397162.1511428575.1512555561.1514183859.6; __utmc=1; __utmz=1.1514183859.6.6.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; xq_a_token=93ef7d84fd99d7b5f81ea4e1442c7252dff29d20; xq_a_token.sig=2_cWCFNwc-q7CurYUzOoewHw_DM; xq_r_token=18ddc4996d6018b400ebaaaa74f144296c288826; xq_r_token.sig=7749cnGDm8cToOaVZtCC3FKmJys; u=641515411055647; Hm_lvt_1db88642e346389874251b5a1eded6e3=1513824495,1514183859,1514183934; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1515411056'
-cookie = cookieByJS+getCookie.getCookie('https://xueqiu.com/');
-userAgent  = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36';
-
 
 print '============= 股票加仓提示 ============='
-
-# 保存json数据
-def store(fileAddress,data):
-    with open(fileAddress, 'w') as json_file:
-        json_file.write(json.dumps(data))
-
-# 读取json数据
-def load(fileAddress):
-    with open(fileAddress) as json_file:
-        try:
-            #正常读取
-            data = json.load(json_file)
-            return data
-        except:
-            #发生异常
-            print '警告：json格式有误！请重新编辑你的股票配置'
-            print '============= 程序已经中断 ============='
-            sys.exit(0) 
 
 #获取股票详情
 def getStockInfoData(url,oneStock):
@@ -123,7 +106,7 @@ def printInfo2(oneStock):
 
 # 初始
 if __name__ == "__main__":
-    myStockArr = load(fileName)
+    myStockArr = common.loadJsonFile(fileName)
     for oneStock in myStockArr:
         #解析计算
         parseStock(oneStock)
