@@ -22,7 +22,7 @@ import common
 conf = common.loadJsonFile('./config.json')
 
 #头信息
-cookie = conf['cookie'] + getCookie.getCookie('https://xueqiu.com/');
+cookie = getCookie.getCookie('https://xueqiu.com/');
 userAgent  = conf['userAgent']
 
 #配置

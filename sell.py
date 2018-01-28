@@ -19,7 +19,7 @@ if __name__ == '__main__':
 #引入配置
 conf = common.loadJsonFile('./config.json')
 #头信息
-cookie = conf['cookie'] + getCookie.getCookie('https://xueqiu.com/');
+cookie = getCookie.getCookie('https://xueqiu.com/');
 userAgent  = conf['userAgent']
 # 每只股票最大可配置额度
 maxMoneyPerStock = conf['maxMoneyPerStock']
