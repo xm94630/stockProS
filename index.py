@@ -22,7 +22,8 @@ import common
 conf = common.loadJsonFile('./config.json')
 
 #头信息
-cookie = getCookie.getCookie('https://xueqiu.com/');
+#cookie = getCookie.getCookie('https://xueqiu.com/');
+cookie = "device_id=1a598ee68fd9ab4a9a0de8480363df28; xq_a_token=9fe68a74102e36c95d83680e70152894648189b5; xq_a_token.sig=Wp2RDfA0m2SS1--eP6TyzeJrNqE; xq_r_token=31f446a0ba3f00cf0ec805ef008a3ad7d7ef5f6e; xq_r_token.sig=-MGYDh3MlR7dkoz1vYeWUVTTyoQ; u=541517136328956; __utmc=1; s=fe112fjt0d; aliyungf_tc=AQAAABeoq3JgIgQAkQCIdUw4tgcoYFuy; __utma=1.61397162.1511428575.1517452317.1517454161.16; __utmz=1.1517454161.16.15.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; Hm_lvt_1db88642e346389874251b5a1eded6e3=1517454161,1517454182,1517454512,1517454621; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1517454621"
 userAgent  = conf['userAgent']
 
 #配置
