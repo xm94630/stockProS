@@ -7,12 +7,18 @@ import json
 import sys 
 import getCookie
 import argparse
-
 import common
+
+showPrice = False
 
 if __name__ == '__main__':
     try:
-        fileName  = sys.argv[1]        
+        argArr   = sys.argv
+        if(len(argArr)>=2):
+            fileName = argArr[1]
+        if(len(argArr)>=3):
+            # python 中的三目表达式写法
+            showPrice = (True if argArr[2]=='-p' else False)
     except:
         sys.exit(0)
 
@@ -91,7 +97,7 @@ def parseStock(oneStock):
 def printInfo(oneStock):
     #注意：这里字符串拼接的时候不要使用'【'，好像会出错，原因就不找了
     print(oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) +')')
-    exportPriceInfo(oneStock)
+    if showPrice:exportPriceInfo(oneStock)
     if float(oneStock['latestPB'])<1:
         print '提示：该股票已经破净'
     if oneStock['canContinueBuy']:
@@ -104,7 +110,7 @@ def printInfo(oneStock):
 #导出信息(全部数据展示)
 def printInfo2(oneStock):
     print(oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) +')')
-    exportPriceInfo(oneStock)
+    if showPrice:exportPriceInfo(oneStock)
     if float(oneStock['latestPB'])<1:
         print '提示：该股票已经破净'
     print('总配/已配/可用：' + str(int(oneStock['canUseMoney'])) +'/'+str(int(oneStock['latestCost']))+'/'+str(int(oneStock['nowCanUse'])))
