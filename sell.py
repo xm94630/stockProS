@@ -12,7 +12,7 @@ import common
 
 if __name__ == '__main__':
     try:
-        fileName = sys.argv[1]
+        fileName  = sys.argv[1]        
     except:
         sys.exit(0)
 
@@ -57,6 +57,8 @@ def parseStock(oneStock):
     symbol = oneStock["symbol"]
     data = getStockInfoData(stockInfoAPI,oneStock)
 
+    #获取最新价格
+    oneStock['current'] = data[symbol]['current']
 
     #获取最新pb
     latestPB = data[symbol]['pb']
@@ -89,6 +91,7 @@ def parseStock(oneStock):
 def printInfo(oneStock):
     #注意：这里字符串拼接的时候不要使用'【'，好像会出错，原因就不找了
     print(oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) +')')
+    exportPriceInfo(oneStock)
     if float(oneStock['latestPB'])<1:
         print '提示：该股票已经破净'
     if oneStock['canContinueBuy']:
@@ -101,11 +104,20 @@ def printInfo(oneStock):
 #导出信息(全部数据展示)
 def printInfo2(oneStock):
     print(oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) +')')
+    exportPriceInfo(oneStock)
     if float(oneStock['latestPB'])<1:
         print '提示：该股票已经破净'
     print('总配/已配/可用：' + str(int(oneStock['canUseMoney'])) +'/'+str(int(oneStock['latestCost']))+'/'+str(int(oneStock['nowCanUse'])))
     print('推荐买入 '+ str(int(oneStock['nowCanBuyStockNumber2'])) + ' ('+str(int(oneStock['nowCanBuyStockNumber'])) +') ')
 
+#导出价格相关信息
+def exportPriceInfo(oneStock):
+    sPrice0 = oneStock['sPrice']
+    sPrice1 = round(sPrice0*0.8,2)
+    sPrice2 = round(sPrice1*0.8,2)
+    sPrice3 = round(sPrice2*0.8,2)
+    percent = str(round(float(oneStock['current'])/sPrice0*100,1))+'%'
+    print(percent+' / ['+str(sPrice0)+','+str(sPrice1)+','+str(sPrice2)+','+str(sPrice3)+'] / '+oneStock['current']);
 
 # 初始
 if __name__ == "__main__":
