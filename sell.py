@@ -19,7 +19,8 @@ if __name__ == '__main__':
 #引入配置
 conf = common.loadJsonFile('./config.json')
 #头信息
-cookie = 'device_id=1a598ee68fd9ab4a9a0de8480363df28; xq_a_token=9fe68a74102e36c95d83680e70152894648189b5; xq_a_token.sig=Wp2RDfA0m2SS1--eP6TyzeJrNqE; xq_r_token=31f446a0ba3f00cf0ec805ef008a3ad7d7ef5f6e; xq_r_token.sig=-MGYDh3MlR7dkoz1vYeWUVTTyoQ; u=541517136328956; __utmc=1; s=fe112fjt0d; __utma=1.61397162.1511428575.1517206641.1517225125.12; __utmz=1.1517225125.12.11.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; Hm_lvt_1db88642e346389874251b5a1eded6e3=1517225200,1517225206,1517225218,1517225306; aliyungf_tc=AQAAABeoq3JgIgQAkQCIdUw4tgcoYFuy; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1517363802';
+#cookie    = getCookie.getCookie('https://xueqiu.com/');
+cookie     = conf['cookie']
 userAgent  = conf['userAgent']
 # 每只股票最大可配置额度
 maxMoneyPerStock = conf['maxMoneyPerStock']
