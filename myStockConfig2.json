@@ -4,7 +4,7 @@
         "name": "湖北能源",
         "number": 0,
         "sPrice": 4.65,
-        "sPB":1.19,
+        "sPB":1.174,
         "latestCost": 8840
     },
     {
@@ -12,7 +12,7 @@
         "name": "大秦铁路",
         "number": 0,
         "sPrice": 8.88,
-        "sPB":1.36,
+        "sPB":1.30,
         "latestCost": 7997
     },
     {
@@ -20,7 +20,7 @@
         "name": "安徽合力",
         "number": 0,
         "sPrice": 10.17,
-        "sPB":1.69,
+        "sPB":1.74,
         "latestCost": 5090
     },
     {
@@ -28,7 +28,7 @@
         "name": "威孚高科",
         "number": 0,
         "sPrice": 25.29,
-        "sPB":1.82,
+        "sPB":1.77,
         "latestCost": 5059
     },
     {
@@ -44,7 +44,7 @@
         "name": "富奥股份",
         "number": 0,
         "sPrice": 8.05,
-        "sPB":1.87,
+        "sPB":1.9,
         "latestCost": 4030
     },
     {
@@ -52,7 +52,7 @@
         "name": "森马股份",
         "number": 0,
         "sPrice": 7.42,
-        "sPB":1.99,
+        "sPB":1.94,
         "latestCost": 3715
     },
     {
@@ -60,15 +60,15 @@
         "name": "苏宁环球",
         "number": 0,
         "sPrice": 4.84,
-        "sPB":1.97,
-        "latestCost": 3392
+        "sPB":1.99,
+        "latestCost": 6155.8
     },
     {
         "symbol": "SH600897", 
         "name": "厦门空港",
         "number": 0,
         "sPrice": 22.32,
-        "sPB":2,
+        "sPB":2.16,
         "latestCost": 2237
     }
 ]

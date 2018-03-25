@@ -43,6 +43,11 @@ print '============= 股票加仓提示 ============='
 #获取股票详情
 def getStockInfoData(url,oneStock):
     symbol = oneStock["symbol"]
+
+    #根据 latestCost 的初始值，反推pb
+    #注意latestCost的初始值，指的是最初的买的时候的钱
+    #print(round((5.0-oneStock["latestCost"]*3.0/10000.0)/2.0,2))
+
     _headers = {
         "User-Agent":userAgent,
         "Cookie":cookie

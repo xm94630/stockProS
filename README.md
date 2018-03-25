@@ -16,3 +16,6 @@ smtplib SMTP协议 （这个应该默认就有）
 # server.py 参数说明
 无参数:默认数据以低点平均百分比增序
 -s:数据以最近一年低点平均百分比增序
+
+# sell.py 
+python sell.py [xxx.json] [-p]
