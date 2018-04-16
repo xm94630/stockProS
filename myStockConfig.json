@@ -110,7 +110,7 @@
         "number": 0,
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 4207
+        "latestCost": 10718
     }, 
     {
         "symbol": "SH600873", 
@@ -166,7 +166,7 @@
         "number": 0,
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 7733
+        "latestCost": 9413
     }, 
     {
         "symbol": "SZ000587", 
@@ -199,15 +199,7 @@
         "sPrice": 0,
         "sPB":0,
         "latestCost": 10330
-    }, 
-    {
-        "symbol": "SZ000936", 
-        "name": "华西股份",
-        "number": 0,
-        "sPrice": 0,
-        "sPB":0,
-        "latestCost": 2934
-    }, 
+    },  
     {
         "symbol": "SZ002083", 
         "name": "孚日股份",
