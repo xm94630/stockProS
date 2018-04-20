@@ -102,7 +102,8 @@
         "number": 0,
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 4501
+        "latestCost": 4501,
+        "info":"20180418 下跌到20%，8.877买入300"
     }, 
     {
         "symbol": "SH600823", 
@@ -126,7 +127,7 @@
         "number": 0,
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 4705
+        "latestCost": 8445
     }, 
     {
         "symbol": "SH601328", 
@@ -206,7 +207,7 @@
         "number": 0,
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 4638
+        "latestCost": 6768
     }, 
     {
         "symbol": "SZ002267", 
