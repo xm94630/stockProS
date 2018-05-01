@@ -495,14 +495,18 @@ def getStockInfoData(url,config,symbol):
     # time.sleep(sleep3);
 
     res = requests.get(url=url,params=_params,headers=_headers)
-
     data = json.loads(res.text);
+
     pe_ttm = data[symbol]['pe_ttm'];
     pe_lyr = data[symbol]['pe_lyr'];
     pb = data[symbol]['pb'];
     totalShares = data[symbol]['totalShares'];
     close = data[symbol]['close'];
     eps = data[symbol]['eps'];
+    net_assets = round(float(data[symbol]['net_assets']),2);
+
+    #roe，不能直接从接口得到，可计算下得出
+    roe = round(float(eps)/net_assets*100,2)
 
     #购买推荐
     buyPercent  = round ( (-2*float(pb) + 5)/3 ,3);
@@ -552,6 +556,8 @@ def getStockInfoData(url,config,symbol):
         "close":close,
         "halt":halt,
         "eps":eps,
+        "net_assets":net_assets,#每股净资产
+        "roe":roe,
     };
 
 

@@ -30,7 +30,7 @@
                     成本为 <span class="c7"> {{ item.info.buyNum2*item.lows[1] }} </span> 元
                 </div>
                 <div>【PB/TTM/LYR】{{item.info.pb}}/{{item.info.pe_ttm}}/{{item.info.pe_lyr}}</div>
-                <div>【EPS】{{item.info.eps}}</div>
+                <div>【EPS/每股净资产/ROE】{{item.info.eps}}/{{item.info.net_assets}}/ <span class="c7">{{item.info.roe}}%</span> </div>
                 <div>N年内低点 {{ item.lows }}</div>
                 <div>N年内卖点占比 {{ item.percents }}</div>
                 <div>总股本 {{ item.info.totalShares2 }}</div>
