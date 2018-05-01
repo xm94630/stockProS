@@ -502,6 +502,7 @@ def getStockInfoData(url,config,symbol):
     pb = data[symbol]['pb'];
     totalShares = data[symbol]['totalShares'];
     close = data[symbol]['close'];
+    eps = data[symbol]['eps'];
 
     #购买推荐
     buyPercent  = round ( (-2*float(pb) + 5)/3 ,3);
@@ -550,6 +551,7 @@ def getStockInfoData(url,config,symbol):
         "buyNum2":buyNum2,
         "close":close,
         "halt":halt,
+        "eps":eps,
     };
 
 
