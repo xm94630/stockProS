@@ -20,7 +20,10 @@
             <li>
                 <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">{{ item.name }}【{{ item.symbol }}】</a> 
                 <div>{{ item.continueDaysText }}，合计涨/跌百分比：<b>{{ item.upOrDownContinuePercent }}</b></div>
-                <div>推荐购买 <span class="c1">{{ item.info.buyNum2 }}</span>({{ item.info.buyNum }}) 股</div>
+                <div>
+                    推荐购买 <span class="c1">{{ item.info.buyNum2 }}</span>({{ item.info.buyNum }}) 股，
+                    成本为 <span class="c1"> {{ item.info.buyNum2*item.lows[1] }} </span> 元
+                </div>
                 <div>【PB/TTM/LYR】{{item.info.pb}}/{{item.info.pe_ttm}}/{{item.info.pe_lyr}}</div>
                 <div>N年内低点 {{ item.lows }}</div>
                 <div>N年内卖点占比 {{ item.percents }}</div>
