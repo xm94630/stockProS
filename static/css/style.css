@@ -27,6 +27,10 @@ body a:visited {
   text-decoration: none;
   color: orangered;
 }
+body a.C1 {
+  text-decoration: none;
+  color: deepskyblue;
+}
 
 
 .myb  {border: solid 1px orangered;}

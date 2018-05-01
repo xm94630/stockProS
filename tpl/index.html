@@ -18,16 +18,29 @@
             <!-- 过滤卖点占比超过1的 -->
         {% else %}
             <li>
-                <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">{{ item.name }}【{{ item.symbol }}】</a> 
+                {% if item.profit[1]>0 %}
+                    <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">{{ item.name }}【{{ item.symbol }}】</a> 
+                {% else %}
+                    <a class="C1" target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">{{ item.name }}【{{ item.symbol }}】</a> 
+                {% endif %}
+                
                 <div>{{ item.continueDaysText }}，合计涨/跌百分比：<b>{{ item.upOrDownContinuePercent }}</b></div>
                 <div>
-                    推荐购买 <span class="c1">{{ item.info.buyNum2 }}</span>({{ item.info.buyNum }}) 股，
-                    成本为 <span class="c1"> {{ item.info.buyNum2*item.lows[1] }} </span> 元
+                    推荐购买 <span class="c7">{{ item.info.buyNum2 }}</span>({{ item.info.buyNum }}) 股，
+                    成本为 <span class="c7"> {{ item.info.buyNum2*item.lows[1] }} </span> 元
                 </div>
                 <div>【PB/TTM/LYR】{{item.info.pb}}/{{item.info.pe_ttm}}/{{item.info.pe_lyr}}</div>
                 <div>N年内低点 {{ item.lows }}</div>
                 <div>N年内卖点占比 {{ item.percents }}</div>
                 <div>总股本 {{ item.info.totalShares2 }}</div>
+
+                {% if item.profit[1]>0 %}
+                    <div>最近季度利润  {{ item.profit[1] }} 亿</div>
+                {% else %}
+                    <div>最近季度利润  <span class="c1">{{ item.profit[1] }}</span> 亿</div>
+                {% endif %}
+                
+                <div>{{ item.profit[0] }}  </div>
                 <div>{{ item.cashFlow[0] }}</div>
                 <div>{{ item.cashFlow[1] }}</div>
                 <div>{{ item.cashFlow[2] }}</div>

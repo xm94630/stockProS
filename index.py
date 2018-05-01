@@ -89,7 +89,7 @@ dataBase.clearOldDatabase(isClearOld);
 
 
 #股票类
-def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0,halt=False,cashFlow=[]):
+def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0,halt=False,cashFlow=[],profit=0):
     return{
         "name"     : name,
         "symbol"   : symbol,
@@ -104,6 +104,7 @@ def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrec
         "upOrDownContinuePercent" : upOrDownContinuePercent,
         "halt"     : halt,
         "cashFlow" : cashFlow,
+        "profit"   : profit,
     }
 
 #解析json
@@ -202,6 +203,7 @@ def getAllData(page=0,stockArr=[]):
             halt = info['halt']
             #新增 财务分析
             cashFlow = FA.parseCfstatementData(symbol)
+            profit = FA.parseIncstatementData(symbol)
 
             #完成一个完整的股票分析
             oneStock = Stock(
@@ -218,6 +220,7 @@ def getAllData(page=0,stockArr=[]):
                 upOrDownContinuePercent,
                 halt,
                 cashFlow,
+                profit,
             );
 
             #屏幕输出
@@ -229,6 +232,8 @@ def getAllData(page=0,stockArr=[]):
             print(oneStock['cashFlow'][0])
             print(oneStock['cashFlow'][1])
             print(oneStock['cashFlow'][2])
+            print(oneStock['profit'][0])
+            print(oneStock['profit'][1])
             print('--------------------------------------------------------------------------------------------------------------- '+str(perc)+'%')
 
             #保存到数据库

@@ -20,6 +20,7 @@
 
 # 利润表
 # https://xueqiu.com/stock/f10/incstatement.json?symbol=SH601088&page=1&size=4&_=1522730476614
+# parenetp 净利润
 
 # 资产负债表
 # https://xueqiu.com/stock/f10/balsheet.json?symbol=SH601088&page=1&size=4&_=1522730522067
@@ -40,7 +41,8 @@ class Payload(object):
         self.__dict__ = json.loads(j)
 
 # url
-cfstatementUrl = 'https://xueqiu.com/stock/f10/cfstatement.json'
+cfstatementUrl  = 'https://xueqiu.com/stock/f10/cfstatement.json'
+incstatementUrl = 'https://xueqiu.com/stock/f10/incstatement.json'
 
 # 获取 现金流表 数据
 def getCfstatementData(cfstatementUrl,symbol):
@@ -52,9 +54,18 @@ def getCfstatementData(cfstatementUrl,symbol):
     res = requests.get(url=cfstatementUrl,params=_params,headers=_headers)
     return res.text
 
+# 获取 利润表 数据
+def getIncstatementData(incstatementUrl,symbol):
+    _headers = {
+        "User-Agent":userAgent,
+        "Cookie":cookie
+    }
+    _params = '&symbol=' + symbol
+    res = requests.get(url=incstatementUrl,params=_params,headers=_headers)
+    return res.text
 
 
-#递归获取全部数据
+# 利润
 def parseCfstatementData(symbol):
     json = getCfstatementData(cfstatementUrl,symbol)
     try:
@@ -95,12 +106,53 @@ def parseCfstatementData(symbol):
     
     return r
 
+# 现金流
+def parseIncstatementData(symbol):
+    json = getIncstatementData(incstatementUrl,symbol)
+    try:
+        #正常的操作
+        data = Payload(json)
+    except:
+        #发生异常，执行这块代码
+        print '【xm】接口崩坏！'
+        print json
+    
+    arr = data.list
 
-# parseCfstatementData('SH601088')
+    str4 = ''
+    newInc = 0
+    
+    for one in arr:
+        if one.has_key('parenetp'):
+            if one['parenetp']>=0:
+                str4 = str4+'+'
+            else:
+                str4 = str4+'-'
+        else:
+            str4 = str4+'?'
+
+    if arr[0].has_key('parenetp'):
+        newInc =  round(arr[0]['parenetp']/100000000,2)
+   
+
+    # 历史正负数据，和最近季度的净利润（单位：亿）
+    r = [str4,newInc]
+    
+    #print r[0]
+    #print r[1]
+    
+    return r
+
+#parseCfstatementData('SH601088')
 #parseCfstatementData('SH600585')
 #parseCfstatementData('SH600340')
 #parseCfstatementData('SZ000651')
 #parseCfstatementData('SH600519')
+
+#parseIncstatementData('SZ300118')
+
+
+
 
 
 
