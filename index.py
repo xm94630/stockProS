@@ -229,11 +229,10 @@ def getAllData(page=0,stockArr=[]):
             print(oneStock['lows'])
             print(oneStock['percents'])
             print(oneStock['continueDaysText'] + u'，合计涨/跌百分比：' + str(oneStock['upOrDownContinuePercent']) )
+            print(oneStock['profit'][0])
             print(oneStock['cashFlow'][0])
             print(oneStock['cashFlow'][1])
             print(oneStock['cashFlow'][2])
-            print(oneStock['profit'][0])
-            print(oneStock['profit'][1])
             print('--------------------------------------------------------------------------------------------------------------- '+str(perc)+'%')
 
             #保存到数据库
@@ -388,7 +387,8 @@ def getLowPriceArr(symbol,nYear):
 
 
     #获取最近(这里只获取10天)连续上涨或下跌的天数
-    print(len(arr))
+    
+    #print(len(arr))
 
     if len(arr) < 10 :
         #发现数组长度只有2的情况...查找原因是一只昨天刚上市的新股...
