@@ -28,6 +28,9 @@
                 <div>N年内低点 {{ item.lows }}</div>
                 <div>N年内卖点占比 {{ item.percents }}</div>
                 <div>总股本 {{ item.info.totalShares2 }}</div>
+                <div>{{ item.cashFlow[0] }}</div>
+                <div>{{ item.cashFlow[1] }}</div>
+                <div>{{ item.cashFlow[2] }}</div>
             </li>
         {% endif %}
     {% endfor %}

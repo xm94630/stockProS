@@ -17,6 +17,7 @@ import exportFile
 import getCookie
 import myEmail
 import common
+import FA
 
 #引入配置
 conf = common.loadJsonFile('./config.json')
@@ -88,7 +89,7 @@ dataBase.clearOldDatabase(isClearOld);
 
 
 #股票类
-def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0,halt=False):
+def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0,halt=False,cashFlow=[]):
     return{
         "name"     : name,
         "symbol"   : symbol,
@@ -101,7 +102,8 @@ def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrec
         "continueDaysText" : continueDaysText,
         "upOrDownPercent"         : upOrDownPercent,
         "upOrDownContinuePercent" : upOrDownContinuePercent,
-        "halt" : halt,
+        "halt"     : halt,
+        "cashFlow" : cashFlow,
     }
 
 #解析json
@@ -198,6 +200,8 @@ def getAllData(page=0,stockArr=[]):
 
             #新增 停牌信息
             halt = info['halt']
+            #新增 财务分析
+            cashFlow = FA.parseCfstatementData(symbol)
 
             #完成一个完整的股票分析
             oneStock = Stock(
@@ -213,6 +217,7 @@ def getAllData(page=0,stockArr=[]):
                 upOrDownPercent,
                 upOrDownContinuePercent,
                 halt,
+                cashFlow,
             );
 
             #屏幕输出
@@ -221,6 +226,9 @@ def getAllData(page=0,stockArr=[]):
             print(oneStock['lows'])
             print(oneStock['percents'])
             print(oneStock['continueDaysText'] + u'，合计涨/跌百分比：' + str(oneStock['upOrDownContinuePercent']) )
+            print(oneStock['cashFlow'][0])
+            print(oneStock['cashFlow'][1])
+            print(oneStock['cashFlow'][2])
             print('--------------------------------------------------------------------------------------------------------------- '+str(perc)+'%')
 
             #保存到数据库
