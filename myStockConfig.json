@@ -4,7 +4,8 @@
         "name": "民生银行",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 10535
+        "latestCost": 10535,
+        "jiacang": 0
     },
     {
         "symbol": "SH600028", 
@@ -12,77 +13,88 @@
         "sPrice": 0,
         "sPB":0,
         "latestCost": 9132,
-        "n":1
+        "n":1,
+        "jiacang": 0
     },
     {
         "symbol": "SH600060", 
         "name": "海信电器",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 7178
+        "latestCost": 7178,
+        "jiacang": 0
     },
     {
         "symbol": "SH600075", 
         "name": "新疆天业",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 4775
+        "latestCost": 4775,
+        "jiacang": 0
     },
     {
         "symbol": "SH600100", 
         "name": "同方股份",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 8859
+        "latestCost": 8859,
+        "jiacang": 0
     },
     {
         "symbol": "SH600284", 
         "name": "浦东建设",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 9969
+        "latestCost": 9969,
+        "jiacang": 0
     },
     {
         "symbol": "SH600312", 
         "name": "平高电气",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 7807
+        "latestCost": 7807,
+        "jiacang": 0
     },
     {
         "symbol": "SH600350", 
         "name": "山东高速",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 9612
+        "latestCost": 9612,
+        "jiacang": 0
     },
     {
         "symbol": "SH600483", 
         "name": "福能股份",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 12757
+        "latestCost": 12757,
+        "jiacang": 0
     },
     {
         "symbol": "SH600508", 
         "name": "上海能源",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 9365
+        "latestCost": 9365,
+        "jiacang": 0
     },
     {
         "symbol": "SH600551", 
         "name": "时代出版",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 12489
+        "latestCost": 12489,
+        "jiacang": 0
     },
     {
         "symbol": "SH600637", 
         "name": "东方明珠",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 7078
+        "latestCost": 7078,
+        "jiacang": 0
     },  
     {
         "symbol": "SH600755", 
@@ -90,120 +102,137 @@
         "sPrice": 0,
         "sPB":0,
         "latestCost": 4501,
-        "info":"20180418 下跌到20%，8.877买入300"
+        "info":"20180418 下跌到20%，8.877买入300",
+        "jiacang": 1
     }, 
     {
         "symbol": "SH600823", 
         "name": "世茂股份",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 10718
+        "latestCost": 10718,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600873", 
         "name": "梅花生物",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 4015
+        "latestCost": 4015,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600978", 
         "name": "宜华生活",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 8445
+        "latestCost": 8445,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH601328", 
         "name": "交通银行",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 11234
+        "latestCost": 11234,
+        "jiacang": 0
     }, 
     {
         "symbol": "SZ000404", 
         "name": "华意压缩",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 10822
+        "latestCost": 10822,
+        "jiacang": 0
     }, 
     {
         "symbol": "SZ000415", 
         "name": "渤海金控",
-        "number": 1300,
         "sPrice": 6.454,
         "sPB":1.29,
-        "latestCost": 8390
+        "latestCost": 8390,
+        "jiacang": 0
     },
     {
         "symbol": "SZ000537", 
         "name": "广宇发展",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": -266.3
+        "latestCost": -266.3,
+        "jiacang": 0,
+        "info":"这个已经好几次减半卖出了，情况比较特殊，所以 latestCost 值，不同寻常"
     }, 
     {
         "symbol": "SZ000550", 
         "name": "江铃汽车",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 9413
+        "latestCost": 9413,
+        "jiacang": 0
     }, 
     {
         "symbol": "SZ000587", 
         "name": "金洲慈航",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 6408
+        "latestCost": 6408,
+        "jiacang": 0
     }, 
     {
         "symbol": "SZ000601", 
         "name": "韶能股份",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 4546
+        "latestCost": 4546,
+        "jiacang": 0
     }, 
     {
         "symbol": "SZ000623", 
         "name": "吉林敖东",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 6678
+        "latestCost": 6678,
+        "jiacang": 0
     }, 
     {
         "symbol": "SZ000685", 
         "name": "中山公用",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 10330
+        "latestCost": 10330,
+        "jiacang": 0
     },  
     {
         "symbol": "SZ002083", 
         "name": "孚日股份",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 6768
+        "latestCost": 6768,
+        "jiacang": 0
     }, 
     {
         "symbol": "SZ002267", 
         "name": "陕天然气",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 5653
+        "latestCost": 5653,
+        "jiacang": 0
     }, 
     {
         "symbol": "SZ002344", 
         "name": "海宁皮城",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 12078
+        "latestCost": 12078,
+        "jiacang": 0
     }, 
     {
         "symbol": "SZ002588", 
         "name": "史丹利",
         "sPrice": 0,
         "sPB":0,
-        "latestCost": 3485
+        "latestCost": 3485,
+        "jiacang": 0
     }
 
 
