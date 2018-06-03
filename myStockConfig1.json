@@ -88,6 +88,22 @@
         "jiacang": 0
     },
     {
+        "symbol": "SH600567", 
+        "name": "山鹰纸业",
+        "sPrice": 4.506,
+        "sPB":1.94,
+        "latestCost": 3604.8,
+        "jiacang": 0
+    }, 
+    {
+        "symbol": "SH600569", 
+        "name": "安阳钢铁",
+        "sPrice": 4.094,
+        "sPB":1.46,
+        "latestCost": 5322,
+        "jiacang": 0
+    }, 
+    {
         "symbol": "SH600637", 
         "name": "东方明珠",
         "sPrice": 17.695,
@@ -96,6 +112,14 @@
         "jiacang": 0
     },  
     {
+        "symbol": "SH600720", 
+        "name": "祁连山",
+        "sPrice": 10.429,
+        "sPB":1.44,
+        "latestCost": 6257.4,
+        "jiacang": 0
+    },
+    {
         "symbol": "SH600755", 
         "name": "厦门国贸",
         "sPrice": 10.196,
@@ -103,6 +127,22 @@
         "latestCost": 4501,
         "info":"20180418 下跌到20%，8.877买入300",
         "jiacang": 1
+    }, 
+    {
+        "symbol": "SH600787", 
+        "name": "中储股份",
+        "sPrice": 8.719,
+        "sPB":1.75,
+        "latestCost": 5231.4,
+        "jiacang": 0
+    }, 
+    {
+        "symbol": "SH600808", 
+        "name": "马钢股份",
+        "sPrice": 3.522,
+        "sPB":1.12,
+        "latestCost": 9509.4,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600823", 
@@ -136,6 +176,14 @@
         "latestCost": 11234,
         "jiacang": 0
     }, 
+    {
+        "symbol": "SH000001", 
+        "name": "平安银行",
+        "sPrice": 11.306,
+        "sPB":0.94,
+        "latestCost": 10175.4,
+        "jiacang": 0
+    },
     {
         "symbol": "SZ000404", 
         "name": "华意压缩",
@@ -232,10 +280,7 @@
         "sPB":0,
         "latestCost": 3485,
         "jiacang": 0
-    }
-
-
-    
+    }    
 ]
 
 
