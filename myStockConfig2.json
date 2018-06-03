@@ -3,7 +3,7 @@
         "symbol": "SZ000883", 
         "name": "湖北能源",
         "number": 0,
-        "sPrice": 4.65,
+        "sPrice": 4.653,
         "sPB":1.174,
         "latestCost": 8840
     },
@@ -14,6 +14,15 @@
         "sPrice": 8.88,
         "sPB":1.30,
         "latestCost": 7997
+    },
+    {
+        "symbol": "SZ000718", 
+        "name": "苏宁环球",
+        "number": 0,
+        "sPrice": 4.84,
+        "sPB":1.99,
+        "latestCost": 6155.8,
+        "info":"20180323 3.940第一次补仓700股"
     },
     {
         "symbol": "SH600761", 
@@ -48,13 +57,12 @@
         "latestCost": 4030
     },
     {
-        "symbol": "SZ000718", 
-        "name": "苏宁环球",
+        "symbol": "SZ000001", 
+        "name": "平安银行",
         "number": 0,
-        "sPrice": 4.84,
-        "sPB":1.99,
-        "latestCost": 6155.8,
-        "info":"20180323 3.940买入700"
+        "sPrice": 11.107,
+        "sPB":"?",
+        "latestCost": 3332
     },
     {
         "symbol": "SH600897", 
