@@ -102,7 +102,6 @@ def parseStock(oneStock):
 def printInfo(oneStock):
     #注意：这里字符串拼接的时候不要使用'【'，好像会出错，原因就不找了
     print(oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) +')')
-    if showPrice:exportPriceInfo(oneStock)
     if float(oneStock['latestPB'])<1:
         print '提示：该股票已经破净'
     if oneStock['canContinueBuy']:
@@ -111,15 +110,22 @@ def printInfo(oneStock):
             print('推荐买入 '+ str(int(oneStock['nowCanBuyStockNumber2'])) + ' ('+str(int(oneStock['nowCanBuyStockNumber'])) +') ')
         else:
             print '建议等待下跌'
+    
+    if showPrice:
+        percent = exportPriceInfo(oneStock)
+        prompt(percent)
 
 #导出信息(全部数据展示)
 def printInfo2(oneStock):
     print(oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) +')')
-    if showPrice:exportPriceInfo(oneStock)
     if float(oneStock['latestPB'])<1:
         print '提示：该股票已经破净'
     print('总配/已配/可用：' + str(int(oneStock['canUseMoney'])) +'/'+str(int(oneStock['latestCost']))+'/'+str(int(oneStock['nowCanUse'])))
     print('推荐买入 '+ str(int(oneStock['nowCanBuyStockNumber2'])) + ' ('+str(int(oneStock['nowCanBuyStockNumber'])) +') ')
+    
+    if showPrice:
+        percent = exportPriceInfo(oneStock)
+        prompt(percent)
 
 #导出价格相关信息
 def exportPriceInfo(oneStock):
@@ -127,8 +133,21 @@ def exportPriceInfo(oneStock):
     sPrice1 = round(sPrice0*0.8,2)
     sPrice2 = round(sPrice1*0.8,2)
     sPrice3 = round(sPrice2*0.8,2)
-    percent = str(round(float(oneStock['current'])/sPrice0*100,1))+'%'
-    print(percent+' / ['+str(sPrice0)+','+str(sPrice1)+','+str(sPrice2)+','+str(sPrice3)+'] / '+oneStock['current']);
+    percent = round(float(oneStock['current'])/sPrice0,3);
+    percentStr = str(percent*100)+'%'
+    print(percentStr+' / ['+str(sPrice0)+','+str(sPrice1)+','+str(sPrice2)+','+str(sPrice3)+'] / '+oneStock['current']);
+    return percent
+
+#根据下跌百分比，来提示处于哪个阶段的补仓
+def prompt(percent):
+    if percent<0.8:
+        if percent<0.64:
+            if percent<0.512:
+                print '===============================================================================================================>【第3阶】'
+            else:
+                print '===============================================================================================================>【第2阶】'
+        else:
+            print '===============================================================================================================>【第1阶】'
 
 # 初始
 if __name__ == "__main__":
