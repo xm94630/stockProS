@@ -140,9 +140,9 @@ def exportPriceInfo(oneStock):
 
 #根据下跌百分比，来提示处于哪个阶段的补仓
 def prompt(percent):
-    if percent<0.8:
-        if percent<0.64:
-            if percent<0.512:
+    if percent<=0.8:
+        if percent<=0.64:
+            if percent<=0.512:
                 if percent>0:
                     print '===============================================================================================================>【第3阶】'
             else:
