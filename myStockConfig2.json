@@ -2,75 +2,75 @@
     {
         "symbol": "SZ000883", 
         "name": "湖北能源",
-        "number": 0,
         "sPrice": 4.653,
         "sPB":1.174,
-        "latestCost": 8840
+        "latestCost": 8840,
+        "jiacang": 0
     },
     {
         "symbol": "SH601006", 
         "name": "大秦铁路",
-        "number": 0,
         "sPrice": 8.88,
         "sPB":1.30,
-        "latestCost": 7997
+        "latestCost": 7997,
+        "jiacang": 0
     },
     {
         "symbol": "SZ000718", 
         "name": "苏宁环球",
-        "number": 0,
         "sPrice": 4.84,
         "sPB":1.99,
         "latestCost": 6155.8,
-        "info":"20180323 3.940第一次补仓700股"
+        "info":"20180323 3.940第一次补仓700股",
+        "jiacang": 1
     },
     {
         "symbol": "SH600761", 
         "name": "安徽合力",
-        "number": 0,
         "sPrice": 10.17,
         "sPB":1.74,
-        "latestCost": 5090
+        "latestCost": 5090,
+        "jiacang": 0
     },
     {
         "symbol": "SZ000581", 
         "name": "威孚高科",
-        "number": 0,
         "sPrice": 25.29,
         "sPB":1.77,
-        "latestCost": 5059
+        "latestCost": 5059,
+        "jiacang": 0
     },
     {
         "symbol": "SZ000501", 
         "name": "鄂武商A",
-        "number": 0,
         "sPrice": 16.22,
         "sPB":1.83,
-        "latestCost": 4871
+        "latestCost": 4871,
+        "jiacang": 0
     },
     {
         "symbol": "SZ000030", 
         "name": "富奥股份",
-        "number": 0,
         "sPrice": 8.05,
         "sPB":1.9,
-        "latestCost": 4030
+        "latestCost": 4030,
+        "jiacang": 0
     },
     {
         "symbol": "SZ000001", 
         "name": "平安银行",
-        "number": 0,
         "sPrice": 11.107,
         "sPB":"?",
-        "latestCost": 3332
+        "latestCost": 3332,
+        "jiacang": 0
     },
     {
         "symbol": "SH600897", 
         "name": "厦门空港",
-        "number": 0,
         "sPrice": 22.32,
         "sPB":2.16,
-        "latestCost": 2237
+        "latestCost": 2237,
+        "jiacang": 0
     }
 ]
 

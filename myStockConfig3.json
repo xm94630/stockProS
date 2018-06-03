@@ -2,123 +2,119 @@
     {
         "symbol": "SZ002329", 
         "name": "皇氏集团",
-        "number": 0,
         "sPrice": 6.076,
         "sPB":1.77,
-        "latestCost": 4852
+        "latestCost": 4852,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600016", 
         "name": "民生银行",
-        "number": 0,
         "sPrice": 7.964,
         "sPB":"?",
-        "latestCost": 10353
+        "latestCost": 10353,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600060", 
         "name": "海信电器",
-        "number": 0,
         "sPrice": 15.029,
         "sPB":"?",
-        "latestCost": 9017
+        "latestCost": 9017,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600328", 
         "name": "兰太实业",
-        "number": 0,
         "sPrice": 9.4,
         "sPB":1.78,
-        "latestCost":4700
+        "latestCost":4700,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600508", 
         "name": "上海能源",
-        "number": 0,
         "sPrice": 10.624,
         "sPB":"?",
-        "latestCost":9561.6
+        "latestCost":9561.6,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600801", 
         "name": "华新水泥",
-        "number": 0,
         "sPrice": 13.573,
         "sPB":1.64,
-        "latestCost":5429
+        "latestCost":5429,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600808", 
         "name": "马钢股份",
-        "number": 0,
         "sPrice": 3.412,
         "sPB":"?",
-        "latestCost":9212
+        "latestCost":9212,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600970", 
         "name": "中材国际",
-        "number": 0,
         "sPrice": 7.557,
         "sPB":1.71,
-        "latestCost":5289
+        "latestCost":5289,
+        "jiacang": 0
     }, 
     
     
 
 
 
-
-    
-    
-    
     {
         "symbol": "SH600567", 
         "name": "山鹰纸业",
-        "number": 0,
         "sPrice": 4.506,
         "sPB":1.94,
-        "latestCost": 3604.8
+        "latestCost": 3604.8,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600569", 
         "name": "安阳钢铁",
-        "number": 0,
         "sPrice": 4.094,
         "sPB":1.46,
-        "latestCost": 5322
+        "latestCost": 5322,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600720", 
         "name": "祁连山",
-        "number": 0,
         "sPrice": 10.429,
         "sPB":1.44,
-        "latestCost": 6257.4
+        "latestCost": 6257.4,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600787", 
         "name": "中储股份",
-        "number": 0,
         "sPrice": 8.719,
         "sPB":1.75,
-        "latestCost": 5231.4
+        "latestCost": 5231.4,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH600808", 
         "name": "马钢股份",
-        "number": 0,
         "sPrice": 3.522,
         "sPB":1.12,
-        "latestCost": 9509.4
+        "latestCost": 9509.4,
+        "jiacang": 0
     }, 
     {
         "symbol": "SH000001", 
         "name": "平安银行",
-        "number": 0,
         "sPrice": 11.306,
         "sPB":0.94,
-        "latestCost": 10175.4
+        "latestCost": 10175.4,
+        "jiacang": 0
     }
 
 ]
