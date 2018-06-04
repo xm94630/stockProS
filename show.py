@@ -245,6 +245,7 @@ def getAllData(page=0,stockArr=[]):
         print('总股本' + str(oneStock['info']['totalShares2'])+ '亿')
         print('最近季度利润' + str(oneStock['profit'][1])+ '亿')
 
+        print(oneStock['profit'][0])
         print(oneStock['cashFlow'][0])
         print(oneStock['cashFlow'][1])
         print(oneStock['cashFlow'][2])
