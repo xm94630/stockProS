@@ -89,27 +89,27 @@ def parseStock(oneStock):
         oneStock['nowCanBuyStockNumber'] = nowCanBuyStockNumber
         oneStock['nowCanBuyStockNumber2'] = nowCanBuyStockNumber2
     else:
-        oneStock['nowCanUse'] = -1
-        oneStock['nowCanBuyStockNumber'] = -1
-        oneStock['nowCanBuyStockNumber2'] = -1
+        oneStock['nowCanUse'] = 0
+        oneStock['nowCanBuyStockNumber'] = 0
+        oneStock['nowCanBuyStockNumber2'] = 0
 
 #导出信息(核心数据展示)
 def printInfo(oneStock):
     #注意：这里字符串拼接的时候不要使用'【'，好像会出错，原因就不找了
     # 20180604  u'【中文**】' 这样子就可以哦
-    printStr = oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) +')'
+    printStr  = oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) +')'
+    printStr2 = '总配/已配/可用：' + str(int(oneStock['canUseMoney'])) +'/'+str(int(oneStock['latestCost']))+'/'+str(int(oneStock['nowCanUse']))
+    
     if float(oneStock['latestPB'])<1:
         print(printStr+ u'【破净】')
     else:
         print(printStr)
-
-    if oneStock['canContinueBuy']:
-        print('总配/已配/可用：' + str(int(oneStock['canUseMoney'])) +'/'+str(int(oneStock['latestCost']))+'/'+str(int(oneStock['nowCanUse'])))
-        if int(oneStock['nowCanBuyStockNumber2'])!=0:
-            print('推荐买入 '+ str(int(oneStock['nowCanBuyStockNumber2'])) + ' ('+str(int(oneStock['nowCanBuyStockNumber'])) +') ')
-        else:
-            print '建议等待下跌'
     
+    if oneStock['nowCanBuyStockNumber']==0:
+        print printStr2 + '，配置充裕'
+    else:
+        print printStr2 + '，推荐买入 '+ str(int(oneStock['nowCanBuyStockNumber2'])) + ' ('+str(int(oneStock['nowCanBuyStockNumber'])) +')'
+
     percent = exportPriceInfo(oneStock)
     prompt(percent)
 
