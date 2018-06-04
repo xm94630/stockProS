@@ -19,3 +19,6 @@ smtplib SMTP协议 （这个应该默认就有）
 
 # buy.py 
 python buy.py [xxx.json]
+
+# show.py
+python show.py [SZ000001]
