@@ -97,12 +97,12 @@ def parseStock(oneStock):
 def printInfo(oneStock):
     #注意：这里字符串拼接的时候不要使用'【'，好像会出错，原因就不找了
     # 20180604  u'【中文**】' 这样子就可以哦
-    printStr  = oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) +')'
+    printStr  = oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) + u') ，已经加仓['+ str(oneStock['jiacang'])+u']'
     printStr2 = '总配/已配/可用：' + str(int(oneStock['canUseMoney'])) +'/'+str(int(oneStock['latestCost']))+'/'+str(int(oneStock['nowCanUse']))
     chengben  = int(oneStock['nowCanBuyStockNumber2']) * float(oneStock['current']);
 
     if float(oneStock['latestPB'])<1:
-        print(printStr+ u'【破净】')
+        print(printStr+ u'，[破净]')
     else:
         print(printStr)
     
