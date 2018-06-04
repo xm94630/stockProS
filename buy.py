@@ -99,7 +99,8 @@ def printInfo(oneStock):
     # 20180604  u'【中文**】' 这样子就可以哦
     printStr  = oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) +')'
     printStr2 = '总配/已配/可用：' + str(int(oneStock['canUseMoney'])) +'/'+str(int(oneStock['latestCost']))+'/'+str(int(oneStock['nowCanUse']))
-    
+    chengben  = int(oneStock['nowCanBuyStockNumber2']) * float(oneStock['current']);
+
     if float(oneStock['latestPB'])<1:
         print(printStr+ u'【破净】')
     else:
@@ -108,7 +109,10 @@ def printInfo(oneStock):
     if oneStock['nowCanBuyStockNumber']==0:
         print printStr2 + '，配置充裕'
     else:
-        print printStr2 + '，推荐买入 '+ str(int(oneStock['nowCanBuyStockNumber2'])) + ' ('+str(int(oneStock['nowCanBuyStockNumber'])) +')'
+        if oneStock['nowCanBuyStockNumber2']==0:
+            print printStr2 + '，等待下跌'
+        else:
+            print printStr2 + '，推荐买入 '+ str(int(oneStock['nowCanBuyStockNumber2'])) + ' ('+str(int(oneStock['nowCanBuyStockNumber'])) +') 成本为：' + str(chengben)
 
     percent = exportPriceInfo(oneStock)
     prompt(percent)
@@ -123,7 +127,7 @@ def exportPriceInfo(oneStock):
     percent = round(float(oneStock['current'])/sPrice0,3);
     percentStr  = str(percent*100)+'%'
     percentStr2 = str(percent*100-100)+'%'
-    print(percentStr+' / '+percentStr2+' / ['+str(sPrice0)+','+str(sPrice1)+','+str(sPrice2)+','+str(sPrice3)+'] / '+oneStock['current']);
+    print(percentStr+' / '+percentStr2+' / ['+str(sPrice0)+','+str(sPrice1)+','+str(sPrice2)+','+str(sPrice3)+ u'] / 当前股价：'+oneStock['current']);
     return percent
 
 #根据下跌百分比，来提示处于哪个阶段的补仓
