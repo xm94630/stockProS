@@ -2,6 +2,14 @@
 # -*- coding: utf-8 -*-
 #上面的注释是用来支持中文，没有就会出错
 
+# 注意 本文件是根据 index.py 复制修改的
+# 基本上复用了 index.py 的逻辑，下面是修改的地方
+# 1）原来的递归解构没了
+# 2）没有数据库相关的操作（所以没有网页版本）
+# 3) 命令行参数是需要查询的股票
+
+
+
 from __future__ import division
 
 #这个需要先 pip install requests
@@ -10,6 +18,7 @@ import json
 import math
 import time
 import argparse #用来获取命令行参数
+import sys
 
 #导入自己写的
 import dataBase
@@ -75,13 +84,17 @@ isClearOld = False
 #数据抓取时间
 grabTime = '';
 
+#没有参数的时候的默认查询股票是“平安银行”
+symbolCode = 'SZ000001'
+
 #获取命令行参数
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-n', dest='new', action='store_true') #action 这个参数不能随便改，在我们的应用场景，就理解为不能改吧
-    #parser.add_argument('-o', '--output')
-    args = parser.parse_args()
-    isClearOld = args.new
+    try:
+        argArr   = sys.argv
+        if(len(argArr)>=2):
+            symbolCode = argArr[1]
+    except:
+        sys.exit(0)
 
 
 #是否清除旧数据
@@ -137,8 +150,8 @@ def getAllData(page=0,stockArr=[]):
     data = {
         "count": 1,
         "list": [{
-            "symbol": "SH600060",
-            "name": "SH600060"
+            "symbol": symbolCode,
+            "name": symbolCode
         }]
     }
 
@@ -161,8 +174,8 @@ def getAllData(page=0,stockArr=[]):
         name = one['name'];
         symbol = one['symbol'];
 
-        print('---------------------------------------------------------------------------------------------------------------')
         print('您查询的股票是：'+name)
+        print('---------------------------------------------------------------------------------------------------------------')
 
         #判断股票是否存在
         # cursor = dataBase.getStock(symbol);
