@@ -18,4 +18,4 @@ smtplib SMTP协议 （这个应该默认就有）
 -s:数据以最近一年低点平均百分比增序
 
 # buy.py 
-python buy.py [xxx.json] [-p]
+python buy.py [xxx.json]

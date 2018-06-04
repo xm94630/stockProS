@@ -9,16 +9,11 @@ import getCookie
 import argparse
 import common
 
-showPrice = False
-
 if __name__ == '__main__':
     try:
         argArr   = sys.argv
         if(len(argArr)>=2):
             fileName = argArr[1]
-        if(len(argArr)>=3):
-            # python 中的三目表达式写法
-            showPrice = (True if argArr[2]=='-p' else False)
     except:
         sys.exit(0)
 
@@ -111,9 +106,8 @@ def printInfo(oneStock):
         else:
             print '建议等待下跌'
     
-    if showPrice:
-        percent = exportPriceInfo(oneStock)
-        prompt(percent)
+    percent = exportPriceInfo(oneStock)
+    prompt(percent)
 
 #导出信息(全部数据展示)
 def printInfo2(oneStock):
@@ -123,9 +117,9 @@ def printInfo2(oneStock):
     print('总配/已配/可用：' + str(int(oneStock['canUseMoney'])) +'/'+str(int(oneStock['latestCost']))+'/'+str(int(oneStock['nowCanUse'])))
     print('推荐买入 '+ str(int(oneStock['nowCanBuyStockNumber2'])) + ' ('+str(int(oneStock['nowCanBuyStockNumber'])) +') ')
     
-    if showPrice:
-        percent = exportPriceInfo(oneStock)
-        prompt(percent)
+
+    percent = exportPriceInfo(oneStock)
+    prompt(percent)
 
 #导出价格相关信息
 def exportPriceInfo(oneStock):
@@ -134,8 +128,9 @@ def exportPriceInfo(oneStock):
     sPrice2 = round(sPrice1*0.8,2)
     sPrice3 = round(sPrice2*0.8,2)
     percent = round(float(oneStock['current'])/sPrice0,3);
-    percentStr = str(percent*100)+'%'
-    print(percentStr+' / ['+str(sPrice0)+','+str(sPrice1)+','+str(sPrice2)+','+str(sPrice3)+'] / '+oneStock['current']);
+    percentStr  = str(percent*100)+'%'
+    percentStr2 = str(percent*100-100)+'%'
+    print(percentStr+' / '+percentStr2+' / ['+str(sPrice0)+','+str(sPrice1)+','+str(sPrice2)+','+str(sPrice3)+'] / '+oneStock['current']);
     return percent
 
 #根据下跌百分比，来提示处于哪个阶段的补仓
