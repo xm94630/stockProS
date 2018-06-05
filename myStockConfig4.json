@@ -2,13 +2,15 @@
     {
         "symbol": "SZ002233", 
         "name": "塔牌集团",
-        "sPrice": 11.480,
+        "number":500,
+        "sPrice": 11.180,
         "sPB":1.64,
-        "latestCost": 5740,
+        "latestCost": 5590,
         "jiacang": 0
     },{
         "symbol": "SH600717", 
         "name": "天津港",
+        "number":800,
         "sPrice": 10.266,
         "sPB":1.27,
         "latestCost": 8212,
@@ -16,6 +18,7 @@
     },{
         "symbol": "SH600823", 
         "name": "世茂股份",
+        "number":2000,
         "sPrice": 5.303,
         "sPB":0.91,
         "latestCost": 10600,
@@ -23,6 +26,7 @@
     },{
         "symbol": "SH601988", 
         "name": "中国银行",
+        "number":2600,
         "sPrice": 4.192,
         "sPB":0.87,
         "latestCost": 10899,
