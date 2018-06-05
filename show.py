@@ -102,7 +102,7 @@ if __name__ == '__main__':
 
 
 #股票类
-def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0,halt=False,cashFlow=[],profit=0):
+def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0,halt=False,cashFlow=[],profit=0,nameStr="股票名称"):
     return{
         "name"     : name,
         "symbol"   : symbol,
@@ -118,6 +118,7 @@ def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrec
         "halt"     : halt,
         "cashFlow" : cashFlow,
         "profit"   : profit,
+        "nameStr"  : nameStr,
     }
 
 #解析json
@@ -212,6 +213,8 @@ def getAllData(page=0,stockArr=[]):
         #新增 财务分析
         cashFlow = FA.parseCfstatementData(symbol)
         profit = FA.parseIncstatementData(symbol)
+        #新增 名字（本来是第一个接口中就有的，因为改了，所以再获取下）
+        nameStr = info['nameStr']
 
         #完成一个完整的股票分析
         oneStock = Stock(
@@ -229,11 +232,12 @@ def getAllData(page=0,stockArr=[]):
             halt,
             cashFlow,
             profit,
+            nameStr,
         );
 
         #屏幕输出
-        print(oneStock['lows'][3])
-        print('合计涨/跌百分比：'+ str(oneStock['lows'][4]) + '%，当天' + str(oneStock['lows'][5]) ) + '%'
+        print(u"【"+oneStock['nameStr']+u"】")
+        print(oneStock['lows'][3].encode("utf-8") + ',合计涨/跌百分比：'+ str(oneStock['lows'][4]) + '%，当天' + str(oneStock['lows'][5])+ '%')
         print('推荐购买' + str(oneStock['info']['buyNum2']) +'('+ str(oneStock['info']['buyNum']) +')')
         print('成本为 ' + str(oneStock['info']['buyNum2']*oneStock['lows'][1]) + ' 元(每股 ' + str(oneStock['lows'][1]) +')')
         
@@ -512,6 +516,9 @@ def getStockInfoData(url,config,symbol):
     res = requests.get(url=url,params=_params,headers=_headers)
     data = json.loads(res.text);
 
+    #新增
+    nameStr =  data[symbol]['name'];
+
     pe_ttm = data[symbol]['pe_ttm'];
     pe_lyr = data[symbol]['pe_lyr'];
     pb = data[symbol]['pb'];
@@ -573,6 +580,8 @@ def getStockInfoData(url,config,symbol):
         "eps":eps,
         "net_assets":net_assets,#每股净资产
         "roe":roe,
+
+        "nameStr":nameStr,
     };
 
 
