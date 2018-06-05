@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 #上面的注释是用来支持中文，没有就会出错
 
+# 注意 本文件是根据 buy.py 复制修改的，另外也是用了 index.py 部分的功能
+
 import requests
 import json
 import sys 
@@ -349,7 +351,7 @@ def printInfo(oneStock):
 
     print(u"【"+oneStock['name']+u"】"+oneStock['symbol'])
     print u"比低点涨了：" + str(a3) + "%" + u"，当前的价格：" + str(a1) + u"，一年低价格：" + str(a2)
-    print u"市值涨幅：" + str(b3) + "%" + u"，当前市值：" + str(b1) + u"，成本总计：" + str(b2) 
+    print u"市值涨幅：" + str(b3) + "% (" + str(int(b1-b2)) + ")" + u"，当前市值：" + str(b1) + u"，成本总计：" + str(b2) 
 
     n = int(a3/50)
     if(n>=1):
