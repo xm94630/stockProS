@@ -2,6 +2,7 @@
     {
         "symbol": "SH600016", 
         "name": "民生银行",
+        "number":1300,
         "sPrice": 8.104,
         "sPB":0,
         "latestCost": 10535,
@@ -10,6 +11,7 @@
     {
         "symbol": "SH600028", 
         "name": "中国石化",
+        "number":1600,
         "sPrice": 5.708,
         "sPB":0,
         "latestCost": 9132,
@@ -18,6 +20,7 @@
     {
         "symbol": "SH600060", 
         "name": "海信电器",
+        "number":500,
         "sPrice": 14.356,
         "sPB":0,
         "latestCost": 7178,
@@ -26,6 +29,7 @@
     {
         "symbol": "SH600075", 
         "name": "新疆天业",
+        "number":600,
         "sPrice": 7.909,
         "sPB":0,
         "latestCost": 4775,
@@ -34,6 +38,7 @@
     {
         "symbol": "SH600100", 
         "name": "同方股份",
+        "number":600,
         "sPrice": 14.765,
         "sPB":0,
         "latestCost": 8859,
@@ -42,6 +47,7 @@
     {
         "symbol": "SH600284", 
         "name": "浦东建设",
+        "number":1400,
         "sPrice": 6.992,
         "sPB":0,
         "latestCost": 9969,
@@ -50,6 +56,7 @@
     {
         "symbol": "SH600312", 
         "name": "平高电气",
+        "number":700,
         "sPrice": 11.153,
         "sPB":0,
         "latestCost": 7807,
@@ -58,6 +65,7 @@
     {
         "symbol": "SH600350", 
         "name": "山东高速",
+        "number":1600,
         "sPrice": 6.008,
         "sPB":0,
         "latestCost": 9612,
@@ -66,6 +74,7 @@
     {
         "symbol": "SH600483", 
         "name": "福能股份",
+        "number":1500,
         "sPrice": 8.505,
         "sPB":0,
         "latestCost": 12757,
@@ -74,6 +83,7 @@
     {
         "symbol": "SH600508", 
         "name": "上海能源",
+        "number":900,
         "sPrice": 10.406,
         "sPB":0,
         "latestCost": 9365,
@@ -82,6 +92,7 @@
     {
         "symbol": "SH600551", 
         "name": "时代出版",
+        "number":900,
         "sPrice": 13.877,
         "sPB":0,
         "latestCost": 12489,
@@ -90,6 +101,7 @@
     {
         "symbol": "SH600567", 
         "name": "山鹰纸业",
+        "number":800,
         "sPrice": 4.506,
         "sPB":1.94,
         "latestCost": 3604.8,
@@ -98,6 +110,7 @@
     {
         "symbol": "SH600569", 
         "name": "安阳钢铁",
+        "number":2400,
         "sPrice": 3.709,
         "sPB":1.46,
         "latestCost": 8901.6,
@@ -106,6 +119,7 @@
     {
         "symbol": "SH600637", 
         "name": "东方明珠",
+        "number":400,
         "sPrice": 17.695,
         "sPB":0,
         "latestCost": 7078,
@@ -114,6 +128,7 @@
     {
         "symbol": "SH600720", 
         "name": "祁连山",
+        "number":600,
         "sPrice": 10.429,
         "sPB":1.44,
         "latestCost": 6257.4,
@@ -122,6 +137,7 @@
     {
         "symbol": "SH600755", 
         "name": "厦门国贸",
+        "number":700,
         "sPrice": 10.196,
         "sPB":0,
         "latestCost": 4501,
@@ -131,6 +147,7 @@
     {
         "symbol": "SH600787", 
         "name": "中储股份",
+        "number":600,
         "sPrice": 8.719,
         "sPB":1.75,
         "latestCost": 5231.4,
@@ -139,6 +156,7 @@
     {
         "symbol": "SH600808", 
         "name": "马钢股份",
+        "number":2700,
         "sPrice": 3.522,
         "sPB":1.12,
         "latestCost": 9509.4,
@@ -147,6 +165,7 @@
     {
         "symbol": "SH600823", 
         "name": "世茂股份",
+        "number":2320,
         "sPrice": 4.621,
         "sPB":0,
         "latestCost": 10718,
@@ -155,6 +174,7 @@
     {
         "symbol": "SH600873", 
         "name": "梅花生物",
+        "number":700,
         "sPrice": 5.737,
         "sPB":0,
         "latestCost": 4015,
@@ -163,6 +183,7 @@
     {
         "symbol": "SH600978", 
         "name": "宜华生活",
+        "number":1000,
         "sPrice": 8.445,
         "sPB":0,
         "latestCost": 8445,
@@ -171,6 +192,7 @@
     {
         "symbol": "SH601328", 
         "name": "交通银行",
+        "number":1900,
         "sPrice": 5.913,
         "sPB":0,
         "latestCost": 11234,
@@ -179,6 +201,7 @@
     {
         "symbol": "SH000001", 
         "name": "平安银行",
+        "number":900,
         "sPrice": 11.306,
         "sPB":0.94,
         "latestCost": 10175.4,
@@ -187,6 +210,7 @@
     {
         "symbol": "SZ000404", 
         "name": "华意压缩",
+        "number":1700,
         "sPrice": 6.366,
         "sPB":0,
         "latestCost": 10822,
@@ -195,6 +219,7 @@
     {
         "symbol": "SZ000415", 
         "name": "渤海金控",
+        "number":1300,
         "sPrice": 6.454,
         "sPB":1.29,
         "latestCost": 8390,
@@ -203,6 +228,7 @@
     {
         "symbol": "SZ000550", 
         "name": "江铃汽车",
+        "number":600,
         "sPrice": 15.869,
         "sPB":0,
         "latestCost": 9413,
@@ -211,6 +237,7 @@
     {
         "symbol": "SZ000587", 
         "name": "金洲慈航",
+        "number":900,
         "sPrice": 7.12,
         "sPB":0,
         "latestCost": 6408,
@@ -219,6 +246,7 @@
     {
         "symbol": "SZ000601", 
         "name": "韶能股份",
+        "number":600,
         "sPrice": 7.577,
         "sPB":0,
         "latestCost": 4546,
@@ -227,6 +255,7 @@
     {
         "symbol": "SZ000623", 
         "name": "吉林敖东",
+        "number":300,
         "sPrice": 22.26,
         "sPB":0,
         "latestCost": 6678,
@@ -235,6 +264,7 @@
     {
         "symbol": "SZ000685", 
         "name": "中山公用",
+        "number":1000,
         "sPrice": 10.330,
         "sPB":0,
         "latestCost": 10330,
@@ -243,6 +273,7 @@
     {
         "symbol": "SZ002083", 
         "name": "孚日股份",
+        "number":1100,
         "sPrice": 6.153,
         "sPB":0,
         "latestCost": 6768,
@@ -251,6 +282,7 @@
     {
         "symbol": "SZ002267", 
         "name": "陕天然气",
+        "number":700,
         "sPrice": 7.777,
         "sPB":0,
         "latestCost": 5653,
@@ -259,6 +291,7 @@
     {
         "symbol": "SZ002344", 
         "name": "海宁皮城",
+        "number":1600,
         "sPrice": 7.549,
         "sPB":0,
         "latestCost": 12078,
@@ -267,6 +300,7 @@
     {
         "symbol": "SZ002588", 
         "name": "史丹利",
+        "number":500,
         "sPrice": 6.970,
         "sPB":0,
         "latestCost": 3485,

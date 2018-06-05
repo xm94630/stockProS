@@ -349,7 +349,7 @@ def printInfo(oneStock):
     #当前市值比成本涨幅
     b3 = round((b1-b2)/b2*100,1)
 
-    print(u"【"+oneStock['name']+u"】"+oneStock['symbol'])
+    print(u"【"+oneStock['name']+u"】"+oneStock['symbol'] + "  ("+ str(oneStock['number']) + u"股)")
     print u"比低点涨了：" + str(a3) + "%" + u"，当前的价格：" + str(a1) + u"，一年低价格：" + str(a2)
     print u"市值涨幅：" + str(b3) + "% (" + str(int(b1-b2)) + ")" + u"，当前市值：" + str(b1) + u"，成本总计：" + str(b2) 
 

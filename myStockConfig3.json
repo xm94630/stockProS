@@ -2,6 +2,7 @@
     {
         "symbol": "SZ002329", 
         "name": "皇氏集团",
+        "number":800,
         "sPrice": 6.076,
         "sPB":1.77,
         "latestCost": 4852,
@@ -10,6 +11,7 @@
     {
         "symbol": "SH600016", 
         "name": "民生银行",
+        "number":1300,
         "sPrice": 7.964,
         "sPB":"?",
         "latestCost": 10353,
@@ -18,6 +20,7 @@
     {
         "symbol": "SH600060", 
         "name": "海信电器",
+        "number":600,
         "sPrice": 15.029,
         "sPB":"?",
         "latestCost": 9017,
@@ -26,6 +29,7 @@
     {
         "symbol": "SH600328", 
         "name": "兰太实业",
+        "number":500,
         "sPrice": 9.4,
         "sPB":1.78,
         "latestCost":4700,
@@ -34,6 +38,7 @@
     {
         "symbol": "SH600508", 
         "name": "上海能源",
+        "number":900,
         "sPrice": 10.624,
         "sPB":"?",
         "latestCost":9561.6,
@@ -42,6 +47,7 @@
     {
         "symbol": "SH600801", 
         "name": "华新水泥",
+        "number":400,
         "sPrice": 13.573,
         "sPB":1.64,
         "latestCost":5429,
@@ -50,6 +56,7 @@
     {
         "symbol": "SH600808", 
         "name": "马钢股份",
+        "number":2700,
         "sPrice": 3.412,
         "sPB":"?",
         "latestCost":9212,
@@ -58,9 +65,19 @@
     {
         "symbol": "SH600970", 
         "name": "中材国际",
+        "number":700,
         "sPrice": 7.557,
         "sPB":1.71,
         "latestCost":5289,
+        "jiacang": 0
+    }, 
+    {
+        "symbol": "SH601336", 
+        "name": "新华保险",
+        "number":100,
+        "sPrice": 45.931,
+        "sPB":"?",
+        "latestCost":4593,
         "jiacang": 0
     }
 ]
