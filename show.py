@@ -237,7 +237,7 @@ def getAllData(page=0,stockArr=[]):
 
         #屏幕输出
         print(u"【"+oneStock['nameStr']+u"】")
-        print(oneStock['lows'][3].encode("utf-8") + ',合计涨/跌百分比：'+ str(oneStock['lows'][4]) + '%，当天' + str(oneStock['lows'][5])+ '%')
+        print(oneStock['lows'][3].encode("utf-8") + ',合计涨/跌百分比：'+ str(oneStock['lows'][5]) + '%，当天' + str(oneStock['lows'][4])+ '%')
         print('推荐购买' + str(oneStock['info']['buyNum2']) +'('+ str(oneStock['info']['buyNum']) +')')
         print('成本为 ' + str(oneStock['info']['buyNum2']*oneStock['lows'][1]) + ' 元(每股 ' + str(oneStock['lows'][1]) +')')
         
