@@ -65,11 +65,12 @@
     {
         "symbol": "SH600350", 
         "name": "山东高速",
-        "number":1600,
+        "number":1900,
         "sPrice": 6.008,
         "sPB":0,
-        "latestCost": 9612,
-        "jiacang": 0
+        "latestCost": 11021,
+        "jiacang": 1,
+        "info":"180608 工业富联上市之日，大跌(破净后继续大跌)；"
     },
     {
         "symbol": "SH600483", 
@@ -140,8 +141,9 @@
         "number":700,
         "sPrice": 10.196,
         "sPB":0,
-        "latestCost": 4501,
+        "latestCost": 7557.2,
         "info":"20180418 下跌到20%，8.877买入300",
+        "info2":"注意，这里的sPrice，不是初始的买入价格了，应该是补仓之后的",
         "jiacang": 1
     }, 
     {
@@ -246,11 +248,12 @@
     {
         "symbol": "SZ000601", 
         "name": "韶能股份",
-        "number":600,
+        "number":1100,
         "sPrice": 7.577,
         "sPB":0,
-        "latestCost": 4546,
-        "jiacang": 0
+        "latestCost": 7510,
+        "jiacang": 1,
+        "info":"180608 工业富联上市之日，大跌；"
     }, 
     {
         "symbol": "SZ000623", 
