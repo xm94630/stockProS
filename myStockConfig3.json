@@ -2,11 +2,12 @@
     {
         "symbol": "SZ002329", 
         "name": "皇氏集团",
-        "number":800,
+        "number":1200,
         "sPrice": 6.076,
         "sPB":1.77,
-        "latestCost": 4852,
-        "jiacang": 0
+        "latestCost": 6806.4,
+        "jiacang": 1,
+        "info":"20180613跌破20%，加仓400"
     }, 
     {
         "symbol": "SH600016", 
