@@ -73,15 +73,6 @@
         "info":"180608 工业富联上市之日，大跌(破净后继续大跌)；"
     },
     {
-        "symbol": "SH600483", 
-        "name": "福能股份",
-        "number":1500,
-        "sPrice": 8.505,
-        "sPB":0,
-        "latestCost": 12757,
-        "jiacang": 0
-    },
-    {
         "symbol": "SH600508", 
         "name": "上海能源",
         "number":900,
@@ -294,11 +285,12 @@
     {
         "symbol": "SZ002588", 
         "name": "史丹利",
-        "number":500,
+        "number":1000,
         "sPrice": 6.970,
         "sPB":0,
-        "latestCost": 3485,
-        "jiacang": 0
+        "latestCost": 6230,
+        "jiacang": 1,
+        "info":"20180614 下跌到20%，加仓500；"
     }    
 ]
 
