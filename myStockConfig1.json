@@ -29,11 +29,12 @@
     {
         "symbol": "SH600075", 
         "name": "新疆天业",
-        "number":600,
+        "number":1100,
         "sPrice": 7.909,
         "sPB":0,
-        "latestCost": 4775,
-        "jiacang": 0
+        "latestCost": 7820,
+        "jiacang": 1,
+        "info":"6.19大暴跌"
     },
     {
         "symbol": "SH600100", 
@@ -93,11 +94,12 @@
     {
         "symbol": "SH600567", 
         "name": "山鹰纸业",
-        "number":800,
+        "number":1600,
         "sPrice": 4.506,
         "sPB":1.94,
-        "latestCost": 3604.8,
-        "jiacang": 0
+        "latestCost": 6368,
+        "jiacang": 1,
+        "info":"6.19大暴跌"
     }, 
     {
         "symbol": "SH600637", 
@@ -158,11 +160,12 @@
     {
         "symbol": "SH600873", 
         "name": "梅花生物",
-        "number":700,
+        "number":1500,
         "sPrice": 5.737,
         "sPB":0,
-        "latestCost": 4015,
-        "jiacang": 0
+        "latestCost": 7365,
+        "jiacang": 1,
+        "info":"6.19大暴跌"
     }, 
     {
         "symbol": "SH600978", 
@@ -240,11 +243,12 @@
     {
         "symbol": "SZ000623", 
         "name": "吉林敖东",
-        "number":300,
+        "number":500,
         "sPrice": 22.26,
         "sPB":0,
-        "latestCost": 6678,
-        "jiacang": 0
+        "latestCost": 10073,
+        "jiacang": 1,
+        "info":"6.19大暴跌"
     }, 
     {
         "symbol": "SZ000685", 

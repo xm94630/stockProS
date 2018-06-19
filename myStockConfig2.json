@@ -48,11 +48,12 @@
     {
         "symbol": "SZ000501", 
         "name": "鄂武商A",
-        "number":300,
+        "number":600,
         "sPrice": 16.22,
         "sPB":1.83,
-        "latestCost": 4871,
-        "jiacang": 0
+        "latestCost": 8522,
+        "jiacang": 1,
+        "info":"6.19大暴跌"
     },
     {
         "symbol": "SZ000030", 

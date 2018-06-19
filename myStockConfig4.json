@@ -10,11 +10,12 @@
     },{
         "symbol": "SH600717", 
         "name": "天津港",
-        "number":800,
+        "number":1200,
         "sPrice": 10.266,
         "sPB":1.27,
-        "latestCost": 8212,
-        "jiacang": 0
+        "latestCost": 11132,
+        "jiacang": 1,
+        "info":"6.19大暴跌"
     },{
         "symbol": "SH600823", 
         "name": "世茂股份",
