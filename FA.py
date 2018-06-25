@@ -122,18 +122,21 @@ def parseIncstatementData(symbol):
     str4 = ''
     newInc = 0
     
-    for one in arr:
-        if one.has_key('parenetp'):
-            if one['parenetp']>=0:
-                str4 = str4+'+'
+    if len(arr)!=0:
+        for one in arr:
+            if one.has_key('parenetp'):
+                if one['parenetp']>=0:
+                    str4 = str4+'+'
+                else:
+                    str4 = str4+'-'
             else:
-                str4 = str4+'-'
-        else:
-            str4 = str4+'?'
-
-    if arr[0].has_key('parenetp'):
-        newInc =  round(arr[0]['parenetp']/100000000,2)
-   
+                str4 = str4+'?'
+        if arr[0].has_key('parenetp'):
+            newInc =  round(arr[0]['parenetp']/100000000,2)
+    else:
+        str4 = '?'
+        newInc = 0
+    
 
     # 历史正负数据，和最近季度的净利润（单位：亿）
     r = [str4,newInc]

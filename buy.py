@@ -8,6 +8,7 @@ import sys
 import getCookie
 import argparse
 import common
+import FA
 
 if __name__ == '__main__':
     try:
@@ -62,9 +63,11 @@ def getMoney(pb):
 def parseStock(oneStock):
     symbol = oneStock["symbol"]
     data = getStockInfoData(stockInfoAPI,oneStock)
-
     #获取最新价格
     oneStock['current'] = data[symbol]['current']
+
+    #获取股票的近季度的利润情况
+    oneStock['profit'] = FA.parseIncstatementData(symbol)
 
     #获取最新pb
     latestPB = data[symbol]['pb']
@@ -97,7 +100,12 @@ def parseStock(oneStock):
 def printInfo(oneStock):
     #注意：这里字符串拼接的时候不要使用'【'，好像会出错，原因就不找了
     # 20180604  u'【中文**】' 这样子就可以哦
-    printStr  = oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) + u') ，已经加仓['+ str(oneStock['jiacang'])+u']'
+
+    kui = '';
+    if oneStock['profit'][1]<0:
+        kui += u'【亏】';
+
+    printStr  = kui + oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) + u') ，已经加仓['+ str(oneStock['jiacang'])+u']'
     printStr2 = '总配/已配/可用：' + str(int(oneStock['canUseMoney'])) +'/'+str(int(oneStock['latestCost']))+'/'+str(int(oneStock['nowCanUse']))
     chengben  = int(oneStock['nowCanBuyStockNumber2']) * float(oneStock['current']);
 
@@ -134,8 +142,9 @@ def exportPriceInfo(oneStock):
 def prompt(percent):
 
     restInfo = '';
+
     if ((oneStock['nowCanBuyStockNumber']==0) or (oneStock['nowCanBuyStockNumber2']==0)):
-        restInfo = '[不用处理]';
+        restInfo += '[不用处理]';
 
     if percent<=0.8:
         if percent<=0.64:

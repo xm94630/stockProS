@@ -213,6 +213,7 @@ def getAllData(page=0,stockArr=[]):
         #新增 财务分析
         cashFlow = FA.parseCfstatementData(symbol)
         profit = FA.parseIncstatementData(symbol)
+
         #新增 名字（本来是第一个接口中就有的，因为改了，所以再获取下）
         nameStr = info['nameStr']
 
@@ -525,7 +526,13 @@ def getStockInfoData(url,config,symbol):
     totalShares = data[symbol]['totalShares'];
     close = data[symbol]['close'];
     eps = data[symbol]['eps'];
-    net_assets = round(float(data[symbol]['net_assets']),2);
+
+    net_assets = float(data[symbol]['net_assets'])
+    if net_assets>0:
+        net_assets = round(float(data[symbol]['net_assets']),2);
+    else: 
+        #每股净资产小于等于0时，调整
+        net_assets = 0.00001
 
     #roe，不能直接从接口得到，可计算下得出
     roe = round(float(eps)/net_assets*100,2)
