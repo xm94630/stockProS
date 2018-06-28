@@ -233,12 +233,12 @@
     {
         "symbol": "SZ000601", 
         "name": "韶能股份",
-        "number":1100,
+        "number":1600,
         "sPrice": 7.577,
         "sPB":0,
-        "latestCost": 7510,
-        "jiacang": 1,
-        "info":"180608 工业富联上市之日，大跌；"
+        "latestCost": 9710.4,
+        "jiacang": 2,
+        "info":"180608 工业富联上市之日，大跌；180628 到第二阶，买入500；"
     }, 
     {
         "symbol": "SZ000623", 
