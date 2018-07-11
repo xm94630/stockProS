@@ -4,7 +4,7 @@
         "userAgent":"用户代理",
         "maxMoneyPerStock":"个股最大可配置额度设置"
     },
-    "cookie": "s=f111l7ubzz; device_id=527ce5b322d3e7a0fb0113b61b59181e; _ga=GA1.2.201168811.1508034850; aliyungf_tc=AQAAACfi8TEeNQUA9Vu2J5crs5z8saIg; __utmc=1; Hm_lvt_1db88642e346389874251b5a1eded6e3=1528133634,1528133663,1528133668,1528133676; __utma=1.201168811.1508034850.1528133259.1528173488.45; __utmz=1.1528173488.45.37.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; xq_a_token=019174f18bf425d22c8e965e48243d9fcfbd2cc0; xq_a_token.sig=_pB0kKy3fV9fvtvkOzxduQTrp7E; xq_r_token=2d465aa5d312fbe8d88b4e7de81e1e915de7989a; xq_r_token.sig=lOCElS5ycgbih9P-Ny3cohQ-FSA; u=321528329613366; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1528329613; _gid=GA1.2.1789843894.1528329614; _gat_gtag_UA_16079156_4=1",
+    "cookie": "aliyungf_tc=AQAAALZcKQ59IQMAzA38cumZTAyEWG91; xq_a_token=7443762eee8f6a162df9eef231aa080d60705b21; xq_a_token.sig=3dXmfOS3uyMy7b17jgoYQ4gPMMI; xq_r_token=9ca9ab04037f292f4d5b0683b20266c0133bd863; xq_r_token.sig=6hcU3ekqyYuzz6nNFrMGDWyt4aU; u=901530514036789; _ga=GA1.2.44707238.1530514038; _gid=GA1.2.565300266.1530514038; _gat_gtag_UA_16079156_4=1; device_id=094fa9d3ca1e608f6a70b819be3a274b; Hm_lvt_1db88642e346389874251b5a1eded6e3=1530514038; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1530514038",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
     "maxMoneyPerStock": 10000
 }

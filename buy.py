@@ -147,7 +147,7 @@ def prompt(percent):
         restInfo += '[亏]';
 
     if ((oneStock['nowCanBuyStockNumber']==0) or (oneStock['nowCanBuyStockNumber2']==0)):
-        restInfo += '[不用处理：已经配置很充分啦]'
+        restInfo += '[不用处理：已经配置很充分啦(或者可以配置不足1手)]'
     elif (int(oneStock['nowCanUse'])<2000 and int(oneStock['nowCanUse'])>=1000):
         restInfo += '[不用处理：可用小于2000的不用处理]'
     elif int(oneStock['nowCanUse'])<1000:
