@@ -30,30 +30,13 @@
     {
         "symbol": "SH600328", 
         "name": "兰太实业",
-        "number":500,
+        "number":800,
         "sPrice": 9.4,
         "sPB":1.78,
-        "latestCost":4700,
-        "jiacang": 0
-    }, 
-    {
-        "symbol": "SH600508", 
-        "name": "上海能源",
-        "number":900,
-        "sPrice": 10.624,
-        "sPB":"?",
-        "latestCost":9561.6,
-        "jiacang": 0
-    }, 
-    {
-        "symbol": "SH600808", 
-        "name": "马钢股份",
-        "number":2700,
-        "sPrice": 3.412,
-        "sPB":"?",
-        "latestCost":9212,
-        "jiacang": 0
-    }, 
+        "latestCost":6864,
+        "jiacang": 1,
+        "info":"20180716加仓300"
+    },
     {
         "symbol": "SH600970", 
         "name": "中材国际",

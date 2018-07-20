@@ -224,11 +224,12 @@
     {
         "symbol": "SZ000587", 
         "name": "金洲慈航",
-        "number":900,
+        "number":2400,
         "sPrice": 7.12,
         "sPB":0,
-        "latestCost": 6408,
-        "jiacang": 0
+        "latestCost": 11407,
+        "jiacang": 0,
+        "info":"20180716加仓1500"
     }, 
     {
         "symbol": "SZ000601", 

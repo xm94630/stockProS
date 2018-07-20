@@ -67,11 +67,12 @@
     {
         "symbol": "SZ000001", 
         "name": "平安银行",
-        "number":300,
+        "number":700,
         "sPrice": 11.107,
         "sPB":"?",
-        "latestCost": 3332,
-        "jiacang": 0
+        "latestCost": 6784.4,
+        "jiacang": 1,
+        "info":"20180716加仓（这个以前不是标准的配置）"
     },
     {
         "symbol": "SH600897", 
