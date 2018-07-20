@@ -20,11 +20,12 @@
     {
         "symbol": "SH600060", 
         "name": "海信电器",
-        "number":500,
+        "number":700,
         "sPrice": 14.356,
         "sPB":0,
-        "latestCost": 7178,
-        "jiacang": 0
+        "latestCost": 9309,
+        "jiacang": 1,
+        "info":"180720 下跌到20%加仓200"
     },
     {
         "symbol": "SH600075", 
@@ -133,11 +134,12 @@
     {
         "symbol": "SH600787", 
         "name": "中储股份",
-        "number":600,
+        "number":900,
         "sPrice": 8.719,
         "sPB":1.75,
-        "latestCost": 5231.4,
-        "jiacang": 0
+        "latestCost": 7206,
+        "jiacang": 1,
+        "info":"20180720 下跌到20%，买入300"
     }, 
     {
         "symbol": "SH600808", 
@@ -206,11 +208,12 @@
     {
         "symbol": "SZ000415", 
         "name": "渤海金控",
-        "number":1300,
+        "number":1800,
         "sPrice": 6.454,
         "sPB":1.29,
-        "latestCost": 8390,
-        "jiacang": 0
+        "latestCost": 10432,
+        "jiacang": 1,
+        "info":"20180720 下跌超过20%，买入500（本应600，有点怕这个突发的，打个折）"
     },
     {
         "symbol": "SZ000550", 
