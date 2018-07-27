@@ -22,3 +22,6 @@ python buy.py [xxx.json]
 
 # show.py
 python show.py [SZ000001]
+
+#注意
+不要忘记开数据库服务
