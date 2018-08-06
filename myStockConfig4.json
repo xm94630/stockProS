@@ -37,6 +37,17 @@
         "latestCost": 10899,
         "jiacang": 0
     }
+
+    ,{
+        "industry":"有色金属（铝）：利源精制、南山铝业、常铝股份、明泰铝业、中国铝业（pe不行）...",
+        "symbol": "SH601600", 
+        "name": "中国铝业",
+        "number":1100,
+        "sPrice": 4.535,
+        "sPB":"?",
+        "latestCost": 4988,
+        "jiacang": 0
+    }
 ]
 
 
