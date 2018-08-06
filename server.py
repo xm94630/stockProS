@@ -53,7 +53,10 @@ def hello():
     if sortByLastYear:
         cursor = coll.find().sort([("lastPrecent", pymongo.ASCENDING)])
     else:
-        cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)])
+        #cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)])
+        
+        #默认按照pb进行排序
+        cursor = coll.find().sort([("info.pb", pymongo.ASCENDING)])
 
     #从数据库获取时间信息
     cursor2 = coll2.find({})
