@@ -243,7 +243,7 @@ def getAllData(page=0,stockArr=[]):
         print('成本为 ' + str(oneStock['info']['buyNum2']*oneStock['lows'][1]) + ' 元(每股 ' + str(oneStock['lows'][1]) +')')
         
         print('【PB/TTM/LYR】'+ str(oneStock['info']['pb']) +'/'+ str(oneStock['info']['pe_ttm'])+'/'+ str(oneStock['info']['pe_lyr']))
-        print('【EPS/每股净资产/ROE】'+ str(oneStock['info']['eps']) +'/'+ str(oneStock['info']['net_assets'])+'/'+ str(oneStock['info']['roe']))+ '%'
+        print('【EPS/每股净资产/ROE（季）/ROE（年）】'+ str(oneStock['info']['eps']) +'/'+ str(oneStock['info']['net_assets'])+'/'+ str(oneStock['info']['roe']))+ '%/'+ str(oneStock['info']['roe2'])+ '%'
         
         print('N年内低点 '   + str(oneStock['lows'][0]))
         print('N年内卖点占比 '+ str(oneStock['percents'][0]) +'，平均 '+ str(oneStock['percents'][1]))
@@ -534,8 +534,12 @@ def getStockInfoData(url,config,symbol):
         #每股净资产小于等于0时，调整
         net_assets = 0.00001
 
-    #roe，不能直接从接口得到，可计算下得出
+    #roe，不能直接从接口得到，可计算下得出(每股收益/每股净资产)
     roe = round(float(eps)/net_assets*100,2)
+
+    #roe的最新算法 PE/PB = 1 + 1/ROE;ROE = PB/(PE-PB)
+    #进过我自己的认证，我觉得这个数据是比较合理的。上面的“每股收益仅仅是以当前季度的收益来计算，而下面这个则是过去一年来观察的”
+    roe2 = round(float(pb)/(float(pe_ttm)-float(pb))*100,2)
 
     #购买推荐
     buyPercent  = round ( (-2*float(pb) + 5)/3 ,3);
@@ -587,6 +591,7 @@ def getStockInfoData(url,config,symbol):
         "eps":eps,
         "net_assets":net_assets,#每股净资产
         "roe":roe,
+        "roe2":roe2,
 
         "nameStr":nameStr,
     };

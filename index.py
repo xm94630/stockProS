@@ -505,8 +505,12 @@ def getStockInfoData(url,config,symbol):
     eps = data[symbol]['eps'];
     net_assets = round(float(data[symbol]['net_assets']),2);
 
-    #roe，不能直接从接口得到，可计算下得出
+    #roe，不能直接从接口得到，可计算下得出(每股收益/每股净资产)
     roe = round(float(eps)/net_assets*100,2)
+
+    #roe的最新算法 PE/PB = 1 + 1/ROE;ROE = PB/(PE-PB)
+    #进过我自己的认证，我觉得这个数据是比较合理的。上面的“每股收益仅仅是以当前季度的收益来计算，而下面这个则是过去一年来观察的”
+    roe2 = round(float(pb)/(float(pe_ttm)-float(pb))*100,2)
 
     #购买推荐
     buyPercent  = round ( (-2*float(pb) + 5)/3 ,3);
@@ -558,6 +562,7 @@ def getStockInfoData(url,config,symbol):
         "eps":eps,
         "net_assets":net_assets,#每股净资产
         "roe":roe,
+        "roe2":roe2,
     };
 
 
