@@ -1,0 +1,66 @@
+[
+    {
+        "industry":"食品（乳品）：梅花生物，皇氏为乳品中最低",
+        "symbol": "SZ002329", 
+        "name": "皇氏集团",
+        "number":1200,
+        "sPrice": 6.076,
+        "sPB":1.77,
+        "latestCost": 6806.4,
+        "jiacang": 1,
+        "info":"20180613跌破20%，加仓400"
+    }, 
+    {
+        "industry":"银行：华夏银行、交通银行、光大银行、民生银行、浦发银行、中国银行、平安银行",
+        "symbol": "SH600016", 
+        "name": "民生银行",
+        "number":1300,
+        "sPrice": 7.964,
+        "sPB":"?",
+        "latestCost": 10353,
+        "jiacang": 0
+    }, 
+    {
+        "industry":"家用电器：海信电器为最低、惠而浦",
+        "symbol": "SH600060", 
+        "name": "海信电器",
+        "number":600,
+        "sPrice": 15.029,
+        "sPB":"?",
+        "latestCost": 9017,
+        "jiacang": 0
+    }, 
+    {
+        "industry":"化工（无机盐）：沈阳化工、辉丰股份、华锦股份（高roe）、...中国石化，7家盐中最低",
+        "symbol": "SH600328", 
+        "name": "兰太实业",
+        "number":800,
+        "sPrice": 9.4,
+        "sPB":1.78,
+        "latestCost":6864,
+        "jiacang": 1,
+        "info":"20180716加仓300"
+    },
+    {
+        "industry":"建筑装饰（专业工程、水泥工程）/土木工程：浦东建设，中材国际一点也不低估..",
+        "symbol": "SH600970", 
+        "name": "中材国际",
+        "number":700,
+        "sPrice": 7.557,
+        "sPB":1.71,
+        "latestCost":5289,
+        "jiacang": 0
+    }, 
+    {
+        "industry":"非银金融（保险）：西水股份、天茂集团、中国人寿。新华保险目前是6个中pb最高的...",
+        "symbol": "SH601336", 
+        "name": "新华保险",
+        "number":100,
+        "sPrice": 45.931,
+        "sPB":"?",
+        "latestCost":4593,
+        "jiacang": 0
+    }
+]
+
+
