@@ -496,13 +496,15 @@ def getStockInfoData(url,config,symbol):
 
     res = requests.get(url=url,params=_params,headers=_headers)
     data = json.loads(res.text);
-
-    pe_ttm = data[symbol]['pe_ttm'];
-    pe_lyr = data[symbol]['pe_lyr'];
-    pb = data[symbol]['pb'];
+   
+    pe_ttm      = round(float(data[symbol]['pe_ttm']),2);
+    pe_lyr      = round(float(data[symbol]['pe_lyr']),2);
+    pb          = round(float(data[symbol]['pb']),2);
     totalShares = data[symbol]['totalShares'];
-    close = data[symbol]['close'];
-    eps = data[symbol]['eps'];
+    close       = round(float(data[symbol]['close']),2);
+    eps         = round(float(data[symbol]['eps']),2);
+    
+
     net_assets = round(float(data[symbol]['net_assets']),2);
 
     #roe，不能直接从接口得到，可计算下得出(每股收益/每股净资产)

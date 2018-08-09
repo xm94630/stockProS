@@ -520,12 +520,12 @@ def getStockInfoData(url,config,symbol):
     #新增
     nameStr =  data[symbol]['name'];
 
-    pe_ttm = data[symbol]['pe_ttm'];
-    pe_lyr = data[symbol]['pe_lyr'];
-    pb = data[symbol]['pb'];
+    pe_ttm      = round(float(data[symbol]['pe_ttm']),2);
+    pe_lyr      = round(float(data[symbol]['pe_lyr']),2);
+    pb          = round(float(data[symbol]['pb']),2);
     totalShares = data[symbol]['totalShares'];
-    close = data[symbol]['close'];
-    eps = data[symbol]['eps'];
+    close       = round(float(data[symbol]['close']),2);
+    eps         = round(float(data[symbol]['eps']),2);
 
     net_assets = float(data[symbol]['net_assets'])
     if net_assets>0:

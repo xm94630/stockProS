@@ -56,7 +56,12 @@ def hello():
         #cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)])
         
         #默认按照pb进行排序
-        cursor = coll.find().sort([("info.pb", pymongo.ASCENDING)])
+        #cursor = coll.find().sort([("info.pb", pymongo.ASCENDING)])
+
+        #这里支持多个字段的排序
+        #其实这个方式我一直就想到了，但是没有成功，因为字段对应的数据之前是字符串，导致的问题，现在已经转化为浮点数了！
+        cursor = coll.find().sort([("info.pb", pymongo.ASCENDING), ("info.pe_lyr", pymongo.ASCENDING)])
+
 
     #从数据库获取时间信息
     cursor2 = coll2.find({})
