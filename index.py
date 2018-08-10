@@ -20,7 +20,8 @@ import common
 import FA
 
 #引入配置
-conf = common.loadJsonFile('./config.json')
+conf           = common.loadJsonFile('./config.json')
+industryConfig = common.loadJsonFile('./industryConfig.json')
 
 #头信息
 #cookie    = getCookie.getCookie('https://xueqiu.com/');
@@ -89,7 +90,7 @@ dataBase.clearOldDatabase(isClearOld);
 
 
 #股票类
-def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0,halt=False,cashFlow=[],profit=0):
+def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrecent=0,continueDays=0,continueDaysText='',upOrDownPercent=0,upOrDownContinuePercent=0,halt=False,cashFlow=[],profit=0,industryId=9999,industryName="未分类"):
     return{
         "name"     : name,
         "symbol"   : symbol,
@@ -105,6 +106,8 @@ def Stock(name=0, symbol=1,lows=[],percents=[],info={},averagePrecent=0,lastPrec
         "halt"     : halt,
         "cashFlow" : cashFlow,
         "profit"   : profit,
+        "industryId" :industryId,
+        "industryName" :industryName,
     }
 
 #解析json
@@ -205,6 +208,14 @@ def getAllData(page=0,stockArr=[]):
             cashFlow = FA.parseCfstatementData(symbol)
             profit = FA.parseIncstatementData(symbol)
 
+            messages = industryConfig.get(symbol) # Check for key existence
+            if messages is None:                  # Check if key is there, but None
+                industryId   = 9999
+                industryName = "未分类"
+            else:
+                industryId   = industryConfig[symbol]['id']
+                industryName = industryConfig[symbol]['industry']
+
             #完成一个完整的股票分析
             oneStock = Stock(
                 name,
@@ -221,6 +232,8 @@ def getAllData(page=0,stockArr=[]):
                 halt,
                 cashFlow,
                 profit,
+                industryId,
+                industryName
             );
 
             #屏幕输出

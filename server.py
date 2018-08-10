@@ -8,8 +8,7 @@ import pymongo
 from bson.json_util import dumps   #这个用来解析mongo返回的数据为json
 import Cookie
 import argparse #用来获取命令行参数
-
-
+import common
 
 #连接数据库
 client = MongoClient()
@@ -60,7 +59,7 @@ def hello():
 
         #这里支持多个字段的排序
         #其实这个方式我一直就想到了，但是没有成功，因为字段对应的数据之前是字符串，导致的问题，现在已经转化为浮点数了！
-        cursor = coll.find().sort([("info.pb", pymongo.ASCENDING), ("info.pe_lyr", pymongo.ASCENDING)])
+        cursor = coll.find().sort([("industryId", pymongo.ASCENDING), ("info.pb", pymongo.ASCENDING)])
 
 
     #从数据库获取时间信息
