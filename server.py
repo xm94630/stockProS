@@ -50,7 +50,10 @@ def hello():
     #注意，这部分一定要放在这里，不能在全局，否者的话，数据就为空，在页面中就看不到（也就是只有第一次才能有数据）。
 
     if sortByLastYear:
-        cursor = coll.find().sort([("lastPrecent", pymongo.ASCENDING)])
+        #cursor = coll.find().sort([("lastPrecent", pymongo.ASCENDING)])
+
+        #这里支持多个字段的排序
+        cursor = coll.find().sort([("info.pb", pymongo.ASCENDING), ("industryId", pymongo.ASCENDING)])
     else:
         #cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)])
         
