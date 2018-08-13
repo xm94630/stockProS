@@ -3,6 +3,7 @@
 #上面的注释是用来支持中文，没有就会出错
 
 import json
+import sys
 
 # 保存json数据
 def storeJsonFile(fileAddress,data):
