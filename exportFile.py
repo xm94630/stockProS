@@ -104,7 +104,7 @@ def save(stockList={}):
                 #写入一条数
                 content += stock['name']+ '['+stock['symbol'] +'] '+ u'推荐购买' + str(stock['info']['buyNum'])+u'股\n' 
                 content += stock['continueDaysText']+ u'，合计涨/跌百分比：' + str(stock['upOrDownContinuePercent']) + '\n'
-                content += '[PB/TTM/LYR] '+ stock['info']['pb']+' / '+stock['info']['pe_ttm']+' / '+stock['info']['pe_lyr']+'\n'
+                content += '[PB/TTM/LYR] '+ str(stock['info']['pb'])+' / '+str(stock['info']['pe_ttm'])+' / '+str(stock['info']['pe_lyr'])+'\n'
                 content += u'[n年内低点] '+ str(stock['lows'])+'\n'
                 content += u'[n年内卖点占比] '+ str(stock['percents'])+'\n'
                 content += u'[总股本] '+ str(stock['info']['totalShares2']) + u'亿'+'\n'
