@@ -137,8 +137,66 @@
 
 
 
-
-
+    ,{
+        "industry":"家具",
+        "symbol": "SH600978", 
+        "name": "宜华生活",
+        "number":1700,
+        "sPrice": 5.72,
+        "sPB":1.06,
+        "latestCost":9724,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"水务",
+        "symbol": "SH600168", 
+        "name": "武汉控股",
+        "number":1500,
+        "sPrice": 6.29,
+        "sPB":0.93,
+        "latestCost":9435,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"医药",
+        "symbol": "SZ300158", 
+        "name": "振东制药",
+        "number":2400,
+        "sPrice": 4.04,
+        "sPB":0.76,
+        "latestCost":9696,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"燃气",
+        "symbol": "SZ000669", 
+        "name": "金鸿控股",
+        "number":1800,
+        "sPrice": 5.53,
+        "sPB":0.9,
+        "latestCost":9954,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"煤炭",
+        "symbol": "SZ000937", 
+        "name": "冀中能源",
+        "number":2400,
+        "sPrice": 4.14,
+        "sPB":0.74,
+        "latestCost":9941,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"电气",
+        "symbol": "SH600089", 
+        "name": "特变电工",
+        "number":1500,
+        "sPrice": 6.59,
+        "sPB":0.87,
+        "latestCost":9885,
+        "jiacang": 0
+    }
 
 
 
