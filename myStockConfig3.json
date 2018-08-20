@@ -201,6 +201,89 @@
 
 
 
+
+    ,{
+        "industry":"家用电器",
+        "symbol": "SH600060", 
+        "name": "海信电器",
+        "number":900,
+        "sPrice": 10.5,
+        "sPB":0.96,
+        "latestCost":9450,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"服装",
+        "symbol": "SZ002087", 
+        "name": "七匹狼",
+        "number":1400,
+        "sPrice": 6.83,
+        "sPB":0.91,
+        "latestCost":9562,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"基础建设",
+        "symbol": "SH600284", 
+        "name": "浦东建设",
+        "number":1900,
+        "sPrice": 5.17,
+        "sPB":0.89,
+        "latestCost":9823,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"化学原料",
+        "symbol": "SZ002092", 
+        "name": "中泰化学",
+        "number":1100,
+        "sPrice": 8.94,
+        "sPB":1.03,
+        "latestCost":9834,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"电力",
+        "symbol": "SH600642", 
+        "name": "申能股份",
+        "number":1900,
+        "sPrice": 5.06,
+        "sPB":0.88,
+        "latestCost":9614,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"化工",
+        "symbol": "SZ000059", 
+        "name": "华锦股份",
+        "number":1400,
+        "sPrice": 7.01,
+        "sPB":0.84,
+        "latestCost":9814,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"综合",
+        "symbol": "SH600051", 
+        "name": "宁波联合",
+        "number":1600,
+        "sPrice": 6.21,
+        "sPB":0.82,
+        "latestCost":9936,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"纺织",
+        "symbol": "SZ002087", 
+        "name": "新野纺织",
+        "number":2700,
+        "sPrice": 3.7,
+        "sPB":0.93,
+        "latestCost":9990,
+        "jiacang": 0
+    }
+
+
 ]
 
 
