@@ -17,10 +17,23 @@
 # 	}],
 # 	"name": "中国神华"
 # }
+# 注意，这里的得到的值是累积的（比如三季度的经营净现金流是之前三个季度之和！）
+# 一共5年数据（共20条数据
 
 # 利润表
 # https://xueqiu.com/stock/f10/incstatement.json?symbol=SH601088&page=1&size=4&_=1522730476614
 # parenetp 净利润
+# 返回数据格式
+# {
+# 	"list": [{
+# 		"enddate": "20180630",
+#		"parenetp": 7.6271494729E8,
+#    }],
+#	"comptype": 4,
+#	"name": "华锦股份"
+# }
+# 注意，这里的得到的利润是累积的（比如三季度的净利润，是前三个季度的净利润之和，不代表第三个季度一定是盈利的，这点要特别注意）
+# 一共5年数据（共20条数据）
 
 # 资产负债表
 # https://xueqiu.com/stock/f10/balsheet.json?symbol=SH601088&page=1&size=4&_=1522730522067
@@ -65,7 +78,7 @@ def getIncstatementData(incstatementUrl,symbol):
     return res.text
 
 
-# 利润
+# 现金流
 def parseCfstatementData(symbol):
     json = getCfstatementData(cfstatementUrl,symbol)
     try:
@@ -106,7 +119,7 @@ def parseCfstatementData(symbol):
     
     return r
 
-# 现金流
+# 利润
 def parseIncstatementData(symbol):
     json = getIncstatementData(incstatementUrl,symbol)
     try:
@@ -153,7 +166,7 @@ def parseIncstatementData(symbol):
 #parseCfstatementData('SH600519')
 
 #parseIncstatementData('SZ300118')
-
+#print parseCfstatementData('SZ000059')
 
 
 
