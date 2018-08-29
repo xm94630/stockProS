@@ -24,7 +24,7 @@ python buy.py [xxx.json]
 python show.py [SZ000001]
 
 #注意
-不要忘记开数据库服务
+不要忘记开数据库服务(20180829 又犯了错误)
 
 
 
