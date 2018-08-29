@@ -1,39 +1,4 @@
-[
-    {
-        "industry":"食品（乳品）：梅花生物，皇氏为乳品中最低",
-        "symbol": "SZ002329", 
-        "name": "皇氏集团",
-        "number":1200,
-        "sPrice": 6.076,
-        "sPB":1.77,
-        "latestCost": 6806.4,
-        "jiacang": 1,
-        "info":"20180613跌破20%，加仓400"
-    },  
-    {
-        "industry":"家用电器：海信电器为最低、惠而浦",
-        "symbol": "SH600060", 
-        "name": "海信电器",
-        "number":600,
-        "sPrice": 15.029,
-        "sPB":"?",
-        "latestCost": 9017,
-        "jiacang": 0
-    }, 
-    {
-        "industry":"化工（无机盐）：沈阳化工、辉丰股份、华锦股份（高roe）、...中国石化，7家盐中最低",
-        "symbol": "SH600328", 
-        "name": "兰太实业",
-        "number":800,
-        "sPrice": 9.4,
-        "sPB":1.78,
-        "latestCost":6864,
-        "jiacang": 1,
-        "info":"20180716加仓300"
-    },
-
-
-
+[ 
     {
         "industry":"铝",
         "symbol": "SZ002501", 
@@ -214,7 +179,7 @@
     }
     ,{
         "industry":"服装",
-        "symbol": "SZ002087", 
+        "symbol": "SZ002029", 
         "name": "七匹狼",
         "number":1400,
         "sPrice": 6.83,
