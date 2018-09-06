@@ -33,11 +33,11 @@
 
                 <!-- 股息率、roe大于特定值时候，标色 -->
                 {% if (item.info.roe2 > 20) and (item.info.dividendRate > 5) %}
-                    <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/ <span class="roe_guxi">R{{item.info.roe2}}% / D{{item.info.dividendRate}}%</span></div>
+                    <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/ <span class="roe_guxi">GOOD RR{{item.info.roe2}}% / DD{{item.info.dividendRate}}%</span></div>
                 {% elif (item.info.roe2 > 20) and (item.info.dividendRate <= 5) %}
-                    <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/ <span class="roe">R{{item.info.roe2}}%</span> / D{{item.info.dividendRate}}%</div>
+                    <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/ <span class="roe">RR{{item.info.roe2}}%</span> / D{{item.info.dividendRate}}%</div>
                 {% elif (item.info.roe2 <= 20) and (item.info.dividendRate > 5) %}
-                    <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/ R{{item.info.roe2}}% / <span class="guxi">D{{item.info.dividendRate}}%</span></div>
+                    <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/ R{{item.info.roe2}}% / <span class="guxi">DD{{item.info.dividendRate}}%</span></div>
                 {% else %}
                     <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/ R{{item.info.roe2}}% / D{{item.info.dividendRate}}%</div>
                 {% endif %}
