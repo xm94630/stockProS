@@ -509,15 +509,18 @@ def getStockInfoData(url,config,symbol):
 
     res = requests.get(url=url,params=_params,headers=_headers)
     data = json.loads(res.text);
-   
+
+
     pe_ttm      = round(float(data[symbol]['pe_ttm']),2);
     pe_lyr      = round(float(data[symbol]['pe_lyr']),2);
     pb          = round(float(data[symbol]['pb']),2);
     totalShares = data[symbol]['totalShares'];
     close       = round(float(data[symbol]['close']),2);
     eps         = round(float(data[symbol]['eps']),2);
-    
 
+    #新增股息率
+    dividendRate = round(float(data[symbol]['dividend'])/float(data[symbol]['current'])*100,2);
+    
     net_assets = round(float(data[symbol]['net_assets']),2);
 
     #roe，不能直接从接口得到，可计算下得出(每股收益/每股净资产)
@@ -578,6 +581,7 @@ def getStockInfoData(url,config,symbol):
         "net_assets":net_assets,#每股净资产
         "roe":roe,
         "roe2":roe2,
+        "dividendRate":dividendRate
     };
 
 
