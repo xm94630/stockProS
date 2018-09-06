@@ -379,3 +379,19 @@ h1{
 .navigationBox{
   margin-top: 18px;
 }
+
+.roe{
+  background: darkseagreen;
+  color:#fff;
+  padding:0 2px;
+}
+.guxi{
+  background: plum;
+  color:#fff;
+  padding:0 2px;
+}
+.roe_guxi{
+  background: burlywood;
+  color:#fff;
+  padding:0 2px;
+}

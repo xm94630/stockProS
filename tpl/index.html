@@ -30,7 +30,19 @@
                     成本为 <span class="c7"> {{ item.info.buyNum2*item.lows[1] }} </span> 元(每股 <span class="bg7 c-fff">{{item.lows[1]}}</span>)
                 </div>
                 <div>【PB/TTM/LYR】{{item.info.pb}}/{{item.info.pe_ttm}}/{{item.info.pe_lyr}}</div>
-                <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/<span class="c7">R{{item.info.roe2}}%</span> / D{{item.info.dividendRate}}%</div>
+
+                <!-- 股息率、roe大于特定值时候，标色 -->
+                {% if (item.info.roe2 > 20) and (item.info.dividendRate > 5) %}
+                    <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/ <span class="roe_guxi">R{{item.info.roe2}}% / D{{item.info.dividendRate}}%</span></div>
+                {% elif (item.info.roe2 > 20) and (item.info.dividendRate <= 5) %}
+                    <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/ <span class="roe">R{{item.info.roe2}}%</span> / D{{item.info.dividendRate}}%</div>
+                {% elif (item.info.roe2 <= 20) and (item.info.dividendRate > 5) %}
+                    <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/ R{{item.info.roe2}}% / <span class="guxi">D{{item.info.dividendRate}}%</span></div>
+                {% else %}
+                    <div>【EPS/每股净资产/ROE（季）/ROE（年）/股息率】{{item.info.eps}}/{{item.info.net_assets}}/{{item.info.roe}}%/ R{{item.info.roe2}}% / D{{item.info.dividendRate}}%</div>
+                {% endif %}
+
+
                 <div>N年内低点 {{ item.lows[0] }}</div>
                 <div>N年内卖点占比 {{ item.percents[0] }}，平均 {{ item.percents[1] }}</div>
                 <div>总股本 {{ item.info.totalShares2 }} 亿</div>
