@@ -9,7 +9,7 @@
     {% for item in data %}
         {% if item.halt == True %}
             <li>
-                <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">#{{item.industryId}} 【{{item.industryName}}】{{ item.name }} 【{{ item.symbol }}】[￥{{item.lows[1]}} ]  PB:{{item.info.pb}}</a> 停牌
+                <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">#{{item.industryId}} 【{{item.industryName}}】{{ item.name }} 【{{ item.symbol }}】[￥{{item.lows[1]}} ]  PB:{{item.info.pb}}</a> 停牌 <span class="ttmBox">TTM:{{item.info.pe_ttm}}</span>
             </li>
             <!-- 停牌的也不要 -->
         {% elif -999 in item.lows[0] %}
@@ -19,9 +19,9 @@
         {% else %}
             <li>
                 {% if item.profit[1]>0 %}
-                    <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">#{{item.industryId}} 【{{item.industryName}}】{{ item.name }} 【{{ item.symbol }}】[￥{{item.lows[1]}} ]  PB:{{item.info.pb}}</a> 
+                    <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">#{{item.industryId}} 【{{item.industryName}}】{{ item.name }} 【{{ item.symbol }}】[￥{{item.lows[1]}} ]  PB:{{item.info.pb}}</a> <span class="ttmBox">TTM:{{item.info.pe_ttm}}</span>
                 {% else %}
-                    <a class="C1" target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">#{{item.industryId}} 【{{item.industryName}}】{{ item.name }}【{{ item.symbol }}】[￥{{item.lows[1]}} ]  PB:{{item.info.pb}}</a> 
+                    <a class="C1" target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">#{{item.industryId}} 【{{item.industryName}}】{{ item.name }}【{{ item.symbol }}】[￥{{item.lows[1]}} ]  PB:{{item.info.pb}}</a> <span class="ttmBox">TTM:{{item.info.pe_ttm}}</span>
                 {% endif %}
                 
                 <div>{{ item.continueDaysText }}，合计涨/跌百分比：<b>{{ item.upOrDownContinuePercent }}%</b>，当天: <b>{{ item.lows[4] }}%</b></div>

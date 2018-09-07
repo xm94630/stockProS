@@ -34,9 +34,21 @@ env = Environment(
 
 #获取命令行参数
 parser = argparse.ArgumentParser()
-parser.add_argument('-s', dest='sort', action='store_true') #action 这个参数不能随便改，在我们的应用场景，就理解为不能改吧
+parser.add_argument('-PB', dest='sortByIndustryAndPB', action='store_true') #action 这个参数不能随便改，在我们的应用场景，就理解为不能改吧
+parser.add_argument('-PE', dest='sortByIndustryAndPE', action='store_true')
 args = parser.parse_args()
-sortByLastYear = args.sort
+
+
+#排序类别确认
+if args.sortByIndustryAndPB == True:
+    # 第一级别按照行业排序，第二级别按照PB排序
+    sortType = 2
+elif args.sortByIndustryAndPE == True:
+    # 第一级别按照行业排序，第二级别按照PE排序
+    sortType = 3
+else:
+    #排序类型 默认按pb从低到高排序
+    sortType = 1
 
 
 #路由
@@ -44,25 +56,21 @@ sortByLastYear = args.sort
 def hello():
 
     #在函数中使用全局变量需要这里声明
-    global sortByLastYear;
+    global sortType;
     
     #获取全部数据，并按照均值大小排序
     #注意，这部分一定要放在这里，不能在全局，否者的话，数据就为空，在页面中就看不到（也就是只有第一次才能有数据）。
 
-    if sortByLastYear:
-        #cursor = coll.find().sort([("lastPrecent", pymongo.ASCENDING)])
-
-        #这里支持多个字段的排序
-        cursor = coll.find().sort([("info.pb", pymongo.ASCENDING), ("industryId", pymongo.ASCENDING)])
-    else:
-        #cursor = coll.find().sort([("percents.1", pymongo.ASCENDING)])
-        
-        #默认按照pb进行排序
-        #cursor = coll.find().sort([("info.pb", pymongo.ASCENDING)])
-
+    if sortType==2:
         #这里支持多个字段的排序
         #其实这个方式我一直就想到了，但是没有成功，因为字段对应的数据之前是字符串，导致的问题，现在已经转化为浮点数了！
         cursor = coll.find().sort([("industryId", pymongo.ASCENDING), ("info.pb", pymongo.ASCENDING)])
+    if sortType==3:
+        cursor = coll.find().sort([("industryId", pymongo.ASCENDING), ("info.pe_ttm", pymongo.ASCENDING)])
+    else:
+        cursor = coll.find().sort([("info.pb", pymongo.ASCENDING), ("industryId", pymongo.ASCENDING)])
+
+
 
 
     #从数据库获取时间信息
