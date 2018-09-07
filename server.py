@@ -65,7 +65,7 @@ def hello():
         #这里支持多个字段的排序
         #其实这个方式我一直就想到了，但是没有成功，因为字段对应的数据之前是字符串，导致的问题，现在已经转化为浮点数了！
         cursor = coll.find().sort([("industryId", pymongo.ASCENDING), ("info.pb", pymongo.ASCENDING)])
-    if sortType==3:
+    elif sortType==3:
         cursor = coll.find().sort([("industryId", pymongo.ASCENDING), ("info.pe_ttm", pymongo.ASCENDING)])
     else:
         cursor = coll.find().sort([("info.pb", pymongo.ASCENDING), ("industryId", pymongo.ASCENDING)])
