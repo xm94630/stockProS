@@ -2228,42 +2228,42 @@
 
     ,"SZ002543":{
         "name": "万和电气",
-        "industry":"家用电器",
+        "industry":"家电",
         "id":21
     }
     ,"SZ002418":{
         "name": "康盛股份",
-        "industry":"家用电器",
+        "industry":"家电",
         "id":21
     }
     ,"SZ000100":{
         "name": "TCL集团",
-        "industry":"家用电器",
+        "industry":"家电",
         "id":21
     }
     ,"SH600060":{
         "name": "海信电器",
-        "industry":"家用电器",
+        "industry":"家电",
         "id":21
     }
     ,"SZ000921":{
         "name": "海信科龙",
-        "industry":"家用电器",
+        "industry":"家电",
         "id":21
     }
     ,"SZ000016":{
         "name": "深康佳A",
-        "industry":"家用电器",
+        "industry":"家电",
         "id":21
     }
     ,"SZ002429":{
         "name": "兆驰股份",
-        "industry":"家用电器",
+        "industry":"家电",
         "id":21
     }
     ,"SZ002403":{
         "name": "爱仕达",
-        "industry":"家用电器",
+        "industry":"家电",
         "id":21
     }
 
@@ -2431,8 +2431,8 @@
     }
     ,"SH600438":{
         "name": "通威股份",
-        "industry":"电气/电源",
-        "id":7
+        "industry":"电气/电源+农牧",
+        "id":23
     }
     ,"SZ002518":{
         "name": "科士达",
