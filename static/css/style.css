@@ -400,3 +400,17 @@ h1{
   color: #ccc;
   padding:0 2px;
 }
+
+.recommendBox{
+  background: #f3f3f3;
+  color:#aaa;
+  padding:5px;
+  margin-top: 2px;
+}
+.LevelImg{
+  display: inline-block;
+  vertical-align: bottom;
+  width:25px;
+  height:25px;
+  margin-left:5px;
+}

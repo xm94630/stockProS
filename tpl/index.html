@@ -7,6 +7,34 @@
     <div class="bar">{{ timeInfo }}</div>
     <ul id="navigation" class="navigationBox">
     {% for item in data %}
+
+
+        <!-- 定义函数 -->
+        {% macro recommendFun(title) -%}
+            {{ caller() }} 
+            {% if item.stockPoolInfo.level == 1 %}
+                <img class="LevelImg" src="./static/img/L1.png"> 
+            {% elif item.stockPoolInfo.level == 2 %}
+                <img class="LevelImg" src="./static/img/L2.png">
+            {% elif item.stockPoolInfo.level == 3 %}
+                <img class="LevelImg" src="./static/img/L3.png">
+            {% else %}
+                <!-- 不处理 -->
+            {% endif %}
+        {%- endmacro %}
+        
+        <!-- 定义函数 -->
+        {% macro recommendFun2(title) -%}
+            {{ caller() }} 
+            {% if item.stockPoolInfo.advantage  %}
+                <div class="recommendBox">[{{item.stockPoolInfo.type}}] 备注 @ {{item.stockPoolInfo.advantage}}</div>
+            {% else %}
+                <!-- 不处理 -->
+            {% endif %}
+        {%- endmacro %}
+
+
+
         {% if item.halt == True %}
             <li>
                 <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">#{{item.industryId}} 【{{item.industryName}}】{{ item.name }} 【{{ item.symbol }}】[￥{{item.lows[1]}} ]  PB:{{item.info.pb}}</a> 停牌 <span class="ttmBox">TTM:{{item.info.pe_ttm}}</span>
@@ -19,11 +47,12 @@
         {% else %}
             <li>
                 {% if item.profit[1]>0 %}
-                    <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">#{{item.industryId}} 【{{item.industryName}}】{{ item.name }} 【{{ item.symbol }}】[￥{{item.lows[1]}} ]  PB:{{item.info.pb}}</a> <span class="ttmBox">TTM:{{item.info.pe_ttm}}</span>
+                    <a target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">#{{item.industryId}} 【{{item.industryName}}】{{ item.name }} 【{{ item.symbol }}】[￥{{item.lows[1]}} ]  PB:{{item.info.pb}}</a> <span class="ttmBox">TTM:{{item.info.pe_ttm}} {% call recommendFun(item.stockPoolInfo) %} {% endcall %}</span> 
                 {% else %}
-                    <a class="C1" target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">#{{item.industryId}} 【{{item.industryName}}】{{ item.name }}【{{ item.symbol }}】[￥{{item.lows[1]}} ]  PB:{{item.info.pb}}</a> <span class="ttmBox">TTM:{{item.info.pe_ttm}}</span>
+                    <a class="C1" target="_blank" href="https://xueqiu.com/S/{{ item.symbol }}">#{{item.industryId}} 【{{item.industryName}}】{{ item.name }}【{{ item.symbol }}】[￥{{item.lows[1]}} ]  PB:{{item.info.pb}}</a> <span class="ttmBox">TTM:{{item.info.pe_ttm}}</span> 
                 {% endif %}
                 
+                {% call recommendFun2(item.stockPoolInfo) %} {% endcall %}
                 <div>{{ item.continueDaysText }}，合计涨/跌百分比：<b>{{ item.upOrDownContinuePercent }}%</b>，当天: <b>{{ item.lows[4] }}%</b></div>
                 <div>
                     推荐购买 <span class="c7">{{ item.info.buyNum2 }}</span>({{ item.info.buyNum }}) 股，
@@ -57,6 +86,8 @@
                 <div>{{ item.cashFlow[0] }}</div>
                 <div>{{ item.cashFlow[1] }}</div>
                 <div>{{ item.cashFlow[2] }}</div>
+
+                
             </li>
         {% endif %}
     {% endfor %}
