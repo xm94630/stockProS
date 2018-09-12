@@ -26,8 +26,8 @@
         <!-- 定义函数 -->
         {% macro recommendFun2(title) -%}
             {{ caller() }} 
-            {% if item.stockPoolInfo.advantage  %}
-                <div class="recommendBox">[{{item.stockPoolInfo.type}}] 备注 @ {{item.stockPoolInfo.advantage}}</div>
+            {% if item.stockPoolInfo.level  %}
+                <div class="recommendBox">[{{item.stockPoolInfo.type}}] L{{item.stockPoolInfo.level}} 备注 @ {{item.stockPoolInfo.advantage}}</div>
             {% else %}
                 <!-- 不处理 -->
             {% endif %}

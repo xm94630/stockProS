@@ -42,7 +42,7 @@
         "name": "梅花生物",
         "level":2,
         "type":"TTM选股法",
-        "advantage":""
+        "advantage":"高股息、高roe"
     }
     ,"SH600966":{
         "name": "博汇纸业",
@@ -70,17 +70,242 @@
     }
     
 
-    ,"SZ300338":{
-        "name": "开元股份",
-        "level":2,
-        "type":"TTM选股法",
-        "advantage":"这个可是好股票"
+    
+
+    
+    ,"SZ002435":{
+        "name": "长江润发",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":"高股息率"
+    }
+    ,"SH600060":{
+        "name": "海信",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SZ002538":{
+        "name": "司尔特",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH601088":{
+        "name": "中国神华",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH601566":{
+        "name": "九牧王",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":"高股息"
+    }
+    ,"SH600291":{
+        "name": "西水股份",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH600717":{
+        "name": "天津港",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SZ000876":{
+        "name": "新希望",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH600668":{
+        "name": "尖峰集团",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH600970":{
+        "name": "中材国际",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH601636":{
+        "name": "旗滨集团",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+
+
+
+
+
+
+
+
+
+
+    ,"SH601636":{
+        "name": "宁波韵升",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH601636":{
+        "name": "中金岭南",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH601636":{
+        "name": "粤泰股份",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH601636":{
+        "name": "永新股份",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH601636":{
+        "name": "方大集团",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH601636":{
+        "name": "中文传媒",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH601636":{
+        "name": "韶能股份",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH601636":{
+        "name": "重庆水务",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH601636":{
+        "name": "中山公用",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SZ000921":{
+        "name": "海信科龙",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SZ002335":{
+        "name": "科华恒盛",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH600856":{
+        "name": "中天能源",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SZ000421":{
+        "name": "南京公用",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH600835":{
+        "name": "上海机电",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SZ000541":{
+        "name": "佛山照明",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SZ000623":{
+        "name": "吉林敖东",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SZ000581":{
+        "name": "威孚高科",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH600755":{
+        "name": "厦门国贸",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH600828":{
+        "name": "茂业商业",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH600987":{
+        "name": "航民股份",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH600068":{
+        "name": "葛洲坝",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SZ002061":{
+        "name": "浙江交科",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH600808":{
+        "name": "马钢股份",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SZ002068":{
+        "name": "黑猫股份",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SH600409":{
+        "name": "三友化工",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
+    }
+    ,"SZ000016":{
+        "name": "深康佳A",
+        "level":1,
+        "type":"其他选股法",
+        "advantage":""
     }
     
-
-    
-
-
 }
 
 
