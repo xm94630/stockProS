@@ -1,0 +1,86 @@
+{
+    "SH600894":{
+        "name": "广日股份",
+        "level":3,
+        "type":"PB选股法",
+        "advantage":""
+    }
+    ,"SZ002567":{
+        "name": "唐人神",
+        "level":3,
+        "type":"PB选股法",
+        "advantage":""
+    }
+    ,"SZ000662":{
+        "name": "天夏智慧",
+        "level":3,
+        "type":"PB选股法",
+        "advantage":"罕见的计算机低估股"
+    }
+    ,"SZ000413":{
+        "name": "东旭光电",
+        "level":3,
+        "type":"PB选股法",
+        "advantage":""
+    }
+    ,"SH600811":{
+        "name": "东方集团",
+        "level":3,
+        "type":"PB选股法",
+        "advantage":""
+    }
+
+
+
+    ,"SZ000785":{
+        "name": "武汉中商",
+        "level":2,
+        "type":"TTM选股法",
+        "advantage":""
+    }
+    ,"SH600873":{
+        "name": "梅花生物",
+        "level":2,
+        "type":"TTM选股法",
+        "advantage":""
+    }
+    ,"SH600966":{
+        "name": "博汇纸业",
+        "level":2,
+        "type":"TTM选股法",
+        "advantage":""
+    }
+    ,"SZ002394":{
+        "name": "联发股份",
+        "level":2,
+        "type":"TTM选股法",
+        "advantage":""
+    }
+    ,"SZ002509":{
+        "name": "天广中茂",
+        "level":2,
+        "type":"TTM选股法",
+        "advantage":""
+    }
+    ,"SH600525":{
+        "name": "长园集团",
+        "level":2,
+        "type":"TTM选股法",
+        "advantage":""
+    }
+    
+
+    ,"SZ300338":{
+        "name": "开元股份",
+        "level":2,
+        "type":"TTM选股法",
+        "advantage":"测试"
+    }
+    
+
+    
+
+
+}
+
+
