@@ -31,15 +31,15 @@
         "info":"6.19大暴跌"
     },
     {
-        "industry":"银行：华夏银行、交通银行、光大银行、民生银行、浦发银行、中国银行、平安银行，当时脑子进水了",
-        "symbol": "SZ000001", 
-        "name": "平安银行",
-        "number":700,
-        "sPrice": 11.107,
-        "sPB":"?",
-        "latestCost": 6784.4,
-        "jiacang": 1,
-        "info":"20180716加仓（这个以前不是标准的配置）"
+        "industry":"房地产",
+        "symbol": "SH600393", 
+        "name": "粤泰股份",
+        "number":2000,
+        "sPrice": 2.64,
+        "sPB":1.09,
+        "latestCost": 5280,
+        "jiacang": 0,
+        "info":""
     }
 ]
 

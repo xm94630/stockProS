@@ -1,253 +1,42 @@
-[ 
+[
     {
-        "industry":"铝",
-        "symbol": "SZ002501", 
-        "name": "利源精制",
-        "number":2500,
-        "sPrice": 3.9,
-        "sPB":0.58,
-        "latestCost":9750,
+        "industry":"非金属矿（水泥）/建筑材料：建研集团（技术服务）、旗滨集团（水泥）、尖峰集团（水泥）、塔牌集团（水泥），祁连山是最低估的，可惜盈利不行",
+        "symbol": "SZ002233", 
+        "name": "塔牌集团",
+        "number":500,
+        "sPrice": 11.180,
+        "sPB":1.64,
+        "latestCost": 5590,
         "jiacang": 0
-    }
-    ,{
-        "industry":"造纸",
-        "symbol": "SH600308", 
-        "name": "华泰股份",
-        "number":2100,
-        "sPrice": 4.69,
-        "sPB":0.75,
-        "latestCost":9849,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"房地产",
-        "symbol": "SZ000926", 
-        "name": "福星股份",
-        "number":1400,
-        "sPrice": 6.72,
-        "sPB":0.64,
-        "latestCost":9408,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"银行",
-        "symbol": "SH600015", 
-        "name": "华夏银行",
-        "number":1300,
-        "sPrice": 7.43,
-        "sPB":0.64,
-        "latestCost":9659,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"钢铁",
-        "symbol": "SZ000709", 
-        "name": "河钢股份",
-        "number":3200,
-        "sPrice": 2.89,
-        "sPB":0.67,
-        "latestCost":9248,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"高速公路",
-        "symbol": "SH600269", 
-        "name": "赣粤高速",
-        "number":2200,
-        "sPrice": 4.11,
-        "sPB":0.66,
-        "latestCost":9042,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"贸易",
-        "symbol": "SZ000564", 
-        "name": "供销大集",
-        "number":2800,
-        "sPrice": 3.48,
-        "sPB":0.68,
-        "latestCost":9744,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"汽车",
-        "symbol": "SZ000625", 
-        "name": "长安汽车",
-        "number":1300,
-        "sPrice": 7.68,
-        "sPB":0.75,
-        "latestCost":9984,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"证券",
-        "symbol": "SH600837", 
-        "name": "海通证券",
-        "number":1100,
-        "sPrice": 8.87,
-        "sPB":0.86,
-        "latestCost":9757,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"传媒",
-        "symbol": "SZ002354", 
-        "name": "天神娱乐",
+    },{
+        "industry":"交通运输（港口）：赣奥高速、海航控股、山东高速。天津港目前是港口中的最低估",
+        "symbol": "SH600717", 
+        "name": "天津港",
         "number":1200,
-        "sPrice": 7.69,
-        "sPB":0.78,
-        "latestCost":9228,
-        "jiacang": 0
-    }
-
-
-
-    ,{
-        "industry":"家具",
-        "symbol": "SH600978", 
-        "name": "宜华生活",
-        "number":1700,
-        "sPrice": 5.72,
-        "sPB":1.06,
-        "latestCost":9724,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"水务",
-        "symbol": "SH600168", 
-        "name": "武汉控股",
-        "number":1500,
-        "sPrice": 6.29,
-        "sPB":0.93,
-        "latestCost":9435,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"医药",
-        "symbol": "SZ300158", 
-        "name": "振东制药",
-        "number":2400,
-        "sPrice": 4.04,
-        "sPB":0.76,
-        "latestCost":9696,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"燃气",
-        "symbol": "SZ000669", 
-        "name": "金鸿控股",
-        "number":1800,
-        "sPrice": 5.53,
-        "sPB":0.9,
-        "latestCost":9954,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"煤炭",
-        "symbol": "SZ000937", 
-        "name": "冀中能源",
-        "number":2400,
-        "sPrice": 4.14,
-        "sPB":0.74,
-        "latestCost":9941,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"电气",
-        "symbol": "SH600089", 
-        "name": "特变电工",
-        "number":1500,
-        "sPrice": 6.59,
-        "sPB":0.87,
-        "latestCost":9885,
-        "jiacang": 0
-    }
-
-
-
-
-
-    ,{
-        "industry":"家用电器",
-        "symbol": "SH600060", 
-        "name": "海信电器",
-        "number":900,
-        "sPrice": 10.5,
-        "sPB":0.96,
-        "latestCost":9450,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"服装",
-        "symbol": "SZ002029", 
-        "name": "七匹狼",
-        "number":1400,
-        "sPrice": 6.83,
+        "sPrice": 10.266,
+        "sPB":1.27,
+        "latestCost": 11132,
+        "jiacang": 1,
+        "info":"6.19大暴跌"
+    },{
+        "industry":"房地产：福星股份、世贸股份",
+        "symbol": "SH600823", 
+        "name": "世茂股份",
+        "number":2000,
+        "sPrice": 5.303,
         "sPB":0.91,
-        "latestCost":9562,
+        "latestCost": 10600,
+        "jiacang": 0
+    },{
+        "industry":"银行：华夏银行、交通银行、光大银行、民生银行、浦发银行、中国银行、平安银行",
+        "symbol": "SH601988", 
+        "name": "中国银行",
+        "number":2600,
+        "sPrice": 4.192,
+        "sPB":0.87,
+        "latestCost": 10899,
         "jiacang": 0
     }
-    ,{
-        "industry":"基础建设",
-        "symbol": "SH600284", 
-        "name": "浦东建设",
-        "number":1900,
-        "sPrice": 5.17,
-        "sPB":0.89,
-        "latestCost":9823,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"化学原料",
-        "symbol": "SZ002092", 
-        "name": "中泰化学",
-        "number":1100,
-        "sPrice": 8.94,
-        "sPB":1.03,
-        "latestCost":9834,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"电力",
-        "symbol": "SH600642", 
-        "name": "申能股份",
-        "number":1900,
-        "sPrice": 5.06,
-        "sPB":0.88,
-        "latestCost":9614,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"化工",
-        "symbol": "SZ000059", 
-        "name": "华锦股份",
-        "number":1400,
-        "sPrice": 7.01,
-        "sPB":0.84,
-        "latestCost":9814,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"综合",
-        "symbol": "SH600051", 
-        "name": "宁波联合",
-        "number":1600,
-        "sPrice": 6.21,
-        "sPB":0.82,
-        "latestCost":9936,
-        "jiacang": 0
-    }
-    ,{
-        "industry":"纺织",
-        "symbol": "SZ002087", 
-        "name": "新野纺织",
-        "number":2700,
-        "sPrice": 3.7,
-        "sPB":0.93,
-        "latestCost":9990,
-        "jiacang": 0
-    }
-
 
 ]
 
