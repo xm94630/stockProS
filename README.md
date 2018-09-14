@@ -8,7 +8,7 @@ Flask     web服务
 jinja     模板
 email     邮件
 smtplib   SMTP协议 （这个应该默认就有）
-retrying  重复执行的装饰器 
+retrying  重复执行的装饰器 （使用 v1.0.0版本！）
 
 # index.py 参数说明
 无参数:在旧数据上追加
@@ -33,6 +33,7 @@ python show.py [SZ000001]
    安装组件用 pip install retrying，不行的话，加上sudo
 5) pip install --upgrade pip 用这个升级失败（9.0.1->18.0）坑了好久，下面这这个可以解决：
    pip curl https://bootstrap.pypa.io/get-pip.py | sudo python
+6）pip install retrying==1.0.0 （retrying版本要指定，后面的几个有问题）
 
 
 

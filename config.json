@@ -3,10 +3,12 @@
         "cookie":"cookie值，不需要手动配置了，以后稳定了可以删除",
         "userAgent":"用户代理",
         "maxMoneyPerStock":"个股最大可配置额度设置",
-        "timeout":"接口请求延时时间，单位为s"
+        "timeout":"接口请求延时时间，单位为：秒",
+        "wait":"如果接口延时了，多久之后再次发起请求，单位：毫秒"
     },
     "cookie": "_ga=GA1.2.44707238.1530514038; device_id=094fa9d3ca1e608f6a70b819be3a274b; s=fd11eo850g; _gid=GA1.2.1773833729.1536552535; aliyungf_tc=AQAAAFzOvX236QMAMFi2JwKMZD9trsiT; xq_a_token=9c75d6bfbd0112c72b385fd95305e36563da53fb; xq_a_token.sig=-6-bcHntQlhRjsyrvsY2IGwh-B4; xq_r_token=9ad364aac7522791166c59720025e1f8f11bf9eb; xq_r_token.sig=usx1_hrblByw-9h0cXk1yLIUlL4; u=121536642224020; __utmc=1; __utmz=1.1536819641.80.71.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; Hm_lvt_1db88642e346389874251b5a1eded6e3=1536821195,1536821254,1536821264,1536821694; __utma=1.44707238.1530514038.1536819641.1536899801.81; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1536904538; _gat_gtag_UA_16079156_4=1",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
     "maxMoneyPerStock": 10000,
-    "timeout":1
+    "timeout":7,
+    "wait":3000
 }

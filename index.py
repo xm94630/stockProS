@@ -3,7 +3,6 @@
 #上面的注释是用来支持中文，没有就会出错
 
 from __future__ import division
-from retrying import retry
 
 #这个需要先 pip install requests
 import requests
@@ -11,6 +10,7 @@ import json
 import math
 import time
 import argparse #用来获取命令行参数
+from retrying import retry
 
 #导入自己写的
 import dataBase
@@ -30,6 +30,7 @@ stockPoolConfig = common.loadJsonFile('./stockPool.json')
 cookie     = conf['cookie']
 userAgent  = conf['userAgent']
 timeout    = conf['timeout']
+wait       = conf['wait']
 
 #配置
 nowTime = str(int(time.time() * 1000));
@@ -135,22 +136,22 @@ def getScreenerData(url,config,page):
     # time.sleep(sleep1);
 
 
-
-    res = requests.get(url=url,params=_params,headers=_headers)
-    
+    #res = requests.get(url=url,params=_params,headers=_headers)    
     #上面的请求改成：
-    # @retry(stop_max_attempt_number=3) #最大重试3次，3次全部报错，才会报错
-    # def _myGet():
-    #     res = requests.get(url=url,params=_params,headers=_headers,timeout=timeout)
-    #     return res
+    #这个装饰器的作用是：如果函数中有报错（如请求超时），则可以重复执行或其他方式执行，这个方式是可以自己设置的（将wait设置不同的值，如fixed_sleep）
+    #这里采用的是 3秒 之后再次请求
+    @retry(wait='fixed_sleep', wait_fixed= wait)
+    def myGet():
+        #注意，被修饰的函数还是很特殊的
+        #1）凡是出现的错误会被忽略，所以这里要是写了其他错误的代码，可能就不会出现报错，表现为“程序一直停止了”
+        #2）如果这里要做一个计数器，如对外层变量进行+1操作，好像有点问题（不细研究了），通过函数参数传入也不行，感觉有个闭包隔离着。
+        print"🍀 🍀 🍀 🍀 🍀 调用一次【"+url+"】🍀 🍀 🍀 🍀 🍀"
+        res = requests.get(url=url,params=_params,headers=_headers,timeout=timeout)
+        return res
+    res = myGet()
 
-    # def myGet():
-    #     try: 
-    #         res = _myGet()
-    #     except Exception as e:
-    #         print"可能是["+url+"]请求超时了！（下面是详细原因：）"
-    #         print(e)
-    #     return res
+
+
 
     
     return res.text;
