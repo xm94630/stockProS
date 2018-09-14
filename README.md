@@ -1,13 +1,14 @@
 # stockProSuper
 stockProSuper
 
-# python 模块
-requests requests模块
-pymongo 数据库
-Flask   web服务
-jinja   模板
-email   邮件
-smtplib SMTP协议 （这个应该默认就有）
+# python 模块（pip install）
+requests  requests模块
+pymongo   数据库
+Flask     web服务
+jinja     模板
+email     邮件
+smtplib   SMTP协议 （这个应该默认就有）
+retrying  重复执行的装饰器 
 
 # index.py 参数说明
 无参数:在旧数据上追加
@@ -28,6 +29,11 @@ python show.py [SZ000001]
 1) 不要忘记开数据库服务(20180829 又犯了错误)
 2) 在盘中，运行本程序，可能会导致极少部分的不能显示出来
 3) 190914 发现运行index.py的时候，会停止，也不报错。我排查之后，是接口的超时问题（各个调用requests.get都有可能出现）。以前是没有这个现象的。不过重新执行 index.py 的时候，还是可以继续的，但是没多久又出现同样的问题。所以我需要解决这个问题。方法有2：一是重新执行index.py本身，二是在接口请求的时候，一旦超时就重新请求，并log出重复的次数，方便追踪问题。
+4) 注意这里的模块安装用 pip 而不是pip3
+   安装组件用 pip install retrying，不行的话，加上sudo
+5) pip install --upgrade pip 用这个升级失败（9.0.1->18.0）坑了好久，下面这这个可以解决：
+   pip curl https://bootstrap.pypa.io/get-pip.py | sudo python
+
 
 
 

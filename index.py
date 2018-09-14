@@ -3,6 +3,7 @@
 #上面的注释是用来支持中文，没有就会出错
 
 from __future__ import division
+from retrying import retry
 
 #这个需要先 pip install requests
 import requests
@@ -28,6 +29,7 @@ stockPoolConfig = common.loadJsonFile('./stockPool.json')
 #cookie    = getCookie.getCookie('https://xueqiu.com/');
 cookie     = conf['cookie']
 userAgent  = conf['userAgent']
+timeout    = conf['timeout']
 
 #配置
 nowTime = str(int(time.time() * 1000));
@@ -132,8 +134,25 @@ def getScreenerData(url,config,page):
     # print '接口1：检索接口，休息一下'
     # time.sleep(sleep1);
 
-    res = requests.get(url=url,params=_params,headers=_headers)
 
+
+    res = requests.get(url=url,params=_params,headers=_headers)
+    
+    #上面的请求改成：
+    # @retry(stop_max_attempt_number=3) #最大重试3次，3次全部报错，才会报错
+    # def _myGet():
+    #     res = requests.get(url=url,params=_params,headers=_headers,timeout=timeout)
+    #     return res
+
+    # def myGet():
+    #     try: 
+    #         res = _myGet()
+    #     except Exception as e:
+    #         print"可能是["+url+"]请求超时了！（下面是详细原因：）"
+    #         print(e)
+    #     return res
+
+    
     return res.text;
 
 
