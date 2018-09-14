@@ -34,7 +34,7 @@ python show.py [SZ000001]
 5) pip install --upgrade pip 用这个升级失败（9.0.1->18.0）坑了好久，下面这这个可以解决：
    pip curl https://bootstrap.pypa.io/get-pip.py | sudo python
 6）pip install retrying==1.0.0 （retrying版本要指定，后面的几个有问题）
-
+7) @retry 修饰过的函数中，出了错误会被忽略，一定要记住，不要被坑了
 
 
 

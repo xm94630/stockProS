@@ -41,12 +41,15 @@
 import requests
 import common
 import json
+from retrying import retry
 
 #引入配置
 conf = common.loadJsonFile('./config.json')
 #头信息
 cookie     = conf['cookie']
 userAgent  = conf['userAgent']
+timeout    = conf['timeout']
+wait       = conf['wait']
 
 #解析json
 class Payload(object):
@@ -64,7 +67,15 @@ def getCfstatementData(cfstatementUrl,symbol):
         "Cookie":cookie
     }
     _params = '&symbol=' + symbol
-    res = requests.get(url=cfstatementUrl,params=_params,headers=_headers)
+    
+    #res = requests.get(url=cfstatementUrl,params=_params,headers=_headers)
+    @retry(wait='fixed_sleep', wait_fixed= wait)
+    def myGet():
+        print"💷 💷 💷 💷  调用一次【"+cfstatementUrl+"】 💷 💷 💷 💷"
+        res = requests.get(url=cfstatementUrl,params=_params,headers=_headers,timeout=timeout)
+        return res
+    res = myGet()
+    
     return res.text
 
 # 获取 利润表 数据
@@ -74,7 +85,15 @@ def getIncstatementData(incstatementUrl,symbol):
         "Cookie":cookie
     }
     _params = '&symbol=' + symbol
-    res = requests.get(url=incstatementUrl,params=_params,headers=_headers)
+    
+    #res = requests.get(url=incstatementUrl,params=_params,headers=_headers)
+    @retry(wait='fixed_sleep', wait_fixed= wait)
+    def myGet():
+        print"💶 💶 💶 💶 💶  调用一次【"+incstatementUrl+"】 💶 💶 💶 💶 💶"
+        res = requests.get(url=incstatementUrl,params=_params,headers=_headers,timeout=timeout)
+        return res
+    res = myGet()
+
     return res.text
 
 
