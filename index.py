@@ -88,7 +88,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     isClearOld = args.new
 
-
 #是否清除旧数据
 dataBase.clearOldDatabase(isClearOld);
 
