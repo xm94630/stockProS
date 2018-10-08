@@ -133,16 +133,6 @@
         "jiacang": 0
     }
     ,{
-        "industry":"燃气",
-        "symbol": "SZ000669", 
-        "name": "金鸿控股",
-        "number":1800,
-        "sPrice": 5.53,
-        "sPB":0.9,
-        "latestCost":9954,
-        "jiacang": 0
-    }
-    ,{
         "industry":"煤炭",
         "symbol": "SZ000937", 
         "name": "冀中能源",
@@ -245,6 +235,26 @@
         "sPrice": 3.7,
         "sPB":0.93,
         "latestCost":9990,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"珠宝",
+        "symbol": "SZ000587", 
+        "name": "金洲慈航",
+        "number":900,
+        "sPrice": 10.48,
+        "sPB":0.6,
+        "latestCost":9432,
+        "jiacang": 0
+    }
+    ,{
+        "industry":"航空",
+        "symbol": "SH600221", 
+        "name": "海航控股",
+        "number":4600,
+        "sPrice": 2.14,
+        "sPB":0.67,
+        "latestCost":9844,
         "jiacang": 0
     }
 
