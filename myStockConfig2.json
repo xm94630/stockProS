@@ -1,46 +1,43 @@
 [
     {
-        "industry":"公用事业：穗恒运（电力）、太阳能、申能股份（电力）、武汉控股（水务）、中山公用（水务）、湖北能源（电力）...福能股份（电力）、韶能股份（电力）...兴蓉环境（供水供气）...陕天然气（供水供气）",
-        "symbol": "SZ000883", 
-        "name": "湖北能源",
-        "number":1900,
-        "sPrice": 4.653,
-        "sPB":1.174,
-        "latestCost": 8840,
+        "industry":"非金属矿（水泥）/建筑材料：建研集团（技术服务）、旗滨集团（水泥）、尖峰集团（水泥）、塔牌集团（水泥），祁连山是最低估的，可惜盈利不行",
+        "symbol": "SZ002233", 
+        "name": "塔牌集团",
+        "number":500,
+        "sPrice": 11.180,
+        "sPB":1.64,
+        "latestCost": 5590,
         "jiacang": 0
-    },
-    {
-        "industry":"交通运输（铁路）：4个铁路中唯一符合标准的",
-        "symbol": "SH601006", 
-        "name": "大秦铁路",
-        "number":900,
-        "sPrice": 8.88,
-        "sPB":1.30,
-        "latestCost": 7997,
-        "jiacang": 0
-    },
-    {
-        "industry":"商业贸易：新世界...轻纺城...厦门国贸、鄂武商（比较后了）...王府井",
-        "symbol": "SZ000501", 
-        "name": "鄂武商A",
-        "number":600,
-        "sPrice": 16.22,
-        "sPB":1.83,
-        "latestCost": 8522,
+    },{
+        "industry":"交通运输（港口）：赣奥高速、海航控股、山东高速。天津港目前是港口中的最低估",
+        "symbol": "SH600717", 
+        "name": "天津港",
+        "number":1200,
+        "sPrice": 10.266,
+        "sPB":1.27,
+        "latestCost": 11132,
         "jiacang": 1,
         "info":"6.19大暴跌"
-    },
-    {
-        "industry":"房地产",
-        "symbol": "SH600393", 
-        "name": "粤泰股份",
+    },{
+        "industry":"房地产：福星股份、世贸股份",
+        "symbol": "SH600823", 
+        "name": "世茂股份",
         "number":2000,
-        "sPrice": 2.64,
-        "sPB":1.09,
-        "latestCost": 5280,
-        "jiacang": 0,
-        "info":""
+        "sPrice": 5.303,
+        "sPB":0.91,
+        "latestCost": 10600,
+        "jiacang": 0
+    },{
+        "industry":"银行：华夏银行、交通银行、光大银行、民生银行、浦发银行、中国银行、平安银行",
+        "symbol": "SH601988", 
+        "name": "中国银行",
+        "number":2600,
+        "sPrice": 4.192,
+        "sPB":0.87,
+        "latestCost": 10899,
+        "jiacang": 0
     }
+
 ]
 
 
