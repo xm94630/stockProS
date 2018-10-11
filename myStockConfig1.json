@@ -63,11 +63,12 @@
         "industry":"贸易",
         "symbol": "SZ000564", 
         "name": "供销大集",
-        "number":2800,
+        "number":3800,
         "sPrice": 3.48,
         "sPB":0.68,
-        "latestCost":9744,
-        "jiacang": 0
+        "latestCost":12524,
+        "jiacang": 1,
+        "info":"20181011美股大跌引起的A股大跌，补仓1000，当前pb0.51！"
     }
     ,{
         "industry":"汽车",
@@ -93,11 +94,12 @@
         "industry":"传媒",
         "symbol": "SZ002354", 
         "name": "天神娱乐",
-        "number":1200,
+        "number":1600,
         "sPrice": 7.69,
         "sPB":0.78,
-        "latestCost":9228,
-        "jiacang": 0
+        "latestCost":11681,
+        "jiacang": 1,
+        "info":"十一后大跌超-20%，买入400股"
     }
 
 
@@ -241,10 +243,10 @@
         "industry":"珠宝",
         "symbol": "SZ000587", 
         "name": "金洲慈航",
-        "number":900,
-        "sPrice": 10.48,
+        "number":3600,
+        "sPrice": 2.741,
         "sPB":0.6,
-        "latestCost":9432,
+        "latestCost":9867,
         "jiacang": 0
     }
     ,{
