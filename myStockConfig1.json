@@ -108,11 +108,12 @@
         "industry":"家具",
         "symbol": "SH600978", 
         "name": "宜华生活",
-        "number":1700,
+        "number":2100,
         "sPrice": 5.72,
         "sPB":1.06,
-        "latestCost":9724,
-        "jiacang": 0
+        "latestCost":11478,
+        "jiacang": 1,
+        "info":"20181012跌超-23%左右，买入400股"
     }
     ,{
         "industry":"水务",
