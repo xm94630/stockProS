@@ -24,12 +24,12 @@
         "industry":"电气",
         "symbol": "SH600525", 
         "name": "长园集团",
-        "number":1200,
+        "number":1500,
         "sPrice": 7.42,
         "sPB":1.14,
-        "latestCost": 8904,
-        "jiacang": 0,
-        "info":""
+        "latestCost": 10690,
+        "jiacang": 1,
+        "info":"20181015周一，跌逾-20%，补300股（1776元）"
     }
     ,{
         "industry":"房地产",

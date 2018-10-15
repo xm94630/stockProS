@@ -6,7 +6,7 @@
         "timeout":"接口请求延时时间，单位为：秒",
         "wait":"如果接口延时了，多久之后再次发起请求，单位：毫秒"
     },
-    "cookie": "_ga=GA1.2.44707238.1530514038; device_id=094fa9d3ca1e608f6a70b819be3a274b; s=fd11eo850g; __utma=1.44707238.1530514038.1538100152.1538150798.92; __utmz=1.1538150798.92.82.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; u=961538962251422; Hm_lvt_1db88642e346389874251b5a1eded6e3=1538153643,1538153668,1538153712,1538962251; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1538962251; aliyungf_tc=AQAAADwXsG0E3goAMFu2J5U1jZv0QaPU; xq_a_token=bb7610f538b447ebadd6a374cdff374206f350dd; xq_a_token.sig=XglA1uiAYkfyfKlhbuJdRhRTTM4; xq_r_token=c946fa437eff0f7b251c2a7babd12b5c9e5a1851; xq_r_token.sig=jW7KrLgtGYffUvfG3DfPexDR8RQ",
+    "cookie": "_ga=GA1.2.44707238.1530514038; device_id=094fa9d3ca1e608f6a70b819be3a274b; s=fd11eo850g; aliyungf_tc=AQAAAKtYNUB9dQYA5Vu2J0sKU+m+tB4C; __utmc=1; __utma=1.44707238.1530514038.1539274563.1539320507.281; __utmz=1.1539320507.281.145.utmcsr=localhost:5000|utmccn=(referral)|utmcmd=referral|utmcct=/; Hm_lvt_1db88642e346389874251b5a1eded6e3=1539326338,1539326407,1539326459,1539326471; xq_a_token=45f0c2debacfcbeb4924700fd74eac831c8c40fa; xq_a_token.sig=hOM9gYRS4Cn-k7838Xk57iU9tIE; xq_r_token=003285fd18aa96023ff92d68d7fa8cc51321aad4; xq_r_token.sig=1kNIrDNSqyqwjdC0aVciBXKexrU; u=671539568809493; Hm_lpvt_1db88642e346389874251b5a1eded6e3=1539568810; _gid=GA1.2.1374995198.1539568810; _gat_gtag_UA_16079156_4=1",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
     "maxMoneyPerStock": 10000,
     "timeout":1,
