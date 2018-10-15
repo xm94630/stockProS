@@ -77,8 +77,20 @@
         "number":1300,
         "sPrice": 7.68,
         "sPB":0.75,
-        "latestCost":9984,
-        "jiacang": 0
+        "latestCost":12124,
+        "jiacang": 1,
+        "info":"181015下跌超-20%，但是这个加仓买的另外一个pb更低的同行业股票众泰汽车。"
+    }
+    ,{
+        "industry":"汽车",
+        "symbol": "SZ000980", 
+        "name": "众泰汽车",
+        "number":500,
+        "sPrice": 4.28,
+        "sPB":0.51,
+        "latestCost":2140,
+        "jiacang": 0,
+        "info":"181015买入，注意这个是为长安汽车而补的！"
     }
     ,{
         "industry":"证券",
