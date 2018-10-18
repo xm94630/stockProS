@@ -79,7 +79,7 @@
         "sPB":0.75,
         "latestCost":12124,
         "jiacang": 1,
-        "info":"181015下跌超-20%，但是这个加仓买的另外一个pb更低的同行业股票众泰汽车。"
+        "info":"181015下跌超-20%，但是这个加仓买的另外一个pb更低的同行业股票众泰汽车。latestCost为在之前的基础上加上买众泰的latestCost"
     }
     ,{
         "industry":"汽车",
@@ -236,11 +236,12 @@
         "industry":"综合",
         "symbol": "SH600051", 
         "name": "宁波联合",
-        "number":1600,
+        "number":2000,
         "sPrice": 6.21,
         "sPB":0.82,
-        "latestCost":9936,
-        "jiacang": 0
+        "latestCost":11914,
+        "jiacang": 1,
+        "info":"20181018跌超-20%，买入400股，成本1968。"
     }
     ,{
         "industry":"纺织",
