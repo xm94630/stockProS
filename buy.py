@@ -63,8 +63,13 @@ def getMoney(pb):
 def parseStock(oneStock):
     symbol = oneStock["symbol"]
     data = getStockInfoData(stockInfoAPI,oneStock)
-    #获取最新价格
-    oneStock['current'] = data[symbol]['current']
+
+    try:
+        #正常的操作#获取最新价格
+        oneStock['current'] = data[symbol]['current']
+    except:
+        #发生异常，执行这块代码
+        print '数据解析出错，可能是cookie问题，请尝试更新'
 
     #获取股票的近季度的利润情况
     oneStock['profit'] = FA.parseIncstatementData(symbol)
