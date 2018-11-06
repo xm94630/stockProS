@@ -35,6 +35,11 @@ python show.py [SZ000001]
    pip curl https://bootstrap.pypa.io/get-pip.py | sudo python
 6）pip install retrying==1.0.0 （retrying版本要指定，后面的几个有问题）
 7) @retry 修饰过的函数中，出了错误会被忽略，一定要记住，不要被坑了
+8) 坑：我更新cookie配置的时候，不小心把它复制到 userAgent 中，导致了我后续一顿排查。当然也有些收获：
+   a)首先报错是403错误，其实后端对 userAgent 是必须要的。
+   b)我以为是ip被封，其实不是，电脑浏览器可以访问就说明没有。
+   c)我复制请求头的时候，某字段的内容前不小心留下一个空格，也会被检测。
+
 
 
 
