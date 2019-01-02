@@ -206,11 +206,12 @@
         "industry":"化学原料",
         "symbol": "SZ002092", 
         "name": "中泰化学",
-        "number":1100,
+        "number":1300,
         "sPrice": 8.94,
         "sPB":1.03,
-        "latestCost":9834,
-        "jiacang": 0
+        "latestCost":11258,
+        "jiacang": 1,
+        "info":"20190102 下跌超20%，可补200股，1400元"
     }
     ,{
         "industry":"电力",
