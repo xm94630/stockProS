@@ -192,6 +192,11 @@ def getAllData(page=0,stockArr=[]):
             name = one['name'];
             symbol = one['symbol'];
 
+            #白云山A，已经退市不在处理
+            if symbol=='SZ000522':
+                print('============ 已经退市，跳过！===========')
+                continue
+
             #判断股票是否存在
             cursor = dataBase.getStock(symbol);
             if cursor.count()>=1:
