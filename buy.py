@@ -123,6 +123,7 @@ def printInfo(oneStock):
     else:
         print(printStr)
 
+    # 20190103 新增
     print('PB / TTM / LYR ：'+ str(oneStock['latestPB']) +'/'+ str(oneStock['pe_ttm'])+'/'+ str(oneStock['pe_lyr']))
     
     if oneStock['nowCanBuyStockNumber']==0:
