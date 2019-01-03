@@ -408,6 +408,9 @@ def getContinuityDay(arr):
 #获取该股票 6年内每天价格数据
 def getLowPriceArr(symbol,nYear):
 
+    print "===============>"
+    print symbol
+
     total = nYear
 
     # 获取六年内的全部
