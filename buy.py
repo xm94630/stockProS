@@ -74,6 +74,10 @@ def parseStock(oneStock):
     #获取股票的近季度的利润情况
     oneStock['profit'] = FA.parseIncstatementData(symbol)
 
+    #获取pe
+    oneStock['pe_lyr'] = data[symbol]['pe_lyr']
+    oneStock['pe_ttm'] = data[symbol]['pe_ttm']
+
     #获取最新pb
     latestPB = data[symbol]['pb']
     oneStock['latestPB'] = latestPB
@@ -110,7 +114,7 @@ def printInfo(oneStock):
     if oneStock['profit'][1]<0:
         kui += u'【亏】';
 
-    printStr  = kui + oneStock['name'] + ' ['+oneStock['symbol']+'] (pb:' + str(oneStock['latestPB']) + u') ，已经加仓['+ str(oneStock['jiacang'])+u']'
+    printStr  = kui + oneStock['name'] + ' ['+oneStock['symbol']+'] ' + u' ，已经加仓['+ str(oneStock['jiacang'])+u']'
     printStr2 = '总配/已配/可用：' + str(int(oneStock['canUseMoney'])) +'/'+str(int(oneStock['latestCost']))+'/'+str(int(oneStock['nowCanUse']))
     chengben  = int(oneStock['nowCanBuyStockNumber2']) * float(oneStock['current']);
 
@@ -118,6 +122,8 @@ def printInfo(oneStock):
         print(printStr+ u'，[破净]')
     else:
         print(printStr)
+
+    print('PB / TTM / LYR ：'+ str(oneStock['latestPB']) +'/'+ str(oneStock['pe_ttm'])+'/'+ str(oneStock['pe_lyr']))
     
     if oneStock['nowCanBuyStockNumber']==0:
         print printStr2 + '，配置充裕'
