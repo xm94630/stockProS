@@ -176,11 +176,12 @@
         "industry":"家用电器",
         "symbol": "SH600060", 
         "name": "海信电器",
-        "number":900,
+        "number":1100,
         "sPrice": 10.5,
         "sPB":0.96,
-        "latestCost":9450,
-        "jiacang": 0
+        "latestCost":11138,
+        "jiacang": 1,
+        "info":"20190103 下跌超20%，补200股，1700元"
     }
     ,{
         "industry":"服装",
