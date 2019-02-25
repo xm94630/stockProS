@@ -44,17 +44,6 @@
         "info":""
     }
     ,{
-        "industry":"猪肉饲料",
-        "symbol": "SZ002567", 
-        "name": "唐人神",
-        "number":2200,
-        "sPrice": 4.43,
-        "sPB":1.1,
-        "latestCost": 9746,
-        "jiacang": 0,
-        "info":""
-    }
-    ,{
         "industry":"机械设备",
         "symbol": "SH600894", 
         "name": "广日股份",

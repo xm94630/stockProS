@@ -96,11 +96,13 @@
         "industry":"证券",
         "symbol": "SH600837", 
         "name": "海通证券",
-        "number":1100,
+        "number":600,
         "sPrice": 8.87,
         "sPB":0.86,
-        "latestCost":9757,
-        "jiacang": 0
+        "latestCost":3110,
+        "jiacang": 0,
+        "info":"190225 大盘疯涨，减半卖出（-500）！",
+        "info2":"latestCost的计算方式就是，卖出后的成本价格*股数"
     }
     ,{
         "industry":"传媒",
@@ -120,12 +122,13 @@
         "industry":"家具",
         "symbol": "SH600978", 
         "name": "宜华生活",
-        "number":2100,
+        "number":3000,
         "sPrice": 5.72,
         "sPB":1.06,
-        "latestCost":11478,
-        "jiacang": 1,
-        "info":"20181012跌超-23%左右，买入400股"
+        "latestCost":14649,
+        "jiacang": 2,
+        "info":"20181012跌超-23%左右，买入400股",
+        "info2":"20190129 跌超-36%，买入600股（本应200，因为财报不错，我稍作调整）"
     }
     ,{
         "industry":"水务",
