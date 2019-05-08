@@ -569,7 +569,12 @@ def getStockInfoData(url,config,symbol):
     pb          = round(float(data[symbol]['pb']),2);
     totalShares = data[symbol]['totalShares'];
     close       = round(float(data[symbol]['close']),2);
-    eps         = round(float(data[symbol]['eps']),2);
+
+    if data[symbol]['eps']:
+        eps = round(float(data[symbol]['eps']),2);
+    else:
+        eps = 0
+    
 
     #新增股息率
     dividendRate = round(float(data[symbol]['dividend'])/float(data[symbol]['current'])*100,2);
